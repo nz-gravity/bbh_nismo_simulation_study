@@ -1,0 +1,487 @@
+{
+  "cheap": {
+    "config": {
+      "run_id": "run_m",
+      "sampler": "dynesty",
+      "status": "planned",
+      "purpose": "Cheap local short-walk pilot",
+      "kwargs": {
+        "nlive": 100,
+        "sample": "rwalk",
+        "nact": 2,
+        "bound": "live",
+        "dlogz": 1.0,
+        "add_live": true,
+        "update_interval": 600,
+        "walks": 20,
+        "facc": 0.2,
+        "maxmcmc": 500,
+        "naccept": 60,
+        "proposals": [
+          "diff",
+          "volumetric"
+        ],
+        "check_point_delta_t": 60,
+        "check_point_plot": false
+      },
+      "seed": 42
+    },
+    "likelihood_id": "70539a67b265d6827500821d191a7aa866db78f73b58efb287691371ebf96ee0",
+    "evidence_convention": "full_log_likelihood",
+    "log_evidence": -16169.848902804337,
+    "log_evidence_err": 0.6943318439712143,
+    "log_noise_evidence": -16293.358364584721,
+    "sampling_seconds": 218.008574,
+    "likelihood_evaluations": 307539,
+    "ncores": 2,
+    "invocation_seconds": 44.46991070799413,
+    "posterior_rows": 104,
+    "original_posterior_rows": 104,
+    "posterior_sha256": "af43a84825aca4f21f3d4eecdd462332a0cdca27a1accc66f4e9e9bebe21def1",
+    "event_id": 0,
+    "provenance_note": "Private machine paths, host/account identifiers and job-log details are excluded. Scientific values and retained posterior CSV bytes are unchanged."
+  },
+  "reference": {
+    "sampler": "dynesty",
+    "sampler_kwargs": {
+      "nlive": 2000,
+      "bound": "live",
+      "sample": "rwalk",
+      "periodic": [
+        6,
+        7
+      ],
+      "reflective": null,
+      "update_interval": 600,
+      "first_update": null,
+      "queue_size": 16,
+      "use_pool": null,
+      "logl_args": null,
+      "logl_kwargs": null,
+      "ptform_args": null,
+      "ptform_kwargs": null,
+      "enlarge": null,
+      "bootstrap": null,
+      "walks": 100,
+      "facc": 0.2,
+      "slices": null,
+      "ncdim": null,
+      "blob": false,
+      "save_evaluation_history": false,
+      "history_filename": null,
+      "maxiter": null,
+      "maxcall": null,
+      "dlogz": 0.1,
+      "logl_max": {
+        "__nonfinite_float__": "Infinity"
+      },
+      "add_live": true,
+      "print_progress": true,
+      "save_bounds": false,
+      "checkpoint_file": null,
+      "checkpoint_every": 60,
+      "resume": false,
+      "seed": null
+    },
+    "log_evidence": -16170.646747330862,
+    "log_evidence_err": 0.10196707259348929,
+    "log_noise_evidence": -16293.358364584721,
+    "log_bayes_factor": 122.71161725385954,
+    "sampling_time": 22556.381685,
+    "num_likelihood_evaluations": 108664994,
+    "information_gain": 12.734789806930621,
+    "use_ratio": true,
+    "search_parameter_keys": [
+      "chirp_mass",
+      "mass_ratio",
+      "a_1",
+      "a_2",
+      "tilt_1",
+      "tilt_2",
+      "phi_12",
+      "phi_jl"
+    ],
+    "fixed_parameter_keys": [
+      "luminosity_distance",
+      "dec",
+      "ra",
+      "cos_theta_jn",
+      "psi",
+      "phase",
+      "geocent_time"
+    ],
+    "constraint_parameter_keys": [
+      "mass_1",
+      "mass_2"
+    ],
+    "version": "bilby=2.7.1",
+    "priors": {
+      "chirp_mass": {
+        "__prior__": true,
+        "__module__": "bilby.gw.prior",
+        "__name__": "UniformInComponentsChirpMass",
+        "kwargs": {
+          "minimum": 14,
+          "maximum": 20,
+          "name": "chirp_mass",
+          "latex_label": "$\\mathcal{M}$",
+          "unit": null,
+          "boundary": null
+        }
+      },
+      "mass_ratio": {
+        "__prior__": true,
+        "__module__": "bilby.gw.prior",
+        "__name__": "UniformInComponentsMassRatio",
+        "kwargs": {
+          "minimum": 0.125,
+          "maximum": 1,
+          "name": "mass_ratio",
+          "latex_label": "$q$",
+          "unit": null,
+          "boundary": null,
+          "equal_mass": false
+        }
+      },
+      "mass_1": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.base",
+        "__name__": "Constraint",
+        "kwargs": {
+          "minimum": 1.001398,
+          "maximum": 1000,
+          "name": "mass_1",
+          "latex_label": "$m_1$",
+          "unit": null
+        }
+      },
+      "mass_2": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.base",
+        "__name__": "Constraint",
+        "kwargs": {
+          "minimum": 1.001398,
+          "maximum": 1000,
+          "name": "mass_2",
+          "latex_label": "$m_2$",
+          "unit": null
+        }
+      },
+      "a_1": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "Uniform",
+        "kwargs": {
+          "minimum": 0,
+          "maximum": 0.99,
+          "name": "a_1",
+          "latex_label": "$a_1$",
+          "unit": null,
+          "boundary": null
+        }
+      },
+      "a_2": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "Uniform",
+        "kwargs": {
+          "minimum": 0,
+          "maximum": 0.99,
+          "name": "a_2",
+          "latex_label": "$a_2$",
+          "unit": null,
+          "boundary": null
+        }
+      },
+      "tilt_1": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "Sine",
+        "kwargs": {
+          "minimum": 0,
+          "maximum": 3.141592653589793,
+          "name": "tilt_1",
+          "latex_label": "$\\theta_1$",
+          "unit": null,
+          "boundary": null
+        }
+      },
+      "tilt_2": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "Sine",
+        "kwargs": {
+          "minimum": 0,
+          "maximum": 3.141592653589793,
+          "name": "tilt_2",
+          "latex_label": "$\\theta_2$",
+          "unit": null,
+          "boundary": null
+        }
+      },
+      "phi_12": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "Uniform",
+        "kwargs": {
+          "minimum": 0,
+          "maximum": 6.283185307179586,
+          "name": "phi_12",
+          "latex_label": "$\\Delta\\phi$",
+          "unit": null,
+          "boundary": "periodic"
+        }
+      },
+      "phi_jl": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "Uniform",
+        "kwargs": {
+          "minimum": 0,
+          "maximum": 6.283185307179586,
+          "name": "phi_jl",
+          "latex_label": "$\\phi_{JL}$",
+          "unit": null,
+          "boundary": "periodic"
+        }
+      },
+      "luminosity_distance": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "DeltaFunction",
+        "kwargs": {
+          "peak": 911.987039213529,
+          "name": null,
+          "latex_label": null,
+          "unit": null
+        }
+      },
+      "dec": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "DeltaFunction",
+        "kwargs": {
+          "peak": -0.2707996420735983,
+          "name": null,
+          "latex_label": null,
+          "unit": null
+        }
+      },
+      "ra": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "DeltaFunction",
+        "kwargs": {
+          "peak": 4.313505898394644,
+          "name": null,
+          "latex_label": null,
+          "unit": null
+        }
+      },
+      "cos_theta_jn": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "DeltaFunction",
+        "kwargs": {
+          "peak": 0.9725138662479688,
+          "name": null,
+          "latex_label": null,
+          "unit": null
+        }
+      },
+      "psi": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "DeltaFunction",
+        "kwargs": {
+          "peak": 0.113552075837361,
+          "name": null,
+          "latex_label": null,
+          "unit": null
+        }
+      },
+      "phase": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "DeltaFunction",
+        "kwargs": {
+          "peak": 5.560382428510214,
+          "name": null,
+          "latex_label": null,
+          "unit": null
+        }
+      },
+      "geocent_time": {
+        "__prior__": true,
+        "__module__": "bilby.core.prior.analytical",
+        "__name__": "DeltaFunction",
+        "kwargs": {
+          "peak": 0.9762541118537486,
+          "name": null,
+          "latex_label": null,
+          "unit": null
+        }
+      },
+      "__prior_dict__": true,
+      "__module__": "bilby.gw.prior",
+      "__name__": "BBHPriorDict"
+    },
+    "posterior_rows": 1000,
+    "original_posterior_rows": 9981,
+    "posterior_sha256": "43e85d45dd5ff47b1869b71e9dc16c5f587d71c8e26db16f8e3b8e1b38121f5c",
+    "source_result_sha256": "f766325fb02e51f7a4e31e042db39fbe7c952a60665d6138b061b631b882d282",
+    "comparison_audit": {
+      "passed": true,
+      "draws": 32,
+      "source_row_indices": [
+        2,
+        385,
+        705,
+        1052,
+        1375,
+        1773,
+        2106,
+        2486,
+        2854,
+        3091,
+        3446,
+        3794,
+        4038,
+        4529,
+        4793,
+        5118,
+        5431,
+        5674,
+        5981,
+        6225,
+        6563,
+        6859,
+        7189,
+        7491,
+        7725,
+        8115,
+        8416,
+        8717,
+        9009,
+        9296,
+        9615,
+        9966
+      ],
+      "max_abs_log_likelihood_residual": 5.4569682106375694e-12,
+      "max_abs_log_prior_residual": 8.881784197001252e-16,
+      "stored_log_likelihood_to_full_offset": -16293.358364584721,
+      "stored_log_likelihood_convention": "likelihood_ratio",
+      "noise_evidence_difference": 0.0,
+      "max_injection_metadata_ulp_difference": 0.0,
+      "comparison_likelihood_id": "70539a67b265d6827500821d191a7aa866db78f73b58efb287691371ebf96ee0",
+      "scope": "Injection/metadata/prior checks and 32 posterior-point likelihood/prior replays against frozen cheap-event data; original reference strain bytes were not archived, and convergence is not certified."
+    },
+    "thinning": {
+      "method": "uniform sampling without replacement, sorted source row indices",
+      "rng": "NumPy default_rng / PCG64",
+      "selection_seed": 0,
+      "numpy_version": "2.4.4",
+      "max_rows": 1000
+    },
+    "completion": {
+      "status": "final_result_present_and_validated",
+      "scheduler_success_claimed": false
+    },
+    "software_versions": {
+      "numpy": "1.26.2",
+      "scipy": "1.11.4",
+      "pandas": "2.1.3",
+      "bilby_cython": "0.5.3",
+      "bilby": "2.7.1"
+    },
+    "scientific_metadata": {
+      "interferometers": {
+        "H1": {
+          "name": "H1",
+          "optimal_SNR": 8.568921984209798,
+          "matched_filter_SNR": {
+            "__complex__": true,
+            "real": 8.22673494169279,
+            "imag": 0.8344621702505295
+          },
+          "parameters": {
+            "chirp_mass": 14.807287963319412,
+            "mass_ratio": 0.6322324995820489,
+            "a_1": 0.7886843345078536,
+            "a_2": 0.7578610697099508,
+            "tilt_1": 1.58557797552303,
+            "tilt_2": 1.3762037892202303,
+            "phi_12": 5.745084255336149,
+            "phi_jl": 0.6277281689486646,
+            "luminosity_distance": 911.987039213529,
+            "dec": -0.2707996420735983,
+            "ra": 4.313505898394644,
+            "cos_theta_jn": 0.9725138662479688,
+            "psi": 0.113552075837361,
+            "phase": 5.560382428510214,
+            "geocent_time": 0.9762541118537486
+          }
+        },
+        "L1": {
+          "name": "L1",
+          "optimal_SNR": 15.886160889341904,
+          "matched_filter_SNR": {
+            "__complex__": true,
+            "real": 14.350656598076357,
+            "imag": -0.5833380578971973
+          },
+          "parameters": {
+            "chirp_mass": 14.807287963319412,
+            "mass_ratio": 0.6322324995820489,
+            "a_1": 0.7886843345078536,
+            "a_2": 0.7578610697099508,
+            "tilt_1": 1.58557797552303,
+            "tilt_2": 1.3762037892202303,
+            "phi_12": 5.745084255336149,
+            "phi_jl": 0.6277281689486646,
+            "luminosity_distance": 911.987039213529,
+            "dec": -0.2707996420735983,
+            "ra": 4.313505898394644,
+            "cos_theta_jn": 0.9725138662479688,
+            "psi": 0.113552075837361,
+            "phase": 5.560382428510214,
+            "geocent_time": 0.9762541118537486
+          }
+        }
+      },
+      "time_marginalization": false,
+      "phase_marginalization": false,
+      "distance_marginalization": false,
+      "calibration_marginalization": false,
+      "waveform_generator_class": {
+        "__class__": true,
+        "__module__": "bilby.gw.waveform_generator",
+        "__name__": "WaveformGenerator"
+      },
+      "waveform_arguments": {
+        "waveform_approximant": "IMRPhenomPv2",
+        "reference_frequency": 20
+      },
+      "frequency_domain_source_model": {
+        "__function__": true,
+        "__module__": "bilby.gw.source",
+        "__name__": "lal_binary_black_hole"
+      },
+      "time_domain_source_model": null,
+      "parameter_conversion": {
+        "__function__": true,
+        "__module__": "bilby.gw.conversion",
+        "__name__": "convert_to_lal_binary_black_hole_parameters"
+      },
+      "sampling_frequency": 4096,
+      "duration": 4.0,
+      "start_time": -1.0237458881462516,
+      "time_reference": "geocent",
+      "reference_frame": "sky",
+      "lal_version": "lal_version=7.7.0, lal_git_version=Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed",
+      "lalsimulation_version": "lalsimulation_version=6.2.0, lalsimulation_git_version=Branch: None;Tag: lalsuite-v7.26.1;Id: c90e1175f5e238741185744a4e516e58d42a9aec;;Builder: Unknown User <>;Repository status: CLEAN: All modifications committed"
+    },
+    "event_id": 0,
+    "provenance_note": "Private machine paths, host/account identifiers and job-log details are excluded. Scientific values and retained posterior CSV bytes are unchanged."
+  }
+}

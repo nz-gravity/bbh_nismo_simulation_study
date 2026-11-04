@@ -1,0 +1,183 @@
+{
+  "label": "repeat",
+  "settings": {
+    "event": 0,
+    "nlive": 100,
+    "fit_seed": 20261104,
+    "seed": 20262107,
+    "dlogz": 0.1,
+    "max_iterations": 10000,
+    "de_retries": 3,
+    "walk_n_steps": null
+  },
+  "versions": {
+    "morphnis": "0.1.0.dev0",
+    "morphZ": "0.4.4",
+    "bilby": "2.8.0",
+    "lalsuite": "7.26.15",
+    "numpy": "2.4.4",
+    "scipy": "1.18.1",
+    "pandas": "3.0.3"
+  },
+  "morphnis_commit": "7b945633964c068e094484f5ea55bf97a9ec97f5",
+  "benchmark_commit": "de448a58fe27fec2a705dc9683f453ef18f98554",
+  "runner_at_invocation_sha256": "66eeabae58a4cdbc77089ec952c92c22202c12cca96420635b7e4a726dc717c3",
+  "validation": {
+    "cheap": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16293.358364584721,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "reference_holdout": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16293.35836458472,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 1.8189894035458565e-12
+    },
+    "likelihood_calls": 64,
+    "seconds": 1.5568275000005087,
+    "data_sha256": "f20d0ff42c51ca993ee44a661c1df908b30021a60015ffad6187992d490b4595"
+  },
+  "status": "converged",
+  "termination_reason": "dlogz",
+  "likelihood_id": "70539a67b265d6827500821d191a7aa866db78f73b58efb287691371ebf96ee0",
+  "training": {
+    "importance_type": "Morph",
+    "beta": 1.0,
+    "morph_version": "0.4.4",
+    "ndim": 8,
+    "parameter_names": [
+      "chirp_mass",
+      "mass_ratio",
+      "a_1",
+      "a_2",
+      "tilt_1",
+      "tilt_2",
+      "phi_12",
+      "phi_jl"
+    ],
+    "n_training_samples": 104,
+    "n_input_samples": 104,
+    "thin": 1,
+    "training_sample_cap": null,
+    "morph_configuration": {
+      "class": "Morph_Group",
+      "n_order": 2,
+      "kde_bw": "silverman",
+      "top_k_greedy": 1,
+      "shuffle_samples": false,
+      "verbose": false,
+      "random_state": 20261104,
+      "param_tc": null
+    },
+    "coordinate_system": "model (identity)",
+    "support": "R^ndim (untruncated Gaussian KDEs)",
+    "fit_seed": 20261104,
+    "bandwidth_scale": 1.0,
+    "bw": null,
+    "density_evaluation": "cached exact KDE factors (scalar); MorphZ (batch)",
+    "selected_groups": [
+      [
+        "mass_ratio",
+        "tilt_1"
+      ],
+      [
+        "a_1",
+        "chirp_mass"
+      ],
+      [
+        "phi_jl",
+        "tilt_2"
+      ],
+      [
+        "a_2",
+        "phi_12"
+      ]
+    ],
+    "single_parameters": []
+  },
+  "nis": {
+    "log_evidence": -16171.005324113574,
+    "log_evidence_err": 0.2731736892325577,
+    "n_iterations": 1247,
+    "nlive": 100,
+    "weight_ess": 634.3948614875912,
+    "weight_ess_accounts_for_correlations": false,
+    "likelihood_calls": 255446,
+    "sampler_seconds": 234.56880120799906,
+    "fit_seconds": 0.4372364170012588,
+    "recovery_iterations": 1,
+    "retry_attempts": 1,
+    "failed_walk_attempts": 1
+  },
+  "delta_logz_nis_reference": -0.3585767827116797,
+  "delta_logz_nis_reference_statistical_error": 0.29158386166283606,
+  "delta_logz_cheap_reference": 0.7978445265252958,
+  "nis_minus_cheap": -1.1564213092369755,
+  "posterior_distances": {
+    "chirp_mass": {
+      "nis_reference_wasserstein": 0.01304488658286431,
+      "cheap_reference_wasserstein": 0.01856097470486387,
+      "angular_center_radians": null
+    },
+    "mass_ratio": {
+      "nis_reference_wasserstein": 0.08402972284960603,
+      "cheap_reference_wasserstein": 0.028753287342561856,
+      "angular_center_radians": null
+    },
+    "a_1": {
+      "nis_reference_wasserstein": 0.08876672281469647,
+      "cheap_reference_wasserstein": 0.015978880684158064,
+      "angular_center_radians": null
+    },
+    "a_2": {
+      "nis_reference_wasserstein": 0.08407960252389847,
+      "cheap_reference_wasserstein": 0.05780810904004233,
+      "angular_center_radians": null
+    },
+    "tilt_1": {
+      "nis_reference_wasserstein": 0.06340645829303057,
+      "cheap_reference_wasserstein": 0.07695342701520341,
+      "angular_center_radians": null
+    },
+    "tilt_2": {
+      "nis_reference_wasserstein": 0.10558011825200392,
+      "cheap_reference_wasserstein": 0.17533608809161622,
+      "angular_center_radians": null
+    },
+    "phi_12": {
+      "nis_reference_wasserstein": 0.43559885921785424,
+      "cheap_reference_wasserstein": 0.16515392631604758,
+      "angular_center_radians": 2.876720005990807
+    },
+    "phi_jl": {
+      "nis_reference_wasserstein": 0.14893305180723496,
+      "cheap_reference_wasserstein": 0.09494042115264335,
+      "angular_center_radians": 1.7715663900080019
+    }
+  },
+  "cost_including_pilot": {
+    "likelihood_calls": 562985,
+    "validation_likelihood_calls_additional": 64,
+    "pilot_reported_sampling_seconds": 218.008574,
+    "pilot_reported_invocation_seconds": 44.46991070799413,
+    "nis_fit_and_sampling_seconds": 235.00603762500032,
+    "wall_times_from_different_hardware_are_not_speedup_estimates": true
+  },
+  "limitations": [
+    "Weight ESS does not measure chain autocorrelation or missing modes.",
+    "Reported evidence errors are statistical approximations, not bounds on proposal or recovery bias.",
+    "Retry selection is heuristic; inspect recovery counts and repeat with fail-fast/stricter walks.",
+    "Reference is independently sampled but is not exact truth; 1000 retained posterior draws limit comparisons.",
+    "Original full reference histories and scheduler completion remain uninspected."
+  ],
+  "cached_quadrature_check": {
+    "log_evidence": -16171.005324113574,
+    "posterior_weight_sum": 1.0000000000000029
+  },
+  "result_npz_sha256": "3c98f6847ea881b73b812a834ce3ff8b01dd9a48a4dfa417f12a3a601584fa26",
+  "initial_renderer_failed": false
+}

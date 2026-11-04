@@ -1,0 +1,27 @@
+{
+  "source_scope": "Portable release metadata only; original OzSTAR files and queue uninspected",
+  "metadata_pairs_passed": 100,
+  "cheap_rows": 9911,
+  "training_rows_range": [
+    81,
+    128
+  ],
+  "max_abs_noise_evidence_difference": 1.0084477253258228e-08,
+  "rerun_and_data_guards": {
+    "existing_output_refused": true,
+    "existing_json_files_unchanged": true,
+    "regenerated_data_refused": true,
+    "regenerated_data_error": "Frozen data do not match original event checksum; do not substitute regenerated noise"
+  },
+  "cap_test": {
+    "status": "non_converged",
+    "termination_reason": "max_iterations",
+    "iterations": 1,
+    "exit_code": 3
+  },
+  "original_full_reference_results_available": false,
+  "original_frozen_event_ids_available": [
+    0
+  ],
+  "scheduler_jobs_submitted": []
+}

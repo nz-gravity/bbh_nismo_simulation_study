@@ -1,0 +1,91 @@
+{
+  "label": "strict",
+  "settings": {
+    "event": 0,
+    "nlive": 200,
+    "fit_seed": 20261105,
+    "seed": 20262105,
+    "dlogz": 0.05,
+    "max_iterations": 10000,
+    "de_retries": 0,
+    "walk_n_steps": 200
+  },
+  "versions": {
+    "morphnis": "0.1.0.dev0",
+    "morphZ": "0.4.4",
+    "bilby": "2.8.0",
+    "lalsuite": "7.26.15",
+    "numpy": "2.4.4",
+    "scipy": "1.18.1",
+    "pandas": "3.0.3"
+  },
+  "morphnis_commit": "7b945633964c068e094484f5ea55bf97a9ec97f5",
+  "benchmark_commit": "de448a58fe27fec2a705dc9683f453ef18f98554",
+  "runner_at_invocation_sha256": "847baab7588a9a913985bb3cbba966dd844aa582a4c3452d1bbec77efa91fdbb",
+  "validation": {
+    "cheap": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16293.358364584721,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "reference_holdout": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16293.35836458472,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 1.8189894035458565e-12
+    },
+    "likelihood_calls": 64,
+    "seconds": 2.7738749999989523,
+    "data_sha256": "f20d0ff42c51ca993ee44a661c1df908b30021a60015ffad6187992d490b4595"
+  },
+  "status": "failed",
+  "error_type": "ConstrainedSamplingError",
+  "error": "DE/stretch recovery exhausted after 1 attempts (300 total proposals). Last attempt: DE/stretch accepted 4/5 required moves in 300 proposals at threshold -16164.761142651429; constraint passes=4",
+  "seconds": 282.9629684579995,
+  "likelihood_calls": 302998,
+  "last_walk": {
+    "iteration": 1607,
+    "attempt": 1,
+    "start_index": 27,
+    "n_steps": 300,
+    "gamma": 0.02975,
+    "min_accepted": 5,
+    "weights": {
+      "de": 0.8,
+      "stretch": 0.2
+    },
+    "next_weights": {
+      "de": 0.8,
+      "stretch": 0.2
+    },
+    "n_mh_accepted": 4,
+    "n_constraint_passed": 4,
+    "likelihood_calls": 282,
+    "n_prior_rejected": 18,
+    "succeeded": false,
+    "move_stats": {
+      "de": {
+        "n_proposed": 227,
+        "n_prior_rejected": 0,
+        "n_constraint_passed": 3,
+        "n_mh_accepted": 3,
+        "likelihood_calls": 227,
+        "sum_standardized_squared_jump": 0.0132583313773333
+      },
+      "stretch": {
+        "n_proposed": 73,
+        "n_prior_rejected": 18,
+        "n_constraint_passed": 1,
+        "n_mh_accepted": 1,
+        "likelihood_calls": 55,
+        "sum_standardized_squared_jump": 1.5975588252870994e-05
+      }
+    }
+  },
+  "complete_iterations_before_failure": 1606,
+  "failed_walk_attempts": 1,
+  "evidence_available": false
+}
