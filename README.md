@@ -11,7 +11,7 @@ The selected reference is **nlive=2000, not nlive=4000**. These packages contain
 
 ## Downloads and plots
 
-Versioned result ZIPs, SHA-256 checksums and a standard-library Python verifier are prepared for release. Publication is pending; no download assets or hosted website are available yet. The static comparison website is prepared in `docs/` and shows shared-axis cheap/reference corner overlays by injection ID.
+Download both result packages, checksum sidecars, the portable manifest and Python verifier from the [versioned data release](https://github.com/nz-gravity/bbh_nismo_simulation_study/releases/tag/dynesty-baselines-2026-11-04). The comparison website source is in `docs/`. All 100 corner plots are validated locally; their repository upload and public site hosting are pending.
 
 ## Samples and matching
 
