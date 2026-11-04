@@ -1,0 +1,28 @@
+{
+  "event_count": 100,
+  "matched_event_count": 100,
+  "cheap_archive_sha256": "c22d83287b9f074fc6a31cc782a31b009104ef8bc7e10e1d614dac1c17fef916",
+  "reference_archive_sha256": "2421ce022fe97c81f69249afbcbdc784438e164e56ac89edf79a35d19f878aea",
+  "parameters": [
+    "chirp_mass",
+    "mass_ratio",
+    "a_1",
+    "a_2",
+    "tilt_1",
+    "tilt_2",
+    "phi_12",
+    "phi_jl"
+  ],
+  "contours": [
+    0.5,
+    0.9
+  ],
+  "histogram_bins": 35,
+  "smoothing_bins": 1.0,
+  "reference_thinning": "up to 1000 uniform draws without replacement; selection seed 0; exact indices in reference archive",
+  "cheap_retained_rows": 9911,
+  "reference_retained_rows": 100000,
+  "reference_original_rows": 923335,
+  "release_url": "https://github.com/nz-gravity/bbh_nismo_simulation_study/releases/tag/dynesty-baselines-2026-11-04",
+  "distribution": "GitHub Pages source"
+}

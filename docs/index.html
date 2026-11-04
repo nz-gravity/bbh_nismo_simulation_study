@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BBH Dynesty comparison</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="data/events.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<main>
+  <header><span class="status">100 matched injections</span><h1>BBH Dynesty comparison</h1><p>Cheap <strong>nlive=100</strong> and reference <strong>nlive=2000</strong> posteriors for the same BBH injections.</p></header>
+  <section class="controls" aria-label="Choose an injection">
+    <button id="previous" type="button" aria-label="Previous injection">← Previous</button>
+    <label for="event">Injection</label><select id="event"></select>
+    <button id="next" type="button" aria-label="Next injection">Next →</button>
+    <a id="open-plot" target="_blank" rel="noopener">Open full-size plot</a>
+  </section>
+  <p id="summary" role="status" aria-live="polite"></p>
+  <div class="table-scroll"><table><caption id="table-caption">Sampler settings and retained samples</caption><thead><tr><th scope="col">Run</th><th scope="col">Live points</th><th scope="col">Retained / original draws</th><th scope="col">Full log evidence ± error</th><th scope="col">Sampling time</th></tr></thead><tbody id="metrics"></tbody></table></div>
+  <figure><img id="corner" alt="" decoding="async"><figcaption>Blue solid: cheap; orange dashed: reference; gray: injection truth. Both use the same axes, bins and smoothing. Contours enclose 50% and 90% probability; diagonal densities are normalized separately. Angles are in radians, with periodic φ angles shown on 0–2π.</figcaption></figure>
+  <p id="plot-error" class="error" hidden>Plot unavailable for this injection. No replacement or fabricated comparison is shown.</p>
+  <details><summary>Data, thinning and matching</summary><p>Each reference event retains up to 1,000 equal-weight posterior draws, sampled uniformly without replacement with selection seed 0. Original counts and exact indices are recorded in its archive. Every cheap saved draw is retained. These contours show retained samples; they do not certify convergence or coverage.</p><p>Matching is checked using injection metadata, prior/catalogue hashes, noise evidence and 32 likelihood/prior replays against the frozen cheap-event data. Original reference strain bytes were not archived, so byte identity is not claimed. Reference sampler RNG seeds are unknown; cheap sampler seed is 42.</p><p>Posterior log-likelihood columns can be ratios relative to noise. Reported log evidences above are already full evidences. No nlive=4000 result is displayed on this site.</p><p id="audit"></p><p><a href="data/provenance.json">Plot and package provenance</a></p></details>
+  <footer><p><a href="https://github.com/nz-gravity/bbh_nismo_simulation_study/releases/tag/dynesty-baselines-2026-11-04">Download result ZIPs, checksums and verifier</a></p><p>Prepared for <code>nz-gravity/bbh_nismo_simulation_study</code>. Results and plot data are source-checked; private machine paths and operational job details are excluded.</p></footer>
+</main>
+</body></html>
