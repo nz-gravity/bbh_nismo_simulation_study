@@ -11,7 +11,7 @@ The selected reference is **nlive=2000, not nlive=4000**. These packages contain
 
 ## Downloads and plots
 
-Download both result packages, checksum sidecars, the portable manifest and Python verifier from the [versioned data release](https://github.com/nz-gravity/bbh_nismo_simulation_study/releases/tag/dynesty-baselines-2026-11-04). The comparison website source is in `docs/`. All 100 corner plots are validated locally; their repository upload and public site hosting are pending.
+Download both result packages, checksum sidecars, the portable manifest and Python verifier from the [versioned data release](https://github.com/nz-gravity/bbh_nismo_simulation_study/releases/tag/dynesty-baselines-2026-11-04). Browse the [100-event corner comparison website](https://nz-gravity.github.io/bbh_nismo_simulation_study/), or inspect the static source and plots in `docs/`. Each event overlays cheap and reference posteriors on shared axes.
 
 ## Samples and matching
 
