@@ -89,7 +89,7 @@ aggregating repeated attempts.
   Event-0 array inspection found strain differences up to `8.32e-39`; frequency
   and PSD arrays matched. Regenerated data were not used for NIS inference.
 - 53 relevant upstream tests passed in the actual pinned campaign environment;
-  3 added scientific/safety tests passed. Integration checks refused an existing
+  the added scientific/safety suite now has 4 passing tests. Integration checks refused an existing
   output directory and changed data. A deliberate one-iteration run returned
   `non_converged`, `max_iterations`, exit code 3; it is excluded from science
   comparisons.
@@ -99,11 +99,46 @@ aggregating repeated attempts.
   integrals per overlay equal one within numerical tolerance; both figures were
   visually inspected.
 
-Original frozen inputs for the other 99 events, unthinned 2,000-live results,
-original result layouts and cluster queue state remain unavailable locally.
-Those inputs are needed before the requested production comparison and
-scheduler duplicate checks. The original reference strain bytes were not
+The saved results needed for training and the core comparison are already
+available for all 100 events: complete cheap training draws, reference posterior
+subsets, and full-inference evidence/error/cost values. Unthinned reference files
+and sampler histories would improve diagnostics, but are not prerequisites for
+that comparison. The earlier statement that full reference files were required
+was too broad.
+
+Original frozen inputs for the other 99 events, original result layouts and
+cluster queue state remain unavailable locally. This limits original-byte
+replication and cluster duplicate checks. Numerically validated local
+reconstruction is a separate route; byte-checksum differences alone do not
+establish a scientific mismatch. The original reference strain bytes were not
 archived, so matching remains a documented numerical check.
+
+### Follow-up: all 100 local reconstructions validated
+
+After rechecking all three repositories, local reconstruction was tested for
+every event against **all 9,911 cheap posterior rows** and **32 held-out
+reference rows per event** (3,200 reference replays). All 100 numerical
+likelihood/prior contracts passed at the documented `1e-6` tolerance. Maximum
+absolute likelihood residual was `1.06e-8`, prior residual `3.56e-15`, and
+noise-likelihood difference `1.01e-8`. See the
+[summary](results/reconstruction_audit_all100_summary.json) and
+[per-event receipts](results/reconstruction_audit_all100_events.json).
+
+None of the regenerated strain files matched the original byte checksums.
+They remain explicitly labelled reconstructions; the numerical agreement does
+not establish exact bytes, global equivalence, or sampler convergence. No new
+NIS inference was launched during this follow-up. These checks support
+continuing the scientific workflow locally; missing unthinned reference files
+are not a blocker for the core evidence/posterior comparison. The remaining
+NIS stability questions are separate from baseline-result availability.
+
+The linked `EL-MZ/MorphZ/analysis/LIGO/fast_pp` directory was checked at commit
+`9993081c3ddd60be7d6b34be8b76ffd95a445fb2`. It contains reconstruction scripts,
+catalogue, priors, aggregate evidences and plots, rather than per-event raw
+strain/result files. Its injection catalogue, prior file and setup script have
+identical Git blob IDs to the inspected reference-study checkout. The benchmark
+repository still contains a single frozen event-0 dataset, while the simulation
+study's release contains the 100 matched baseline pairs.
 
 The portable [validation receipt](results/validation_receipt.json) records
 scope and guard outcomes. [Workflow commands and fixed settings](README.md)

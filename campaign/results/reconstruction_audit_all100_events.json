@@ -1,0 +1,3002 @@
+[
+  {
+    "event": 0,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "f20d0ff42c51ca993ee44a661c1df908b30021a60015ffad6187992d490b4595",
+    "actual_data_sha256": "bfb726c99db3db62ee1ae63d228de4fca70dcbf02e71894ea6a3e1f4feec1287",
+    "posterior_audit": {
+      "n_points": 104,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16293.358364584721,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16293.35836458472,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 1.8189894035458565e-12
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 1,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "90ce9b6a13c3a1992709121c66c72c48578a8d16ed66732c14b0b46cead9a4ef",
+    "actual_data_sha256": "ba2a59f027b613406bb956c8bdf46088a79f124cd4278c0d965d9705e6a7a5a4",
+    "posterior_audit": {
+      "n_points": 84,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -15976.153494180186,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -15976.153494180184,
+      "max_abs_log_likelihood_residual": 5.4569682106375694e-12,
+      "offset_to_documented_convention_residual": 1.8189894035458565e-12
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 2,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "13c8f38d6b4343d348facea2ca3e86deea88bf8ea77483d50a9d13e916f7b938",
+    "actual_data_sha256": "7f3a39a283dca15d0beb1828c050928e2846bc5d3a9863978a02ded71adb7b0f",
+    "posterior_audit": {
+      "n_points": 89,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16351.265180913084,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16351.265180913084,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 3,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "c802633d3783a02204847969c4361b64864d9a6f50ae2d11bedd58fe05142824",
+    "actual_data_sha256": "c0724cc152a38b341e3043684d9ee07037454a8277a17381edd50b5a4ed232ef",
+    "posterior_audit": {
+      "n_points": 100,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16220.937171209296,
+      "max_abs_log_likelihood_residual": 1.2732925824820995e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16220.937171209296,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 4,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "4a71c44ef1c7306b761088cee9731ae361297dbfbfe8fa0a4b9f303436e98f74",
+    "actual_data_sha256": "0a60af49f6842f08fe6f98a5fcb7961da62e0429075ab890e83116c91985db2f",
+    "posterior_audit": {
+      "n_points": 102,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16501.107438374376,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16501.107438374376,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 5,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "7d9781ddf58716b909b30d6bf16a97d2c2ab84317015b942c3c317c835c983d7",
+    "actual_data_sha256": "5023a4b9f2f31bc7d7ce1403846083bd6586bc44c4aa473e65e725a6f4869cf1",
+    "posterior_audit": {
+      "n_points": 96,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16523.359376804532,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 3.552713678800501e-15,
+      "log_likelihood_offset": -16523.359376804532,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 6,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "11f5b282925f76352d84c28ecd0d509f8a93506172c4a55b626ec4454c637207",
+    "actual_data_sha256": "26520a64f5de4b923cd47230e8312d23c506db844151af3d395073bcd10f52ea",
+    "posterior_audit": {
+      "n_points": 109,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16289.1891792871,
+      "max_abs_log_likelihood_residual": 5.4569682106375694e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16289.1891792871,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 7,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "6ccaf41520fe91ebe5cd7752cf31d17d5c433cfafc0d5292d1aaa251b9b860e4",
+    "actual_data_sha256": "caee3ead71b20ff33f26099bb364c4aeb0e394b3e61428b143db3a35d02647b5",
+    "posterior_audit": {
+      "n_points": 107,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16735.120364078764,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16735.120364078764,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 8,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "e7ea4ff3c30d723a8ce25ccef4a5341933501595bb5f0ca73413d321e38c9502",
+    "actual_data_sha256": "a3237968bff4478b445db70a35984d1510fe7848d02efd1cfe8f4e3ee236e0d0",
+    "posterior_audit": {
+      "n_points": 109,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -18209.043780010164,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -18209.043780010164,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 9,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "e503a25f98ffb1fca1f4c826f184e7745af5706d146ca78b5b7623e9aa696ea0",
+    "actual_data_sha256": "d8dd7b682e331b4649219b3a8de7cc8f91c50bb68dfabe53057bc96514a32ca9",
+    "posterior_audit": {
+      "n_points": 109,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16407.983578228333,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16407.983578228333,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 10,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "78788c014c40f807e63da4078c9da416f0336bae72277d9798ec85047df7765d",
+    "actual_data_sha256": "b12bd5dbb08f19d4be81c9c22a37a5a0ffbeec6b50f0cab10f00783d04f1f4ca",
+    "posterior_audit": {
+      "n_points": 128,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16853.857648773475,
+      "max_abs_log_likelihood_residual": 1.0604708222672343e-08,
+      "offset_to_documented_convention_residual": 8.767528925091028e-10
+    },
+    "noise_difference": 8.174538379535079e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16853.85764876443,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 8.167262421920896e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 11,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "65e208db426b7959f4cbc2648edd5f8435839090356336ef44952d86e867d417",
+    "actual_data_sha256": "16f9a6baab379b43b8f7ef5eba55c9179e439437431d11ca8f7445b07a4bfc92",
+    "posterior_audit": {
+      "n_points": 91,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16344.404370801843,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16344.404370801843,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 12,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "3a0cf43e1e0e9de1abc07375b7ba76079fbd73f8c0caff554dc37ee8e837e05a",
+    "actual_data_sha256": "9f936f1c04b14d62ef620374479905d6df29d7f4bdc5d7cec578436270270aec",
+    "posterior_audit": {
+      "n_points": 96,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16572.551330693106,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16572.551330693106,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 13,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "7c7eed904f58c5866a5b26b93fe3f623190e021140770457b45a73d65bc6df3b",
+    "actual_data_sha256": "01d48961e76e033e51791f636cbfc6526428eb2c10f8409d1721cb888d5d883a",
+    "posterior_audit": {
+      "n_points": 103,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16666.302290056956,
+      "max_abs_log_likelihood_residual": 2.5756889954209328e-09,
+      "offset_to_documented_convention_residual": 3.637978807091713e-12
+    },
+    "noise_difference": 9.458744898438454e-11,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16666.302290056858,
+      "max_abs_log_likelihood_residual": 1.4551915228366852e-11,
+      "offset_to_documented_convention_residual": 9.458744898438454e-11
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 14,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "c85e47a28bd9b6e88fb24dc52f72b1577ab2a97674528081b4ab963a2b3a2303",
+    "actual_data_sha256": "8f7a030b0965205a6f5838363c8b46053ea62b5ed4e40d72f9e3dbe3ed7a6251",
+    "posterior_audit": {
+      "n_points": 97,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16342.79276363221,
+      "max_abs_log_likelihood_residual": 5.4569682106375694e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16342.79276363221,
+      "max_abs_log_likelihood_residual": 5.4569682106375694e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 15,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "43c5259f352a901cb0bba57394eac02bd167b88637846b86762640d430ae4678",
+    "actual_data_sha256": "092f11164702f95cea400aab62b4345186fbbf217e9b4355be6d2ae0f0e51676",
+    "posterior_audit": {
+      "n_points": 93,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16450.629199269424,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16450.629199269424,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 16,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "3d56720eb822e555f79d25ea26afa92c12ae9b958b35db58c0a97dce386f6c25",
+    "actual_data_sha256": "972eef61bff468098b815bdc7bc441ef35a4eb62271329befe984632a66208b6",
+    "posterior_audit": {
+      "n_points": 93,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16163.208085794398,
+      "max_abs_log_likelihood_residual": 2.9831426218152046e-10,
+      "offset_to_documented_convention_residual": 8.731149137020111e-11
+    },
+    "noise_difference": -5.129550117999315e-10,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16163.208085794824,
+      "max_abs_log_likelihood_residual": 5.4569682106375694e-12,
+      "offset_to_documented_convention_residual": 5.129550117999315e-10
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 17,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "ff0d922946b5ff9e4430e2a813d36e291a4f8c7cfd39308f159510db339223f4",
+    "actual_data_sha256": "fd9e3ed4f0cf4ccafffb150e30df120e88bfb743e64ffbb0c228158172627aab",
+    "posterior_audit": {
+      "n_points": 102,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16202.028967771192,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16202.028967771192,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 18,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "ff87ac754c2c8502b65d91b8e1bcf8a18b6ee4cb867262aa10b18f99aa20ad69",
+    "actual_data_sha256": "1cc3e5b44e8c32da1801b23e482405f0ade2a6ae206edba5ad1e977243bd62e2",
+    "posterior_audit": {
+      "n_points": 101,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -17050.159657974982,
+      "max_abs_log_likelihood_residual": 1.0913936421275139e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -17050.159657974982,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 19,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "1c9e19b1ab684253c7fe8faa0ab1dc11de517456560fedf0a1c87e021d34410a",
+    "actual_data_sha256": "348383b8670a97be4894f708802f2d86df410c622eab799647c2e59642490b9a",
+    "posterior_audit": {
+      "n_points": 105,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16132.99100907019,
+      "max_abs_log_likelihood_residual": 2.042725100181997e-09,
+      "offset_to_documented_convention_residual": 3.001332515850663e-10
+    },
+    "noise_difference": 1.837179297581315e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16132.991009068654,
+      "max_abs_log_likelihood_residual": 1.0913936421275139e-11,
+      "offset_to_documented_convention_residual": 1.837179297581315e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 20,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "c1bc71cd3dc5eee64301009f8357bbad44528f28d701e6c625a090d2ea046cff",
+    "actual_data_sha256": "4c1b514a5512cf0b4714f83adab4a94232511845e915545e4ca4392a01d9c6d2",
+    "posterior_audit": {
+      "n_points": 86,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -17181.12801148655,
+      "max_abs_log_likelihood_residual": 2.1827872842550278e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -17181.12801148658,
+      "max_abs_log_likelihood_residual": 4.001776687800884e-11,
+      "offset_to_documented_convention_residual": 2.9103830456733704e-11
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 21,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "9541c7affa79d62d57e779874ceb76b193ecc76576fcecb53d48f97a577ed8ce",
+    "actual_data_sha256": "b9e89920e5ff3daa3e1e5640a519acbc44174a034c5d74a7be54ee855c6c31c9",
+    "posterior_audit": {
+      "n_points": 96,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16284.761741829485,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16284.761741829487,
+      "max_abs_log_likelihood_residual": 1.6370904631912708e-11,
+      "offset_to_documented_convention_residual": 1.8189894035458565e-12
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 22,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "1b3f2b6ce16633b3dc166490dc4167e67c30c4f932cbb79a9b50b7ffd939b834",
+    "actual_data_sha256": "219cd6a44cd917f8c92be870e33cba286775cfe4ad96c97ae597d0d1e53e2466",
+    "posterior_audit": {
+      "n_points": 93,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -17430.636907460525,
+      "max_abs_log_likelihood_residual": 1.4551915228366852e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -17430.636907460525,
+      "max_abs_log_likelihood_residual": 1.0913936421275139e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 23,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "72f97ebdc00ab04dc9582378992af3764d58a8cb8200801d933d08bc3a1f2544",
+    "actual_data_sha256": "9bcd6e298c88a91c7bf65679c04b83c20730dd0d9cffabd3d49de27725f20db0",
+    "posterior_audit": {
+      "n_points": 81,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16127.503842862667,
+      "max_abs_log_likelihood_residual": 8.185452315956354e-11,
+      "offset_to_documented_convention_residual": 2.3646862246096134e-11
+    },
+    "noise_difference": -2.000888343900442e-11,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16127.503842862663,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 2.000888343900442e-11
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 24,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "1bfcfa62089afda44f101f07078d84145eaa526d0b881d6983ac9d8b6698aa1d",
+    "actual_data_sha256": "8d5e6df6555e6f32edc107ee368538af5d5b27f40e9dfdc464fd088ba1eaf3cc",
+    "posterior_audit": {
+      "n_points": 103,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16773.994112421322,
+      "max_abs_log_likelihood_residual": 1.4042598195374012e-09,
+      "offset_to_documented_convention_residual": 4.2928149923682213e-10
+    },
+    "noise_difference": -2.4811015464365482e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16773.994112423374,
+      "max_abs_log_likelihood_residual": 1.0913936421275139e-11,
+      "offset_to_documented_convention_residual": 2.4811015464365482e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 25,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "0fd1642a652efd63fa1b926f670a5718a610528e64a4a41d863cac728d7aff3f",
+    "actual_data_sha256": "259ff6e97e93eda2d77bf2bad7969bedb821342ee357d9130685d44bc572b027",
+    "posterior_audit": {
+      "n_points": 103,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -17031.91553710676,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -17031.91553710676,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 26,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "0f5275d06239378494babc2c74f4174629cd7e8a5ac8868e9e18c4f6d13fceda",
+    "actual_data_sha256": "352a5737c7d32d3d6c8cfa7650e7e8904de104a4813c923ba5d37c9bd2a2063e",
+    "posterior_audit": {
+      "n_points": 89,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16300.02060295219,
+      "max_abs_log_likelihood_residual": 3.0213413992896676e-09,
+      "offset_to_documented_convention_residual": 1.000444171950221e-10
+    },
+    "noise_difference": 1.11504050437361e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16300.020602951174,
+      "max_abs_log_likelihood_residual": 5.4569682106375694e-12,
+      "offset_to_documented_convention_residual": 1.1168594937771559e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 27,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "8b43b8e8426fdd9f98d8fb5783d0b8216d1d2f4e62ddb88b4a3be7e2f412f970",
+    "actual_data_sha256": "d28058f906c7786cd863215e4b86928d0d7c3aed68ce17b62ebe11c59a82c18b",
+    "posterior_audit": {
+      "n_points": 95,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16278.479685134675,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16278.479685134673,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 1.8189894035458565e-12
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 28,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "e3b81ba65f6f78e2d11b8c099c8e09aca7309dcf42ba63f090011a2f2fb0d501",
+    "actual_data_sha256": "7e8f8a53f5dfa6a18cd32ca44215cb10464fd3f986b43c8fa558da64986816fd",
+    "posterior_audit": {
+      "n_points": 96,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16137.034649117679,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16137.034649117679,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 29,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "a044ed4cf0b59cb0592aca6fe2e22853a24bf123af1321fb9bbaec1fb5a1f58b",
+    "actual_data_sha256": "3f4f72396d7b7549c19754720047587ffb2ed45f35b200bd0cbc33d4c888cb51",
+    "posterior_audit": {
+      "n_points": 94,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16183.227423852168,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16183.227423852168,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 30,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "9119285221d78c844481c1d99ba114e981cff4e90645bb423a3d1c85c19463de",
+    "actual_data_sha256": "f5b846d8c4d94aaedb6ef710e51f45108246ed574d84526e8e5e1bfb6fd53e08",
+    "posterior_audit": {
+      "n_points": 116,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16716.4516354223,
+      "max_abs_log_likelihood_residual": 2.0081643015146255e-09,
+      "offset_to_documented_convention_residual": 1.0113581083714962e-09
+    },
+    "noise_difference": 2.9322109185159206e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16716.451635418358,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 2.9322109185159206e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 31,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "b667c243529f27dcebdc94582fc031bd8a36fad8a35c8682427397e635285d2a",
+    "actual_data_sha256": "ebf20a7be11539dec731720622c103501ee2a9b97c9b646ba402121f329c13a2",
+    "posterior_audit": {
+      "n_points": 104,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16781.612643119195,
+      "max_abs_log_likelihood_residual": 1.0913936421275139e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16781.612643119173,
+      "max_abs_log_likelihood_residual": 2.1827872842550278e-11,
+      "offset_to_documented_convention_residual": 2.1827872842550278e-11
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 32,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "230c0e39eec4e9ba9ef3af22886b3e730d69953ad2df6a2e47a5e1dbda3c82ff",
+    "actual_data_sha256": "2e1a678a8179bb12c2dd41ce5ca489c496425f1f877e5ea0ca881c1a82fee563",
+    "posterior_audit": {
+      "n_points": 107,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -17054.833573595777,
+      "max_abs_log_likelihood_residual": 1.0913936421275139e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 3.552713678800501e-15,
+      "log_likelihood_offset": -17054.83357359576,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-11,
+      "offset_to_documented_convention_residual": 1.8189894035458565e-11
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 33,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "66b50e95b377e08bccf91b51679c56734a5dac225bc7ba281381a42009042d97",
+    "actual_data_sha256": "f72b6e9a465435c47d255a602e3406fc78ae3c7551733c3fee2a8d35c2036cc4",
+    "posterior_audit": {
+      "n_points": 93,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -15946.758450775334,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -15946.758450775334,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 34,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "cbcb5b2d97cc7e655d02af0bce83a8cdf8f5b75477abee6a05cc4eeca102e109",
+    "actual_data_sha256": "9eda56ff9f3d6e30741f13e36b78e08720602f8e0830a7cd2e35dfbf0cc67e61",
+    "posterior_audit": {
+      "n_points": 103,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16934.579902186622,
+      "max_abs_log_likelihood_residual": 2.306478563696146e-09,
+      "offset_to_documented_convention_residual": 2.546585164964199e-11
+    },
+    "noise_difference": 2.7430360205471516e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16934.579902183854,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 2.7430360205471516e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 35,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "44526d715c9c8a44749533ae7391e6a1ef4ec690f71dca65c662d6332d144615",
+    "actual_data_sha256": "8d80840c3fe45bb6fc74677616134ff9bba6872b8de79cfe2e7d1c10f5c0265b",
+    "posterior_audit": {
+      "n_points": 109,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16889.738240896077,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16889.738240896077,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 36,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "c5363b196c42e3bc7a1a87917f16b89fda03bb9994b142e769a2b54ce4100a4d",
+    "actual_data_sha256": "b2f74df178e4c20c43506a38627f62701f63d9ccf1be9bcf0dd6fbeb451982a5",
+    "posterior_audit": {
+      "n_points": 108,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16778.623095487943,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16778.623095487943,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 37,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "92ce8e8d20a8719552dbb0893c94fa0ff23572aa80c7f474c8cc09d102df0bd5",
+    "actual_data_sha256": "caad779eb710868947a516f7960c17ccb44367009759591627681893dd839242",
+    "posterior_audit": {
+      "n_points": 94,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16442.644108286688,
+      "max_abs_log_likelihood_residual": 2.3355823941528797e-09,
+      "offset_to_documented_convention_residual": 2.255546860396862e-10
+    },
+    "noise_difference": 2.4010660126805305e-10,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16442.644108286222,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 2.4010660126805305e-10
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 38,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "d8ef9c47407e67e48bda8460429859e20dbb324b0aa2f0fb2a64accaf3cd03f2",
+    "actual_data_sha256": "895af9dc9a3899462b2191cc2f3e6fb7a228ba0f42fa27b644965a6e4b4fdfcc",
+    "posterior_audit": {
+      "n_points": 100,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16553.47685369218,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16553.47685369218,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 39,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "f1d39390d65164c63fd1ff7f1d2991e5f240ceacff889bc01897aa48982d5b0a",
+    "actual_data_sha256": "33e5fe82e15f28ca5e719a40fdf3f2a2a0797be215286c8d27f3d5fd1ede5811",
+    "posterior_audit": {
+      "n_points": 104,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16231.276328360918,
+      "max_abs_log_likelihood_residual": 2.535671228542924e-09,
+      "offset_to_documented_convention_residual": 2.1645973902195692e-10
+    },
+    "noise_difference": -2.2973836166784167e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16231.276328363,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 2.2973836166784167e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 40,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "e68bba4437e44e57e091e4b6ef1ba4ed6ea784c906066ce611e42b2828ba962d",
+    "actual_data_sha256": "93b16f8d8896f50807655b080c66f390cb83377a2c101c7434398c9016595066",
+    "posterior_audit": {
+      "n_points": 120,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -17322.38442333223,
+      "max_abs_log_likelihood_residual": 7.803464541211724e-09,
+      "offset_to_documented_convention_residual": 7.785274647176266e-10
+    },
+    "noise_difference": -1.008811523206532e-08,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -17322.38442334154,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 1.008811523206532e-08
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 41,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "13ebc8daa3826053ee0a3c167aed87ed086f11a5b2308bb73f832b065221db54",
+    "actual_data_sha256": "f5cd2818082b17e9a62dcbb956de0d2a2dfb2c196a6043487cd6acaa75832a40",
+    "posterior_audit": {
+      "n_points": 91,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16430.531927353364,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16430.531927353364,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 42,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "956b5d693b545f31410aa3f1fb85988bc73ce7856a41a322aaced662c483df47",
+    "actual_data_sha256": "cf944626a543289a506744f868181c4ae82eb5e6affe9a5d87788fc8b4b85724",
+    "posterior_audit": {
+      "n_points": 109,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -17183.362161715602,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -17183.362161715602,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 43,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "c5908ab46129a2cb353682abe16e0405091e7ff2df528504c11ee146ec663cf9",
+    "actual_data_sha256": "b7faf9838fa1aa8605452ca5aa961926fec19666bff3780ece18e534f4d83ff6",
+    "posterior_audit": {
+      "n_points": 108,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16401.779164837735,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16401.779164837728,
+      "max_abs_log_likelihood_residual": 1.4551915228366852e-11,
+      "offset_to_documented_convention_residual": 7.275957614183426e-12
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 44,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "01b74d75298023f5bf49d973cbb9a290df2871e9bd5c066d698100ee214a4c47",
+    "actual_data_sha256": "154329d7f3a5e9d766792c23b4fe2da74cfef1549757c0b76cd6d7a2b35deb10",
+    "posterior_audit": {
+      "n_points": 112,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16628.455290404483,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16628.455290404483,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 45,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "1c855f6774295c87cb5e2a6c5eaf6cfd55da0fafcd07b8b363b26596b6fbab06",
+    "actual_data_sha256": "a0408f49e29dd12772b5b6cc14d61cea77cb14a28a7f5e440be65616a1ca25c4",
+    "posterior_audit": {
+      "n_points": 101,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16660.09931474441,
+      "max_abs_log_likelihood_residual": 1.0913936421275139e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16660.09931474441,
+      "max_abs_log_likelihood_residual": 1.4551915228366852e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 46,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "324bc69c74b39d0c3c3891a9f035e65557e3d1b174a9a29c96a829498b9d4ed2",
+    "actual_data_sha256": "7ef2be32bab0e687110ed7fb8c92c8a9055afb831ff4948e88d349e7d8ef1518",
+    "posterior_audit": {
+      "n_points": 91,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16091.874025937008,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16091.874025937008,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 47,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "a1d7a4954bb54df0650ef5dd66b9e2cf8c60e7ba6d89da9e429b47db9ad3396f",
+    "actual_data_sha256": "ca959a0b734e09c0b454a982a95fb414b3963a224a69a044977151757015b9a7",
+    "posterior_audit": {
+      "n_points": 105,
+      "max_abs_log_prior_difference": 3.552713678800501e-15,
+      "log_likelihood_offset": -16361.08042975724,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16361.08042975724,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 48,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "9adce92cc86fbc6b5cdda8ffb4b99304663ac303a62ebc19f2282acde4d57dc2",
+    "actual_data_sha256": "871fb3faa534b23f351561e6a44b2dd66bfd0db0b4f250b99da5d055100c44b9",
+    "posterior_audit": {
+      "n_points": 95,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -17023.62632262272,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -17023.62632262272,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 49,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "6392eadf270c6ff548672aa43041e04ec3e2d49338a13155b5d098deee46b055",
+    "actual_data_sha256": "f188a16317c5ecba8d0ad363ea635fbb8376852dd814a7bf326127dbcd4594aa",
+    "posterior_audit": {
+      "n_points": 91,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16283.684678527023,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16283.684678527023,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 50,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "8497cd3815fb12b3a3a27b36a730aa147fcbd53af77b592560565b2ff9ffcdfd",
+    "actual_data_sha256": "a8df4f400b468f53ee3e57678de6fde4c8131b491a1edb0ae30cbd71d9dc3901",
+    "posterior_audit": {
+      "n_points": 99,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16561.87379460637,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16561.873794606367,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 3.637978807091713e-12
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 51,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "a32af7130b3978b3e02fa337abf11efde475d97cf1879d249d87b33fcb6b8cff",
+    "actual_data_sha256": "a7bd02ff326aa9a05b6d093d11be14c25cb05df42aba0abc8d913dd68836bfeb",
+    "posterior_audit": {
+      "n_points": 86,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16132.418959164072,
+      "max_abs_log_likelihood_residual": 1.0422809282317758e-09,
+      "offset_to_documented_convention_residual": 6.912159733474255e-11
+    },
+    "noise_difference": 1.3096723705530167e-10,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16132.418959163871,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 1.3096723705530167e-10
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 52,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "f0ff9dc00c4b6cba509ad721e5f7f60b07ab300a655c0cf282b51361fd7f942a",
+    "actual_data_sha256": "d971bc10607dbbe7747748800ff758f6ddc2ba2e1a1047a548d8e5fff8fd20c0",
+    "posterior_audit": {
+      "n_points": 102,
+      "max_abs_log_prior_difference": 3.552713678800501e-15,
+      "log_likelihood_offset": -16067.770450535367,
+      "max_abs_log_likelihood_residual": 1.482476363889873e-09,
+      "offset_to_documented_convention_residual": 1.1223164619877934e-09
+    },
+    "noise_difference": -3.2268872018903494e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16067.770450537471,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 3.2268872018903494e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 53,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "b4764309f6ba1505c121bb466ffccd68dcc365dae8c8c7d221d738ba37281efe",
+    "actual_data_sha256": "d43c08d33075e618da10c106833d13c9f032d95d88d00be3c9e3a7569899223f",
+    "posterior_audit": {
+      "n_points": 89,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16199.63521386881,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16199.63521386881,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 54,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "fb2ef55d2871662dfa558e6512c573cd56cd1d5deeb66255d920ee695835a040",
+    "actual_data_sha256": "be1442743a8d44e6b8d67e8ca774ba3b3e1f7c37f8390c0d29dc5c65fc542ad5",
+    "posterior_audit": {
+      "n_points": 96,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16445.404035318643,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16445.404035318643,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 55,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "76f74a1601ab8426fb116655e670dfb6acc16c4c485b1e1a525f9b48618263b8",
+    "actual_data_sha256": "53a91f90e757e4aa12c3143819d444ebcf7cf8dd3a906ef74d2b87cdbd99f27d",
+    "posterior_audit": {
+      "n_points": 107,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16507.582531609558,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16507.582531609558,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 56,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "83236d5c5c80a177bfe037b36bfea8ee65fa142dc1e5eb7b5f56c3a059c14f4a",
+    "actual_data_sha256": "3699f238036b66ced52cbae7c2ccef3026784491a07e26abfff37877b318a280",
+    "posterior_audit": {
+      "n_points": 99,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16394.21176172661,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16394.21176172661,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 57,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "086613602612ebb4fcb65a5a08f68c11195715565ef8788d2013f047773aca2d",
+    "actual_data_sha256": "71f92ba4481167c8ea397f8f99bad0c5f0a24d0a7ab64d33f2390ee2b0d7fc46",
+    "posterior_audit": {
+      "n_points": 97,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16362.490792853041,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16362.490792853041,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 58,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "c60952c84a57a6282ff14dbd40a0be009832021b833baa979a56e675d4ece949",
+    "actual_data_sha256": "40e3fb2ba0b1f549ebc78c2ae99847f202efbde874d37a8c9f8f1bd4807ebb15",
+    "posterior_audit": {
+      "n_points": 97,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16562.584244518446,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16562.584244518446,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 59,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "94f78fadf46f90642be0a27ba6e1e0573cc699d22638bdc90821aadb3f48d188",
+    "actual_data_sha256": "2b37fb071111106484e5e835444d50232649733435f051aa1105dfee6d1cfd8e",
+    "posterior_audit": {
+      "n_points": 96,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16304.655521337307,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16304.655521337305,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 1.8189894035458565e-12
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 60,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "3c7abfc151148f2259403888090fbf8e2af81531ecb767c30d153ab2abc67343",
+    "actual_data_sha256": "c504c079a1ca329eb41b06d44743ec7d1a69edb3fb2067ec6cc7f52e7e802fab",
+    "posterior_audit": {
+      "n_points": 94,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16295.346853449919,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16295.346853449919,
+      "max_abs_log_likelihood_residual": 5.4569682106375694e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 61,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "820b2744d3f033cce8b0be63e4c903075b01743c2f794ad078a3abfb7f3ce453",
+    "actual_data_sha256": "fdcc6bc23247873594794f07d58fc90ec4036a1295d6e8d964d5dfe239372174",
+    "posterior_audit": {
+      "n_points": 101,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16192.118225600569,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16192.118225600569,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 62,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "ba74bf7b3e8404f556e55ab9a87a3cb91b7448b658ce6095be5f1f8352d061eb",
+    "actual_data_sha256": "7fa9fa9527383c619e22781f7e91123e3fcf3b1dd13b283e6e948e4d006d6907",
+    "posterior_audit": {
+      "n_points": 99,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -15989.509169676068,
+      "max_abs_log_likelihood_residual": 2.0336301531642675e-09,
+      "offset_to_documented_convention_residual": 2.582964953035116e-10
+    },
+    "noise_difference": 1.8935679690912366e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -15989.509169673916,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 1.8935679690912366e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 63,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "ca2e4c382f589615ce5b6c9d15697f79eaff0c0c921af211a06d421ee68b87b2",
+    "actual_data_sha256": "a0f1c9aa51c9b4cf57dcb6758d82ade8e29b111520b2c64f0df0797201461864",
+    "posterior_audit": {
+      "n_points": 102,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16440.403282036175,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16440.403282036175,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 64,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "8cafbd59658c764f633cf299c9e8dfb8388ba04b5d405845bd7c664f31b785a0",
+    "actual_data_sha256": "99880a10ec93b1cdbe991eb7bcecbc8f4929a7d51f0b99ce9025a5855919abe0",
+    "posterior_audit": {
+      "n_points": 82,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16281.561675675051,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16281.561675675051,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 65,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "873ca3690f4ddd7e325b2e7011970dfa62a62c1b85c534df7fd032d94c0bf9ad",
+    "actual_data_sha256": "c4bd147d366b4e348fbacd205ee893d71c48d4384742149e66e757db615d5b42",
+    "posterior_audit": {
+      "n_points": 98,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16284.86294877375,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16284.86294877375,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 66,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "a5f00c245bacd6f2ef602307aab6371a123ab501f33a36f58d5c7d8407920770",
+    "actual_data_sha256": "8bd39733c2126c5fcd8546a5693a510c7e8969de3da8916a8ed01c6e8f3c49e9",
+    "posterior_audit": {
+      "n_points": 104,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16422.475138761,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16422.475138761,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 67,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "0629aeb1deefb1d335c502a20b337db1aea032e4f68b1de229c3339e6f02408e",
+    "actual_data_sha256": "0acce89d1c52fc52b2e5fd8844fe743317c19f8e15d3e719302466eeee3e15ce",
+    "posterior_audit": {
+      "n_points": 100,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16272.78386988856,
+      "max_abs_log_likelihood_residual": 1.9226717995479703e-09,
+      "offset_to_documented_convention_residual": 1.3460521586239338e-10
+    },
+    "noise_difference": -1.4915713109076023e-10,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16272.783869888844,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 1.4915713109076023e-10
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 68,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "33cb408e1cd1ecd68b4dc01a7dc0d78afb803d9699f91364e8ede23ac9110d98",
+    "actual_data_sha256": "7fb5973486dbf041e23f67b6cc4f089e88875cc074b88cc236627a154416d8b7",
+    "posterior_audit": {
+      "n_points": 99,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16494.52124054569,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16494.52124054569,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 69,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "cb97528f19d686c0a2e47f45f15238a087d4d6c43e89c13618de53a9bbdb0985",
+    "actual_data_sha256": "913b2df5a2fa811ba6f72e9c9a687fa68fba1d9f393ced6c8c67ca1da2b40f20",
+    "posterior_audit": {
+      "n_points": 95,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16262.062392386404,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16262.062392386404,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 70,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "6d2411401b9ce7e7d6b357d1be5eb3d78d285030438d73ac24fba4ec5d9567ef",
+    "actual_data_sha256": "93acda682e55f095867bd906a314ef2fd8aacfa066dce1741f68f77f1b5310e1",
+    "posterior_audit": {
+      "n_points": 97,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16303.90486545211,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16303.90486545211,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 71,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "2f24233cd9dd92215efbc058226d37db353267cda2aea34b7200289b929e817b",
+    "actual_data_sha256": "769495a589db05aefe14aa171b832b4fb44a07cd9431b7095ab2cd0fbc1b07eb",
+    "posterior_audit": {
+      "n_points": 94,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16374.597885834346,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16374.597885834346,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 72,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "cb1d50043477479efb1d79d6a165e11d5a39bcdc1ee4f9bf1ced84736d7ff405",
+    "actual_data_sha256": "5ceaab7df2dbf5d55043bedc7336ffbcfeea1474b9280e5c0757597bdb798639",
+    "posterior_audit": {
+      "n_points": 93,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16375.270902626802,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16375.2709026268,
+      "max_abs_log_likelihood_residual": 5.4569682106375694e-12,
+      "offset_to_documented_convention_residual": 1.8189894035458565e-12
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 73,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "bfea2c1ff56d1799ae7281e1cdacad8eed2ea20bd99c74a3f3906f8a2bddf9e5",
+    "actual_data_sha256": "b9dac73a34ecd04b0d64637595cc066795a1ca334937f0ea5f1957fd903c3e42",
+    "posterior_audit": {
+      "n_points": 106,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16565.320823551327,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16565.320823551327,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 74,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "49a1c88e9554b78ad6ed41b04f5cecdabcf65584a8117dda8c3da830e7ec7e67",
+    "actual_data_sha256": "92aa3dc90c854efd65d50df997f8a1c6cc3d0bcbb284d4b8bb9e8d2b3eb1773a",
+    "posterior_audit": {
+      "n_points": 97,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16668.240902016165,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16668.240902016165,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 75,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "6aa2bfc9a0e260c38b7086a27cbe949cb1e5c0d1c10fe2578f4db635a7ec7529",
+    "actual_data_sha256": "700c42c5603a435c2d075e62f00e2b98c95f8526e98fb74fafeb72e55c34b58d",
+    "posterior_audit": {
+      "n_points": 94,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16306.991207280056,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16306.991207280056,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 76,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "81c513c210889a9ad7a3b6bf9e9ca5f45bad27be8e0eff71f05796e934dcf266",
+    "actual_data_sha256": "2baf81948f76e7db2bff9db0b178d9fa3301e423ab7c9e12a28f1e9fbc887b46",
+    "posterior_audit": {
+      "n_points": 97,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16200.725095763968,
+      "max_abs_log_likelihood_residual": 3.055902197957039e-10,
+      "offset_to_documented_convention_residual": 2.546585164964199e-11
+    },
+    "noise_difference": -1.344233169220388e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16200.725095765338,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 1.344233169220388e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 77,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "db44b72cf89622a2604bf8ed6b38e6749d4adfbe8ae212f44571fe2cdfc79aac",
+    "actual_data_sha256": "c5f1855c0f313dfa3c1a3f44569ab75ad89e4326a2b62330099e195a050f3c0c",
+    "posterior_audit": {
+      "n_points": 93,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16579.483020235475,
+      "max_abs_log_likelihood_residual": 4.853063728660345e-09,
+      "offset_to_documented_convention_residual": 7.60337570682168e-10
+    },
+    "noise_difference": -1.44427758641541e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16579.48302023768,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 1.44427758641541e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 78,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "4e57872427dd5fe69a3574cea9cd57bc51e86316d51ed5b11707e8757e5a866d",
+    "actual_data_sha256": "26f29aaaa5c6dcce532fd4df59a734e5b89c71277849a82324cc19a4a27aeed1",
+    "posterior_audit": {
+      "n_points": 85,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16320.044984889963,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16320.044984889963,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 79,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "510f55e4c554b3b86fa83b8e125dd91f7804f0c5d286747641530030691af997",
+    "actual_data_sha256": "2f3e837ad1d8c4308e7d4709d65025a1a62f6302b86976c626303414da9c616c",
+    "posterior_audit": {
+      "n_points": 101,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16378.616787099772,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16378.616787099772,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 80,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "003976a4f5891461dabe46196b6750f020368e4815c7bd2674b5908cd32b366c",
+    "actual_data_sha256": "e69c084668d6cb1e74cdc8ee4382436a4e09be4283dd4561fa48d4b247166943",
+    "posterior_audit": {
+      "n_points": 110,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16789.760014629683,
+      "max_abs_log_likelihood_residual": 1.0913936421275139e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16789.760014629683,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 81,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "dde8f0ad89a28fd428855d8aef49729cef02b51422a2669537a95bb1811cea46",
+    "actual_data_sha256": "7d01d6534903f5605d63f5ffcd45a589ebe21e63d7959dafb158aacf6908d243",
+    "posterior_audit": {
+      "n_points": 94,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16436.054606951046,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16436.054606951046,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 82,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "42f274d44fe2de75c8363d0179aa15abfccacf10d308f267d1a48194ddccb281",
+    "actual_data_sha256": "4bfdcb934961df272d9ac82c0d85d5a87e2da0bc353d2cc70d360cc09362dd1e",
+    "posterior_audit": {
+      "n_points": 92,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16438.939489711458,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16438.939489711458,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 83,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "f6546e7a4b5d85d3f87ff0cf80ade661393571cf4ecac38ca360456a8840d64c",
+    "actual_data_sha256": "a4c2d7225095d096baa7488ac63a9b45cf4ca59cd58e269b57d0c074ed727c8f",
+    "posterior_audit": {
+      "n_points": 93,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16497.38155797536,
+      "max_abs_log_likelihood_residual": 1.5897967386990786e-09,
+      "offset_to_documented_convention_residual": 4.729372449219227e-11
+    },
+    "noise_difference": 1.4661054592579603e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16497.381557973848,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 1.4661054592579603e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 84,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "9e76425bd6e940041111b6a009884e481f60294313ce9f7e4f70ce0d59aa3425",
+    "actual_data_sha256": "816b5addcb7003547158390cb8d2eb0c6633667b255d039a113dbd03c8455810",
+    "posterior_audit": {
+      "n_points": 99,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16078.608420851615,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16078.608420851615,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 85,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "b7ecc90ffeaec44cbc22e86f55da2343461c434a227a9ecddb7c055912cadced",
+    "actual_data_sha256": "3fc6e2246f288f70d0d9472109430545075246e707a122fb61b4b97d04e55c63",
+    "posterior_audit": {
+      "n_points": 120,
+      "max_abs_log_prior_difference": 3.552713678800501e-15,
+      "log_likelihood_offset": -17944.94353220897,
+      "max_abs_log_likelihood_residual": 1.4551915228366852e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 3.552713678800501e-15,
+      "log_likelihood_offset": -17944.943532208956,
+      "max_abs_log_likelihood_residual": 1.0913936421275139e-11,
+      "offset_to_documented_convention_residual": 1.4551915228366852e-11
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 86,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "6cda1aa4f970c573b32f75bc20bb86cb1025e935809b08ff3a9819229485732f",
+    "actual_data_sha256": "ca35a2f8902ab5db4e1049151856308c28b52aaddd25a9452239a5e7cfee45b7",
+    "posterior_audit": {
+      "n_points": 105,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16385.586855135545,
+      "max_abs_log_likelihood_residual": 4.503817763179541e-09,
+      "offset_to_documented_convention_residual": 5.056790541857481e-10
+    },
+    "noise_difference": -2.1827872842550278e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16385.586855138234,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 2.1827872842550278e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 87,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "978c558f9ddc167eef67e8add02666f505951523abcbb3140e913eb3bdb6966c",
+    "actual_data_sha256": "d80e1a301d29b6a3004dc04b10e35d39bd20e0e66b04150c30ddc2ae6f3b6f37",
+    "posterior_audit": {
+      "n_points": 99,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16188.772967800884,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16188.772967800884,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 88,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "a7af9360144e8ecb8b0986c2d4783926230afb676be08162be4bea07503009cb",
+    "actual_data_sha256": "adc241623f427b89c69735d1bc3631b47e19e9d27fdabc21ab401f3867357603",
+    "posterior_audit": {
+      "n_points": 102,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16472.953518367154,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16472.953518367143,
+      "max_abs_log_likelihood_residual": 7.275957614183426e-12,
+      "offset_to_documented_convention_residual": 1.0913936421275139e-11
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 89,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "a0e2b27e279c05d71fe0d9589a62673512360572625a6aaeae14961c849fd101",
+    "actual_data_sha256": "606b58968558d5eea96aaa7a82c7d76fc2ec91b7d0d2c4bd28b48073d8ba9df4",
+    "posterior_audit": {
+      "n_points": 101,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16082.780561896765,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16082.780561896765,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 90,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "380b784cceaf59e88f1e3b7e5852456b289253cdaecbc9c1aceed81da34f0080",
+    "actual_data_sha256": "542a0e60c7e84c4bfaa35c7d3b00513e1a125a12861be1b4afbafd81f7be9344",
+    "posterior_audit": {
+      "n_points": 100,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16133.004189939747,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16133.004189939747,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 91,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "b3b7e0023ad95d9ba9097fe8e5961c2764caedb0485bc5657500c6d177965657",
+    "actual_data_sha256": "ad103c4a1ecd3ef4c388ae5b151c1f8b5da595a22f93ade6131f4b9324ba3207",
+    "posterior_audit": {
+      "n_points": 95,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16186.863752731286,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16186.863752731286,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 92,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "6fb1b603ec74a4a2dfe65a72bc76c0d906da6088d4cd2ca80f395e08cebf3f9a",
+    "actual_data_sha256": "745479b505cc69860eea0234f7960e5d4370b20a459892f121c5087df6b61a89",
+    "posterior_audit": {
+      "n_points": 105,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16525.984280312026,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16525.984280312026,
+      "max_abs_log_likelihood_residual": 0.0,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 93,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "13cde54215c59f384fe3cf73e1aa2caa6de7065fe1998c38a0e5a8da492ce3a9",
+    "actual_data_sha256": "cd1f796678bc00539cdf04a0fda4031d1e2df4a4167337fcbd4b6c7a5a1e3b31",
+    "posterior_audit": {
+      "n_points": 93,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16336.24017022039,
+      "max_abs_log_likelihood_residual": 4.089088179171085e-09,
+      "offset_to_documented_convention_residual": 3.128661774098873e-10
+    },
+    "noise_difference": 1.6007106751203537e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16336.240170218476,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 1.6007106751203537e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 94,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "747bfc9ddac028ec67347e1916747bd408439a9071f67d211fb745ff9ff38895",
+    "actual_data_sha256": "45ca4eb76635b37e580975f90641e57cd8fa81f0d6bb4afb956ab8ffcbf3da90",
+    "posterior_audit": {
+      "n_points": 97,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16282.045135420864,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16282.045135420864,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 95,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "4cc1bee6e44a3da5d00fcea6a82452ea9967cefd7f0efc1c7d834be51e34a5a1",
+    "actual_data_sha256": "a3428b96a3a62ea574006132123289522fc57a5dcf3e3af2bfef92acdff12fb5",
+    "posterior_audit": {
+      "n_points": 106,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16245.634864494672,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16245.634864494672,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 96,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "dfe33f8fb810dfeb9ef2512a857b702c438abcc29d5ba7c0ce94c695208d3b21",
+    "actual_data_sha256": "aa950e7914277b277b5eabfff14445fd34bb871f6312d8c2f8d385fb395c0095",
+    "posterior_audit": {
+      "n_points": 100,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16222.892906692654,
+      "max_abs_log_likelihood_residual": 6.446498446166515e-09,
+      "offset_to_documented_convention_residual": 3.2741809263825417e-11
+    },
+    "noise_difference": 4.551111487671733e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16222.892906688136,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 4.551111487671733e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 97,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "2b2aea365dc7abcd4fbf28aa80f6364b53001c0d3f690dcc61e7facfe32a3976",
+    "actual_data_sha256": "d953044d180176d9705452ccd28e93bf2808137ba0dfcfc4772bd9207baebe00",
+    "posterior_audit": {
+      "n_points": 96,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16568.074197035538,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16568.074197035538,
+      "max_abs_log_likelihood_residual": 1.4551915228366852e-11,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 98,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": false
+    },
+    "expected_data_sha256": "aee07a7e3c450080f94305186cda596e5b51c8bb0e74195f4f1fc07304093993",
+    "actual_data_sha256": "78c8d5717eb55fa751946023ab016473006764fe7700497fbea5c8d3c936bc4d",
+    "posterior_audit": {
+      "n_points": 91,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16363.488989681824,
+      "max_abs_log_likelihood_residual": 9.076757123693824e-10,
+      "offset_to_documented_convention_residual": 1.6189005691558123e-10
+    },
+    "noise_difference": 1.1968950275331736e-09,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 8.881784197001252e-16,
+      "log_likelihood_offset": -16363.488989680789,
+      "max_abs_log_likelihood_residual": 5.4569682106375694e-12,
+      "offset_to_documented_convention_residual": 1.1968950275331736e-09
+    },
+    "numerical_contract_passed": true
+  },
+  {
+    "event": 99,
+    "exact_manifest_fields": {
+      "scientific_config": true,
+      "data_sha256": false,
+      "core_versions": true,
+      "geometry": true,
+      "likelihood_id": false,
+      "noise_log_likelihood": true
+    },
+    "expected_data_sha256": "025fccf1906f9519bb2ec7e3ebc54b03ef15fe26c8e0faf0de6f0c703431a454",
+    "actual_data_sha256": "bff8f70ecd898de4b9e9e9ae215fa53b570f8234616c1e20256110ed5b988d25",
+    "posterior_audit": {
+      "n_points": 99,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16072.521088366222,
+      "max_abs_log_likelihood_residual": 3.637978807091713e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "noise_difference": 0.0,
+    "eligible_for_original_data_runner": false,
+    "reference_holdout_audit": {
+      "n_points": 32,
+      "max_abs_log_prior_difference": 1.7763568394002505e-15,
+      "log_likelihood_offset": -16072.521088366222,
+      "max_abs_log_likelihood_residual": 1.8189894035458565e-12,
+      "offset_to_documented_convention_residual": 0.0
+    },
+    "numerical_contract_passed": true
+  }
+]

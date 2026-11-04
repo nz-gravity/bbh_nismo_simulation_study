@@ -78,10 +78,10 @@ def load_helpers(path):
     return module
 
 
-def audit(model, posterior, helper, noise):
+def audit(model, posterior, helper, noise, n_points=32):
     result = helper.audit_posterior_contract(
         model=model, result=SimpleNamespace(posterior=posterior),
-        samples=posterior[list(PARAMETERS)].to_numpy(), n_points=32,
+        samples=posterior[list(PARAMETERS)].to_numpy(), n_points=n_points,
     )
     # Full likelihood or ratio-to-noise are the only documented conventions.
     result["offset_to_documented_convention_residual"] = min(

@@ -49,3 +49,16 @@ def test_records_are_exclusively_created(tmp_path):
     with pytest.raises(FileExistsError):
         workflow.write_new(path, {"status": "replacement"})
     assert path.read_bytes() == original
+
+
+def test_all_row_audit_checks_points_between_the_spread_subset(contract):
+    helper, _, model = contract
+    data = np.arange(128*8, dtype=float).reshape(128, 8)
+    posterior = pd.DataFrame(data, columns=workflow.PARAMETERS)
+    posterior["log_prior"] = 0.
+    posterior["log_likelihood"] = data.sum(axis=1)
+    assert 1 not in np.linspace(0, 127, 32, dtype=int)
+    posterior.loc[1, "log_likelihood"] += .01
+    workflow.audit(model, posterior, helper, -100)
+    with pytest.raises(ValueError, match="Scientific"):
+        workflow.audit(model, posterior, helper, -100, n_points=len(posterior))

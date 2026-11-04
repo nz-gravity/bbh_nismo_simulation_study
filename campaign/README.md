@@ -99,12 +99,31 @@ use floating-point comparison; density/evidence identities use the documented
 regenerates figures from cached NPZ samples without likelihood evaluations or
 modifying sampling output. It checks every diagonal density integral.
 
-## Full campaign prerequisites
+## What is needed for a full campaign
 
-Before any 100-event campaign, inspect the actual original catalogue/result
-layouts, current queue and existing outputs. Obtain original frozen inputs for
-all events and unthinned `nlive=2000` results, make a one-to-one manifest, and
-repeat injection/prior/waveform/likelihood checks against those files. Retain
+The published release already supplies complete cheap training draws and the
+reference evidence/error/cost values for all 100 events. Its 1,000 reference
+posterior draws per event support the core posterior comparison. Unthinned
+reference files and additional sampler histories would improve diagnostics;
+they are not prerequisites for that core comparison.
+
+An original-byte replication still requires the original frozen inputs for
+the other 99 events. A reconstructed local target must instead be identified
+explicitly as reconstructed, with its new hashes, unchanged scientific
+configuration/dependency/geometry checks, noise likelihood check, and posterior
+likelihood/prior replays against both baselines. A checksum difference across
+platforms is not itself a scientific mismatch. The default inference runner
+remains restricted to original-byte inputs; the reconstruction probe tests
+numerical contracts separately and never launches inference.
+
+Use `probe_local_reconstruction.py --reference REFERENCE_ZIP --all-cheap-rows
+--events 0 1 ... 99` with the other documented arguments for a full numerical
+audit. It checks every cheap training row and 32 held-out reference points per
+event, stops on a numerical/scientific mismatch, and distinguishes numerical
+agreement from exact byte identity in its output.
+
+Before an OzSTAR submission, inspect its actual source layouts, current queue
+and existing outputs, and make a one-to-one original-file manifest. Retain
 unknown reference sampler seeds as unknown. No scheduler job has been submitted
-by these local scripts. Use the completed smoke-test resource measurements to
-choose resources, and gate submission on validation and duplicate-job checks.
+by these local scripts. Use measured smoke-test resources, and gate submission
+on scientific validation and duplicate-job checks.
