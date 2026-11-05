@@ -263,7 +263,7 @@ def export(data, output, site_dir=None):
         "jsd_cheap_reference_bits", "jsd_nismo_reference_bits", "nis_weight_ess", "nis_recovery_iterations"]
     columns += [f"jsd_{method}_{name}_bits" for name in PARAMETERS for method in ("cheap", "nismo")]
     stream = io.StringIO()
-    writer = csv.DictWriter(stream, fieldnames=columns)
+    writer = csv.DictWriter(stream, fieldnames=columns, lineterminator="\n")
     writer.writeheader()
     for row in data["events"]:
         flat = {key: row.get(key) for key in columns}
