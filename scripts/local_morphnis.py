@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Run a guarded local smoke test against a checksum-matched frozen likelihood.
+"""Run a guarded local NIS comparison using original or audited reconstructed data.
 
 The compact release supplies complete cheap training rows and a thinned,
 independent reference for preliminary comparison. It supplies no strain arrays.
-Use --data to point at original frozen arrays; reconstructed bytes must also
-match the original manifest. This script never generates data or submits jobs.
+Original data require exact checksums. Reconstructed data require an explicit
+--reconstruction-audit receipt and fresh likelihood/prior replays. This script
+never generates data or submits scheduler jobs.
 """
 from __future__ import annotations
 
@@ -76,6 +77,43 @@ def load_helpers(path):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+def validate_data_origin(data_path, original, event, training_rows, receipt_path=None):
+    """Bind a target to original bytes or an explicitly audited reconstruction."""
+    actual = json.loads(data_path.with_suffix(".json").read_text())
+    data_hash = digest(data_path)
+    if receipt_path is None:
+        if data_hash != original["data_sha256"]:
+            raise ValueError("Frozen data do not match original event checksum; supply a validated reconstruction receipt")
+        if actual != original:
+            raise ValueError("Frozen strain manifest mismatch")
+        return actual, {"kind": "original_frozen", "data_sha256": data_hash,
+                        "original_data_sha256": original["data_sha256"]}
+    receipt = json.loads(receipt_path.read_text())
+    if receipt.get("event") != event or receipt.get("numerical_contract_passed") is not True:
+        raise ValueError("Wrong or unsuccessful reconstruction receipt")
+    if (data_hash != actual.get("data_sha256") or data_hash != receipt.get("actual_data_sha256")
+            or original["data_sha256"] != receipt.get("expected_data_sha256")):
+        raise ValueError("Reconstruction receipt/data checksum mismatch")
+    for key in ("scientific_config", "core_versions", "geometry"):
+        if actual[key] != original[key]:
+            raise ValueError(f"Reconstructed target changed {key}")
+    for key, required_points in (("posterior_audit", training_rows), ("reference_holdout_audit", 32)):
+        check = receipt.get(key, {})
+        if check.get("n_points", 0) < required_points:
+            raise ValueError(f"Incomplete reconstruction replay: {key}")
+        for metric in ("max_abs_log_prior_difference", "max_abs_log_likelihood_residual",
+                       "offset_to_documented_convention_residual"):
+            value = check.get(metric, np.inf)
+            if not np.isfinite(value) or not 0 <= value <= TOLERANCE:
+                raise ValueError(f"Reconstruction replay failed: {key}/{metric}")
+    if not np.isfinite(receipt.get("noise_difference", np.inf)) or abs(receipt["noise_difference"]) > TOLERANCE:
+        raise ValueError("Reconstruction noise likelihood mismatch")
+    return actual, {"kind": "validated_reconstruction", "data_sha256": data_hash,
+        "original_data_sha256": original["data_sha256"], "receipt_sha256": digest(receipt_path),
+        "original_likelihood_id": original["likelihood_id"],
+        "reconstructed_likelihood_id": actual["likelihood_id"]}
 
 
 def audit(model, posterior, helper, noise, n_points=32):
@@ -176,7 +214,7 @@ def plot_corner(output, result, cheap, reference, manifest, event):
             ax.set_xlabel(LABELS[j])
         integrals.append(areas)
     fig.subplots_adjust(top=.92)
-    fig.suptitle(f"Injection {event:03d} · local NIS smoke test", fontsize=16)
+    fig.suptitle(f"Injection {event:03d} · local NIS comparison", fontsize=16)
     handles = [Line2D([], [], color=c, linestyle=ls, label=label) for c, ls, label in (
         ("#2166ac", "-", f"Cheap: {len(cheap)} draws"),
         ("#d97916", "--", f"Reference: {len(reference)} retained draws"),
@@ -201,6 +239,7 @@ def main():
     parser.add_argument("--de-retries", type=int, default=3)
     parser.add_argument("--walk-n-steps", type=int)
     parser.add_argument("--audit-only", action="store_true")
+    parser.add_argument("--reconstruction-audit", type=Path)
     args = parser.parse_args()
     if args.nlive < 4 or args.max_iterations < 1 or not np.isfinite(args.dlogz) or args.dlogz <= 0:
         parser.error("Invalid sampling settings")
@@ -220,6 +259,7 @@ def main():
         "versions": {k: version(k) for k in ("morphnis", "morphZ", "bilby", "lalsuite", "numpy", "scipy", "pandas")},
     })
     sampler = None
+    phase = "validation"
     try:
         cheap, training, manifest = read_event(args.cheap, args.event, "cheap")
         ref, reference, _ = read_event(args.reference, args.event, "reference")
@@ -231,10 +271,8 @@ def main():
             raise ValueError("Reference/cheap event matching failed")
         if tuple(ref["search_parameter_keys"]) != PARAMETERS:
             raise ValueError("Parameterization mismatch")
-        if digest(args.data) != manifest["data_sha256"]:
-            raise ValueError("Frozen data do not match original event checksum; do not substitute regenerated noise")
-        if json.loads(args.data.with_suffix(".json").read_text()) != manifest:
-            raise ValueError("Frozen strain manifest mismatch")
+        target_manifest, data_origin = validate_data_origin(
+            args.data, manifest, args.event, len(training), args.reconstruction_audit)
         sys.path.insert(0, str(args.benchmark_repo.resolve()))
         from benchmark import injection
         helper = load_helpers(args.nismo_repo / "examples/lvk/morphnis_computation.py")
@@ -245,15 +283,18 @@ def main():
         noise = float(likelihood.noise_log_likelihood())
         if max(abs(cheap["log_noise_evidence"]-noise), abs(ref["log_noise_evidence"]-noise)) > TOLERANCE:
             raise ValueError("Noise-evidence mismatch")
-        audits = {"cheap": audit(model, training, helper, noise),
+        audits = {"cheap": audit(model, training, helper, noise,
+                                 n_points=len(training) if args.reconstruction_audit else 32),
                   "reference_holdout": audit(model, reference, helper, noise)}
         audits["likelihood_calls"] = sum(x["n_points"] for x in audits.values())
         audits["seconds"] = time.perf_counter()-started
         audits["data_sha256"] = digest(args.data)
+        audits["data_origin"] = data_origin
         write_new(args.output / "validation.json", audits)
         if args.audit_only:
             return
         from morphnis import MorphImportance, NestedImportanceSampler
+        phase = "fit"
         fit_started = time.perf_counter()
         proposal = MorphImportance.fit(training[list(PARAMETERS)].to_numpy(),
                                        parameter_names=PARAMETERS, seed=args.fit_seed, thin=1)
@@ -261,7 +302,9 @@ def main():
         sampler = NestedImportanceSampler(model=model, importance=proposal, nlive=args.nlive,
             seed=args.seed, move_weights={"de": .8, "stretch": .2}, de_adapt=True,
             de_retries=args.de_retries, walk_n_steps=args.walk_n_steps)
+        phase = "sampling"
         result = sampler.run(dlogz=args.dlogz, max_iterations=args.max_iterations, print_progress=True)
+        phase = "export"
         result.save(args.output / "nis")
         weights = result.posterior_weights
         history = result.de_settings["recovery"]["attempts"]
@@ -269,9 +312,10 @@ def main():
         converged = result.termination_reason in ("dlogz", "flat_log_psi")
         error = float(np.hypot(result.logzerr, ref["log_evidence_err"]))
         payload = {
-            "event": args.event, "scope": "local smoke; thinned reference posterior; full-inference baseline evidence/cost",
+            "event": args.event, "scope": "local NIS; thinned reference posterior; full-inference baseline evidence/cost",
             "status": "converged" if converged else "non_converged", "termination_reason": result.termination_reason,
-            "likelihood_id": manifest["likelihood_id"], "training": proposal.metadata,
+            "likelihood_id": target_manifest["likelihood_id"], "baseline_likelihood_id": manifest["likelihood_id"],
+            "data_origin": data_origin, "training": proposal.metadata,
             "nis": {"log_evidence": result.logz, "log_evidence_err": result.logzerr,
                 "n_iterations": result.niter, "nlive": result.nlive,
                 "weight_ess": float(1 / np.sum(weights**2)), "weight_ess_accounts_for_correlations": False,
@@ -310,7 +354,7 @@ def main():
         if not converged:
             raise SystemExit(3)
     except Exception as error:
-        failure = {"status": "failed", "error_type": type(error).__name__, "error": str(error),
+        failure = {"status": "failed", "phase": phase, "error_type": type(error).__name__, "error": str(error),
                    "traceback": traceback.format_exc(), "seconds": time.perf_counter()-started}
         if sampler is not None:
             failure["likelihood_calls"] = sampler.evaluate.n_likelihood_calls

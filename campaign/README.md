@@ -1,6 +1,8 @@
 # Local NISMO preflight
 
 See [the local smoke-test results and limitations](LOCAL_STATUS.md).
+The [sequential campaign](SEQUENTIAL_RUN.md) uses the validated reconstruction
+path and keeps one local job active at a time.
 
 This workflow uses `morphnis` from **nismo-dev**, not the separate `nismo`
 distribution. It is a guarded local smoke-test workflow, not an OzSTAR
@@ -52,8 +54,10 @@ details. The full NIS NPZ preserves weighted samples and traces without pickle.
 
 ## Scientific checks and frozen choices
 
-- Input data and its manifest must match the original event checksum exactly.
-  A regenerated realization is rejected even if a small likelihood replay agrees.
+- Original data require the original checksum and manifest. Reconstructed data
+  require an explicit `--reconstruction-audit` receipt, matching reconstructed
+  bytes and scientific settings, complete cheap-row and held-out reference
+  replays, and fresh numerical audits before sampling.
 - Frozen data construction uses the original benchmark likelihood code and its
   exact four core versions. Detector geometry and noise likelihood are checked.
 - Both cheap and independent reference posterior rows undergo 32-point prior and
@@ -112,9 +116,9 @@ the other 99 events. A reconstructed local target must instead be identified
 explicitly as reconstructed, with its new hashes, unchanged scientific
 configuration/dependency/geometry checks, noise likelihood check, and posterior
 likelihood/prior replays against both baselines. A checksum difference across
-platforms is not itself a scientific mismatch. The default inference runner
-remains restricted to original-byte inputs; the reconstruction probe tests
-numerical contracts separately and never launches inference.
+platforms is not itself a scientific mismatch. The default inference path
+requires original bytes; `--reconstruction-audit` explicitly selects the audited
+reconstruction path. The reconstruction probe itself never launches inference.
 
 Use `probe_local_reconstruction.py --reference REFERENCE_ZIP --all-cheap-rows
 --events 0 1 ... 99` with the other documented arguments for a full numerical
