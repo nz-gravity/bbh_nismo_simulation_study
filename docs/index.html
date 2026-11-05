@@ -2,13 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BBH Dynesty comparison</title>
+  <title>BBH NISMO comparison</title>
   <link rel="stylesheet" href="style.css">
-  <script src="data/events.js" defer></script><script src="app.js" defer></script>
+  <script src="data/events.js" defer></script><script src="data/main_results.js" defer></script>
+  <script src="app.js" defer></script><script src="main-results.js" defer></script>
 </head>
 <body>
 <main>
-  <header><span class="status">100 matched injections</span><h1>BBH Dynesty comparison</h1><p>Cheap <strong>nlive=100</strong> and reference <strong>nlive=2000</strong> posteriors for the same BBH injections.</p></header>
+  <header><span class="status">100 matched injections</span><h1>BBH NISMO comparison</h1><p>Evidence and posterior comparisons against the matched <strong>2,000-live Dynesty reference</strong>. Cheap Dynesty uses 100 live points; NISMO trains exclusively on the cheap posterior.</p></header>
+  <section id="main-results" aria-labelledby="main-title">
+    <h2 id="main-title">Main results</h2>
+    <p id="main-status" role="status" aria-live="polite">Loading the comparison snapshot…</p>
+    <div class="result-links"><a href="data/main_results.csv" download>Download results CSV</a><a href="data/main_results.json">Data and estimator settings</a><button id="refresh-results" type="button">Refresh snapshot</button></div>
+    <p id="paired-summary"></p>
+    <div class="series-legend"><span class="cheap">● Cheap Dynesty</span><span class="nismo">◇ NISMO</span></div>
+    <p class="mobile-chart-hint">Scroll charts and tables sideways to see all events and comparison columns.</p>
+    <figure class="main-chart"><div class="chart-scroll" id="evidence-chart"></div><figcaption>ΔlnZ = method − reference. Bars show ±1 combined reported statistical error, added in quadrature. Zero indicates agreement with the reference; these errors do not include sampler or proposal bias.</figcaption></figure>
+    <label class="chart-choice" for="jsd-parameter">Posterior chart <select id="jsd-parameter"><option value="mean">Mean across 8 marginals</option></select></label>
+    <figure class="main-chart"><div class="chart-scroll" id="jsd-chart"></div><figcaption id="jsd-chart-caption">Jensen–Shannon divergence in bits: smaller means closer posterior shapes. The mean of eight marginal JSDs is not the eight-dimensional joint JSD.</figcaption></figure>
+    <p class="result-note">A numerical stopping threshold is not a convergence or coverage certificate. Pending, failed and iteration-limited NISMO results remain missing in the primary comparisons. Fewer cheap posterior draws create a finite-sample JSD contribution; inspect the reference-split calibration below.</p>
+    <label class="result-filter"><input id="completed-only" type="checkbox"> Show only events with completed NISMO comparisons</label>
+    <div class="table-scroll main-result-table"><table><caption id="main-table-caption">All 100 injections; JSD columns are mean marginal divergences in bits</caption><thead><tr><th scope="col">Injection</th><th scope="col">lnZ reference</th><th scope="col">lnZ cheap − reference</th><th scope="col">lnZ NISMO − reference</th><th scope="col">JSD cheap / reference</th><th scope="col">JSD NISMO / reference</th><th scope="col">NISMO outcome</th></tr></thead><tbody id="main-result-rows"></tbody></table></div>
+    <details class="metric-definitions"><summary>Definitions, uncertainty and posterior comparison method</summary>
+      <p><strong>Reference lnZ</strong> is the stored full log evidence from the 2,000-live run. The next two columns subtract that same reference from cheap Dynesty and NISMO, respectively. Natural logarithms are used for lnZ. Each ± value is a reported statistical error; difference errors assume independent sampling noise.</p>
+      <p><strong>JSD(P,Q) = ½ KL₂(P‖M) + ½ KL₂(Q‖M)</strong>, where M = (P + Q)/2. JSD is bounded by 0–1 bits; zero means identical distributions. The headline value is the arithmetic mean of the eight one-dimensional marginal divergences. It does not measure differences in parameter correlations.</p>
+      <p>Both comparisons use common prior support, a shared reference-based Scott bandwidth per parameter, and Gaussian-smoothed histograms. Periodic φ angles wrap; other prior boundaries reflect. NISMO uses the original normalized posterior weights. Estimator settings and source hashes are in the JSON download. The reference is used only for comparison and target validation, never proposal training or sampler tuning.</p>
+      <p>The reference-split calibration compares disjoint reference subsets matching each cheap draw count. Its 5th/50th/95th percentiles describe finite-sample variation under this comparison, not confidence intervals on the measured JSD, a bias correction, or a test of NISMO mixing. NISMO weight ESS also omits chain correlations.</p>
+      <p>Paired aggregate summaries use exactly the same completed events for both methods. All 100 cheap/reference results remain in the table. Reference posteriors retain 1,000 draws per event, so all posterior comparisons have finite-reference uncertainty.</p>
+      <p><a href="https://github.com/nz-gravity/bbh_nismo_simulation_study/blob/main/scripts/build_main_results.py">Reusable calculation script</a> · <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.jensenshannon.html">JSD and square-root JS distance</a></p>
+    </details>
+  </section>
+  <section aria-labelledby="event-title"><h2 id="event-title">Inspect an injection</h2>
   <section class="controls" aria-label="Choose an injection">
     <button id="previous" type="button" aria-label="Previous injection">← Previous</button>
     <label for="event">Injection</label><select id="event"></select>
@@ -17,9 +41,12 @@
   </section>
   <p id="summary" role="status" aria-live="polite"></p>
   <div class="table-scroll"><table><caption id="table-caption">Sampler settings and retained samples</caption><thead><tr><th scope="col">Run</th><th scope="col">Live points</th><th scope="col">Retained / original draws</th><th scope="col">Full log evidence ± error</th><th scope="col">Sampling time</th></tr></thead><tbody id="metrics"></tbody></table></div>
-  <figure><img id="corner" alt="" decoding="async"><figcaption>Blue solid: cheap; orange dashed: reference; gray: injection truth. Both use the same axes, bins and smoothing. Contours enclose 50% and 90% probability; diagonal densities are normalized separately. Angles are in radians, with periodic φ angles shown on 0–2π.</figcaption></figure>
+  <p id="event-main-summary"></p>
+  <div class="table-scroll"><table><caption>Marginal posterior JSD [bits]</caption><thead><tr><th scope="col">Parameter</th><th scope="col">Cheap / reference</th><th scope="col">NISMO / reference</th></tr></thead><tbody id="marginal-jsd"></tbody></table></div>
+  <figure><img id="corner" alt="" decoding="async"><figcaption id="plot-caption">Blue solid: cheap; orange dashed: reference; gray: injection truth. Contours enclose 50% and 90% probability; diagonal densities are normalized separately.</figcaption></figure>
   <p id="plot-error" class="error" hidden>Plot unavailable for this injection. No replacement or fabricated comparison is shown.</p>
   <details><summary>Data, thinning and matching</summary><p>Each reference event retains up to 1,000 equal-weight posterior draws, sampled uniformly without replacement with selection seed 0. Original counts and exact indices are recorded in its archive. Every cheap saved draw is retained. These contours show retained samples; they do not certify convergence or coverage.</p><p>Matching is checked using injection metadata, prior/catalogue hashes, noise evidence and 32 likelihood/prior replays against the frozen cheap-event data. Original reference strain bytes were not archived, so byte identity is not claimed. Reference sampler RNG seeds are unknown; cheap sampler seed is 42.</p><p>Posterior log-likelihood columns can be ratios relative to noise. Reported log evidences above are already full evidences. No nlive=4000 result is displayed on this site.</p><p id="audit"></p><p><a href="data/provenance.json">Plot and package provenance</a></p></details>
-  <footer><p><a href="https://github.com/nz-gravity/bbh_nismo_simulation_study/releases/tag/dynesty-baselines-2026-11-04">Download result ZIPs, checksums and verifier</a></p><p>Prepared for <code>nz-gravity/bbh_nismo_simulation_study</code>. Results and plot data are source-checked; private machine paths and operational job details are excluded.</p></footer>
+  </section>
+  <footer><p><a href="https://github.com/nz-gravity/bbh_nismo_simulation_study/releases/tag/dynesty-baselines-2026-11-04">Download baseline ZIPs, checksums and verifier</a></p><p>Prepared for <code>nz-gravity/bbh_nismo_simulation_study</code>. Results and plot data are source-checked; private machine paths and operational job details are excluded.</p></footer>
 </main>
 </body></html>

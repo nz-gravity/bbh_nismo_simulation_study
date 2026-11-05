@@ -1,0 +1,83 @@
+{
+  "scope": "Main results page, current partial snapshot",
+  "completed_nis_events": 40,
+  "all_baseline_rows": 100,
+  "browser_errors": [],
+  "filter_checked": true,
+  "parameter_selection_checked": true,
+  "pending_event99_missingness_checked": true,
+  "event28_overlay_checked": true,
+  "mobile_body_width": 390,
+  "mobile_chart_horizontal_scroll_checked": true,
+  "numerical_tests_passed": 5,
+  "independent_kernel_spot_checks": {
+    "scope": "Independent analytic Gaussian-kernel bin integration spot checks for events 0 and 28, chirp mass and periodic phi_jl",
+    "checks": [
+      {
+        "event": 0,
+        "parameter": "chirp_mass",
+        "method": "cheap",
+        "reported_jsd_bits": 0.035039638818231425,
+        "independent_integrated_kde_jsd_bits": 0.035329885282080135,
+        "abs_difference_bits": 0.0002902464638487104
+      },
+      {
+        "event": 0,
+        "parameter": "chirp_mass",
+        "method": "nismo",
+        "reported_jsd_bits": 0.061394157271728554,
+        "independent_integrated_kde_jsd_bits": 0.06179442056580115,
+        "abs_difference_bits": 0.00040026329407259753
+      },
+      {
+        "event": 0,
+        "parameter": "phi_jl",
+        "method": "cheap",
+        "reported_jsd_bits": 0.01474451816436347,
+        "independent_integrated_kde_jsd_bits": 0.01465808550412267,
+        "abs_difference_bits": 8.64326602408004e-05
+      },
+      {
+        "event": 0,
+        "parameter": "phi_jl",
+        "method": "nismo",
+        "reported_jsd_bits": 0.10624914077891844,
+        "independent_integrated_kde_jsd_bits": 0.10625783647746796,
+        "abs_difference_bits": 8.695698549526787e-06
+      },
+      {
+        "event": 28,
+        "parameter": "chirp_mass",
+        "method": "cheap",
+        "reported_jsd_bits": 0.027778157038166704,
+        "independent_integrated_kde_jsd_bits": 0.028138397118340097,
+        "abs_difference_bits": 0.0003602400801733935
+      },
+      {
+        "event": 28,
+        "parameter": "chirp_mass",
+        "method": "nismo",
+        "reported_jsd_bits": 0.12087337013024237,
+        "independent_integrated_kde_jsd_bits": 0.12092390570805038,
+        "abs_difference_bits": 5.05355778080141e-05
+      },
+      {
+        "event": 28,
+        "parameter": "phi_jl",
+        "method": "cheap",
+        "reported_jsd_bits": 0.021657423503238956,
+        "independent_integrated_kde_jsd_bits": 0.02154433043486587,
+        "abs_difference_bits": 0.00011309306837308658
+      },
+      {
+        "event": 28,
+        "parameter": "phi_jl",
+        "method": "nismo",
+        "reported_jsd_bits": 0.057090569363548456,
+        "independent_integrated_kde_jsd_bits": 0.05688590443272703,
+        "abs_difference_bits": 0.00020466493082142712
+      }
+    ],
+    "max_abs_difference_bits": 0.00040026329407259753
+  }
+}

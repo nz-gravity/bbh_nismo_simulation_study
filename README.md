@@ -1,5 +1,10 @@
 # BBH NISMO simulation study
 
+The [comparison webpage](https://nz-gravity.github.io/bbh_nismo_simulation_study/)
+reports the matched reference lnZ, cheap/NISMO evidence differences and posterior
+JSD. The [main-result script and definitions](campaign/MAIN_RESULTS.md) preserve
+the reproducible calculation. In-progress NISMO results are explicitly partial.
+
 Dynesty parameter-estimation baselines for **100 matched BBH injections**, IDs **0–99**.
 
 | Dataset | Live points | Retained posterior draws | Original saved draws |
