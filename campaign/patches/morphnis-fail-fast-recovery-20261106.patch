@@ -1,0 +1,84 @@
+diff --git a/README.md b/README.md
+index 31f140b..a3beabd 100644
+--- a/README.md
++++ b/README.md
+@@ -431,10 +431,11 @@ Initial zero-density rejection draws do not train the controller. Adaptive DE
+ remains an approximate constrained sampler: settings inferred from previous
+ walks do not guarantee independent replacements or discovery of missing modes.
+ After the planned number of proposals, a walk below `de_min_accepted` fails.
+-The sampler now attempts recovery instead of immediately aborting:
++The default aborts that run. Recovery is an explicit heuristic opt-in:
+
+-- `de_retries=3` permits up to three additional walks; set it to zero to fail
+-  immediately. Recovery is available in both static and adaptive modes.
++- `de_retries=0` is the default and fails without selecting a successful retry.
++  Opting into `de_retries=3` permits up to three additional walks.
++  Recovery is available in both static and adaptive modes.
+ - Each retry selects a different surviving live point, avoiding starts already
+   tried until all have been used. The discarded point is never a start.
+ - Each retry halves gamma, with a floor of 0.05 times the initial gamma, and
+diff --git a/src/morphnis/sampler.py b/src/morphnis/sampler.py
+index 7e7ebe2..56c97f9 100644
+--- a/src/morphnis/sampler.py
++++ b/src/morphnis/sampler.py
+@@ -37,7 +37,7 @@ class NestedImportanceSampler:
+     None selects the dimension-based defaults for de_n_steps and de_gamma,
+     and the configured default for de_min_accepted. de_jitter scales survivor standard deviations.
+     de_adapt adjusts scale and length only between completed walks. Failed
+-    walks can recover via de_retries bounded restarts (default 3), each with a
++    walks can opt into de_retries bounded restarts (default 0), each with a
+     fresh live start, smaller gamma and a larger capped budget. This retry
+     selection is heuristic; de_retries=0 enables fail-fast operation.
+
+@@ -76,7 +76,7 @@ class NestedImportanceSampler:
+         de_adapt: bool = False,
+         de_target_acceptance: float = 0.2,
+         de_max_steps: int | None = None,
+-        de_retries: int = 3,
++        de_retries: int = 0,
+         move_weights: dict[str, float] | MoveWeights | None = None,
+         stretch_scale: float = 1.5,
+         rwalk_scale: float = 1.0,
+diff --git a/tests/test_de_recovery.py b/tests/test_de_recovery.py
+index 96976f6..8ffa8c2 100644
+--- a/tests/test_de_recovery.py
++++ b/tests/test_de_recovery.py
+@@ -10,6 +10,8 @@ def make_sampler(**kwargs):
+     q = GaussianProposal([0.0], [[1.0]])
+     model = Model(("x",), lambda x: float(x[0]), q.log_prob)
+     kwargs.setdefault("de_min_accepted", 1)
++    # These tests explicitly exercise the opt-in legacy recovery policy.
++    kwargs.setdefault("de_retries", 3)
+     return NestedImportanceSampler(model=model, importance=q, nlive=16, seed=19,
+                                    de_n_steps=4, de_max_steps=16, **kwargs)
+
+@@ -66,6 +68,17 @@ def test_successful_walk_has_no_retries(monkeypatch):
+     assert result.trace.replacements[0]["n_proposed"] == 4
+
+
++def test_default_fails_instead_of_selecting_successful_retries(monkeypatch):
++    monkeypatch.setattr("morphnis.constrained._de_increment", lambda *a, **kw: np.zeros(1))
++    q = GaussianProposal([0.0], [[1.0]])
++    model = Model(("x",), lambda x: float(x[0]), q.log_prob)
++    sampler = NestedImportanceSampler(model=model, importance=q, nlive=16, seed=19,
++                                     de_n_steps=4, de_min_accepted=1)
++    with pytest.raises(ConstrainedSamplingError):
++        sampler.run(max_iterations=1, print_progress=False)
++    assert len(sampler._de_recovery_history) == 1
++
++
+ @pytest.mark.parametrize("value", [-1, True, 1.5])
+ def test_invalid_retry_counts(value):
+     with pytest.raises(ValueError, match="de_retries"):
+diff --git a/tests/test_move_mixture.py b/tests/test_move_mixture.py
+index b199d88..34fa176 100644
+--- a/tests/test_move_mixture.py
++++ b/tests/test_move_mixture.py
+@@ -593,6 +593,7 @@ def test_failed_mixed_attempts_are_included_in_recovery_counts(monkeypatch):
+         walk_n_steps=8,
+         walk_min_accepted=1,
+         de_max_steps=64,
++        de_retries=3,
+     ).run(max_iterations=1, print_progress=False)
+     attempts = result.de_settings["recovery"]["attempts"]
+     assert len(attempts) >= 2

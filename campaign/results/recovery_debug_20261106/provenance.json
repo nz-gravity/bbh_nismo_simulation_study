@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-06",
+  "host": "UOA484808",
+  "core_base_commit": "7b945633964c068e094484f5ea55bf97a9ec97f5",
+  "local_core_fix_commit": "6e1fe5f741366815a6ff580063032236581c1404",
+  "versions": {
+    "morphnis": "0.1.0.dev0",
+    "morphZ": "0.4.4",
+    "bilby": "2.8.0",
+    "lalsuite": "7.26.15",
+    "numpy": "2.4.4",
+    "scipy": "1.18.1",
+    "pandas": "3.0.3"
+  },
+  "training": "All saved cheap rows, thin=1, no cap; reference excluded from training and tuning",
+  "settings": {
+    "nlive": 100,
+    "dlogz": 0.1,
+    "max_iterations": 10000,
+    "fit_seeds": {
+      "23": 20261127,
+      "47": 20261151
+    },
+    "sampling_seeds": [
+      20261106,
+      20261107
+    ],
+    "fixed_walk_steps": 1000,
+    "move_weights": {
+      "de": 0.8,
+      "stretch": 0.2
+    },
+    "de_adapt": false,
+    "de_retries": 0,
+    "walk_min_accepted": 5,
+    "proposal_budget": 1000000
+  },
+  "nismo_source_sha256": {
+    "src/morphnis/__init__.py": "ab0b80ba460bafe300f4ed9af6d39ddb0b0a2e7550be12742ef8acef90071437",
+    "src/morphnis/constrained.py": "05e2644c0a7851a3c5a93c724c2e41cca58ad33284ad72714aabbc013c2e7570",
+    "src/morphnis/de.py": "20d767c3f20c00a604f007af6808bdb044821ba2f2abd75f13af34dc581cd025",
+    "src/morphnis/diagnostics.py": "01ffa2e5f4a64a5493fc6bcf513f212860ed66a07c3a1be99b2d1330d6210786",
+    "src/morphnis/evaluate.py": "a2d854102f5841493a103cfb88b806e5b9cc2ef7f45cca02f9cede6cab75eb47",
+    "src/morphnis/importance.py": "fc1071f30111de5a4a4a719a4091146609a31f9a2d3c710b6b02f9e01e9a891e",
+    "src/morphnis/model.py": "48291429653ef00159a1e476f188c64e8c9609d6bb72643b96f1306c68590875",
+    "src/morphnis/moves.py": "4ad9f261c643ed3258cd13e1916ae3b67b8887718f9390cb297085756133e637",
+    "src/morphnis/pool.py": "ae5be06859f175e0666cf81226a5a5b567a72afb6c6d66ebb77d195b96a97c30",
+    "src/morphnis/progress.py": "5582b57c2d71c4c4764f1b963717aed0abded0b065ef2313aab97bb432d49dc8",
+    "src/morphnis/proposal.py": "c4e6ecb50dc404aca6a1377a0abeb8e636d38f5957db4a6123bc1150f6ad99a3",
+    "src/morphnis/quadrature.py": "dc79b7c5a0e11bef4cbd2e7123c0195025c7ee1e265ae87f8da6893177fb19ac",
+    "src/morphnis/result.py": "9719dc41a46b783fea53a9af11e9adab10e2bcef438ac566ff83b2d4b270e392",
+    "src/morphnis/sampler.py": "5080687b6cc24f31794a71b1dbf94eb3e1da38d85138ad927e894d86a225d79b"
+  },
+  "tests": {
+    "focused_core_passed": 132,
+    "all_core_passed": 334,
+    "all_core_failed": 3,
+    "failures": "Three notebook-output assertions fail identically on unchanged base checkout",
+    "study_passed": 11,
+    "checkout_selection_audit": "passed for event23 using the patched worktree"
+  },
+  "full_campaign_gate": "failed: event47 constrained replacement control did not complete; no rerun launched",
+  "data_origin": "Previously audited reconstructed strain; original likelihood/prior convention reproduced. Reference has 1000 retained posterior draws per event."
+}

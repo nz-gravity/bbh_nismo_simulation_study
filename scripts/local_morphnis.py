@@ -236,11 +236,16 @@ def main():
     parser.add_argument("--seed", type=int, default=20262104)
     parser.add_argument("--dlogz", type=float, default=.1)
     parser.add_argument("--max-iterations", type=int, default=10000)
-    parser.add_argument("--de-retries", type=int, default=3)
+    parser.add_argument("--de-retries", type=int, default=0)
+    parser.add_argument("--allow-heuristic-recovery", action="store_true",
+                        help="Explicitly permit potentially biased successful-retry selection")
+    parser.add_argument("--fixed-walks", action="store_true", help="Disable between-walk DE adaptation")
     parser.add_argument("--walk-n-steps", type=int)
     parser.add_argument("--audit-only", action="store_true")
     parser.add_argument("--reconstruction-audit", type=Path)
     args = parser.parse_args()
+    if args.de_retries and not args.allow_heuristic_recovery:
+        parser.error("Retries condition on successful movement; use --allow-heuristic-recovery to opt in explicitly")
     if args.nlive < 4 or args.max_iterations < 1 or not np.isfinite(args.dlogz) or args.dlogz <= 0:
         parser.error("Invalid sampling settings")
     if not (0 <= args.fit_seed < 2**32 and 0 <= args.seed < 2**32) or args.de_retries < 0:
@@ -255,6 +260,8 @@ def main():
         "training_policy": "cheap only; every saved row; thin=1; no sample cap",
         "reference_policy": "holdout for contract validation and post-run comparison; no training/tuning",
         "morphnis_commit": revision(args.nismo_repo), "benchmark_commit": revision(args.benchmark_repo),
+        "morphnis_source_sha256": {str(p.relative_to(args.nismo_repo)): digest(p)
+            for p in sorted((args.nismo_repo / "src/morphnis").glob("*.py"))},
         "script_sha256": digest(__file__),
         "versions": {k: version(k) for k in ("morphnis", "morphZ", "bilby", "lalsuite", "numpy", "scipy", "pandas")},
     })
@@ -274,6 +281,12 @@ def main():
         target_manifest, data_origin = validate_data_origin(
             args.data, manifest, args.event, len(training), args.reconstruction_audit)
         sys.path.insert(0, str(args.benchmark_repo.resolve()))
+        # --nismo-repo must select the implementation, including an isolated
+        # patched worktree; an unrelated editable install must not win.
+        sys.path.insert(0, str(args.nismo_repo.resolve() / "src"))
+        import morphnis
+        if not Path(morphnis.__file__).resolve().is_relative_to(args.nismo_repo.resolve() / "src"):
+            raise RuntimeError("Loaded morphnis does not match --nismo-repo; use a fresh Python process")
         from benchmark import injection
         helper = load_helpers(args.nismo_repo / "examples/lvk/morphnis_computation.py")
         with patch.object(injection, "settings", return_value=manifest["scientific_config"]["settings"]):
@@ -300,7 +313,7 @@ def main():
                                        parameter_names=PARAMETERS, seed=args.fit_seed, thin=1)
         fit_seconds = time.perf_counter()-fit_started
         sampler = NestedImportanceSampler(model=model, importance=proposal, nlive=args.nlive,
-            seed=args.seed, move_weights={"de": .8, "stretch": .2}, de_adapt=True,
+            seed=args.seed, move_weights={"de": .8, "stretch": .2}, de_adapt=not args.fixed_walks,
             de_retries=args.de_retries, walk_n_steps=args.walk_n_steps)
         phase = "sampling"
         result = sampler.run(dlogz=args.dlogz, max_iterations=args.max_iterations, print_progress=True)
@@ -358,6 +371,7 @@ def main():
                    "traceback": traceback.format_exc(), "seconds": time.perf_counter()-started}
         if sampler is not None:
             failure["likelihood_calls"] = sampler.evaluate.n_likelihood_calls
+            failure["prior_calls"] = sampler.evaluate.n_prior_calls
             failure["recovery_history"] = sampler._de_recovery_history
         write_new(args.output / "failure.json", failure)
         raise
