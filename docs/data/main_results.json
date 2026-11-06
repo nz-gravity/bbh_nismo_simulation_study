@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "created_utc": "2026-11-06T04:26:55.683311+00:00",
+  "created_utc": "2026-11-06T04:30:15.975948+00:00",
   "campaign_metadata": {
     "id": "mehdi-de80-rwalk20-pool100k-20261106",
     "label": "Mehdi demo with user-specified DE/rwalk mixture",
@@ -29,11 +29,11 @@
   },
   "event_count": 100,
   "nis_counts": {
-    "pending": 98,
-    "converged": 2
+    "converged": 3,
+    "pending": 97
   },
   "campaign_state": "running",
-  "active_event": 0,
+  "active_event": 1,
   "method": {
     "id": "shared-reference-scott-smoothed-histogram-v1",
     "jsd_log_base": 2,
@@ -56,11 +56,11 @@
     ]
   },
   "paired_summary": {
-    "events": 2,
-    "mean_jsd_cheap_bits": 0.022991766612137247,
-    "mean_jsd_nismo_bits": 0.020513827794263,
-    "median_abs_delta_cheap": 0.5945065939285996,
-    "median_abs_delta_nismo": 0.27078355931371334
+    "events": 3,
+    "mean_jsd_cheap_bits": 0.023878740510385802,
+    "mean_jsd_nismo_bits": 0.023051821174658944,
+    "median_abs_delta_cheap": 0.7978445265252958,
+    "median_abs_delta_nismo": 0.26179809950735944
   },
   "source_hashes": {
     "cheap_archive": "c22d83287b9f074fc6a31cc782a31b009104ef8bc7e10e1d614dac1c17fef916",
@@ -70,47 +70,47 @@
   "events": [
     {
       "event_id": 0,
-      "nis_status": "pending",
+      "nis_status": "converged",
       "lnz_reference": -16170.646747330862,
       "lnz_reference_error": 0.10196707259348929,
       "delta_lnz_cheap_reference": 0.7978445265252958,
       "delta_lnz_cheap_reference_error": 0.7017791628751544,
-      "delta_lnz_nismo_reference": null,
-      "delta_lnz_nismo_reference_error": null,
+      "delta_lnz_nismo_reference": 0.1229224952567165,
+      "delta_lnz_nismo_reference_error": 0.295672285022633,
       "jsd_cheap_reference_bits": 0.025652688306882915,
-      "jsd_nismo_reference_bits": null,
+      "jsd_nismo_reference_bits": 0.028127807935450826,
       "jsd_marginals": {
         "chirp_mass": {
           "cheap_reference_bits": 0.035039638818231425,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.0374875451419648
         },
         "mass_ratio": {
           "cheap_reference_bits": 0.02404036611761339,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.05731615129929594
         },
         "a_1": {
           "cheap_reference_bits": 0.018830975326082147,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.022243410765567222
         },
         "a_2": {
           "cheap_reference_bits": 0.040187932909176785,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.011334464986924959
         },
         "tilt_1": {
           "cheap_reference_bits": 0.03376542786334526,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.04581558829767677
         },
         "tilt_2": {
           "cheap_reference_bits": 0.028268545245680114,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.016512743389722025
         },
         "phi_12": {
           "cheap_reference_bits": 0.01034410201057073,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.007586546303401637
         },
         "phi_jl": {
           "cheap_reference_bits": 0.01474451816436347,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.02672601329905323
         }
       },
       "reference_split_calibration": {
@@ -125,9 +125,9 @@
       "cheap_rows": 104,
       "reference_rows": 1000,
       "reference_original_rows": 9981,
-      "nis_weight_ess": null,
-      "nis_recovery_iterations": null,
-      "nis_plot": null,
+      "nis_weight_ess": 565.5396504829919,
+      "nis_recovery_iterations": 8,
+      "nis_plot": "plots/nismo-mehdi-de80-rwalk20-100k/injection_000.png",
       "marginal_estimator": {
         "chirp_mass": {
           "low": 14.0,
@@ -206,7 +206,44 @@
         "cheap_posterior_sha256": "af43a84825aca4f21f3d4eecdd462332a0cdca27a1accc66f4e9e9bebe21def1",
         "reference_posterior_sha256": "43e85d45dd5ff47b1869b71e9dc16c5f587d71c8e26db16f8e3b8e1b38121f5c",
         "reference_original_result_sha256": "f766325fb02e51f7a4e31e042db39fbe7c952a60665d6138b061b631b882d282",
-        "baseline_likelihood_id": "70539a67b265d6827500821d191a7aa866db78f73b58efb287691371ebf96ee0"
+        "baseline_likelihood_id": "70539a67b265d6827500821d191a7aa866db78f73b58efb287691371ebf96ee0",
+        "nis_result_sha256": "a4d41b21a8f6632a978ab350185e4281fb167c8beeb6a1220b4563b60ddc4e49",
+        "nis_comparison_sha256": "cd5c3cb211406174d7208291c17869df85d9910593a4d0163c1d802f6a91ef48"
+      },
+      "nis_failure": null,
+      "nis_likelihood_calls": 236558,
+      "nis_log_evidence": -16170.523824835605,
+      "nis_log_evidence_error": 0.2775334506635537,
+      "nis_nlive": 100,
+      "nis_weighted_rows": 1342,
+      "nis_sampler_seconds": 220.88858179101953,
+      "pilot_inclusive_likelihood_calls": 544097,
+      "nis_morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 658,
+        "rejected": 99242,
+        "prior_rejected": 43756,
+        "unused": 0,
+        "likelihood_calls": 56205,
+        "switch_iteration": 659
+      },
+      "data_origin": {
+        "kind": "validated_reconstruction",
+        "data_sha256": "bfb726c99db3db62ee1ae63d228de4fca70dcbf02e71894ea6a3e1f4feec1287",
+        "original_data_sha256": "f20d0ff42c51ca993ee44a661c1df908b30021a60015ffad6187992d490b4595",
+        "receipt_sha256": "57c7d0a0525b24ed90d8058ad6bed1cc2b770aa3dff6dfd88b72c78b767592d5",
+        "original_likelihood_id": "70539a67b265d6827500821d191a7aa866db78f73b58efb287691371ebf96ee0",
+        "reconstructed_likelihood_id": "4e837dadce8d2ad36446c2944ebd026907110c5614de39840f95af1d5ab0ae73"
+      },
+      "max_correlation_difference": 0.6030247051227577,
+      "posterior_diagnostic_flags": {
+        "mean_jsd_above_0_03_bits": false,
+        "correlation_difference_above_0_25": true
       }
     },
     {
