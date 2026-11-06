@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "created_utc": "2026-11-06T06:32:22.692647+00:00",
+  "created_utc": "2026-11-06T07:01:32.908440+00:00",
   "campaign_metadata": {
     "id": "mehdi-de80-rwalk20-pool100k-20261106",
     "label": "Mehdi demo with user-specified DE/rwalk mixture",
@@ -29,11 +29,11 @@
   },
   "event_count": 100,
   "nis_counts": {
-    "converged": 43,
-    "pending": 57
+    "converged": 53,
+    "pending": 47
   },
   "campaign_state": "running",
-  "active_event": 42,
+  "active_event": 53,
   "method": {
     "id": "shared-reference-scott-smoothed-histogram-v1",
     "jsd_log_base": 2,
@@ -56,11 +56,11 @@
     ]
   },
   "paired_summary": {
-    "events": 43,
-    "mean_jsd_cheap_bits": 0.03676252233448382,
-    "mean_jsd_nismo_bits": 0.04626342734323437,
-    "median_abs_delta_cheap": 1.008453590085992,
-    "median_abs_delta_nismo": 0.2873225069615728
+    "events": 53,
+    "mean_jsd_cheap_bits": 0.03553348961491749,
+    "mean_jsd_nismo_bits": 0.04476446436137801,
+    "median_abs_delta_cheap": 0.9508498849609168,
+    "median_abs_delta_nismo": 0.27976901912006724
   },
   "source_hashes": {
     "cheap_archive": "c22d83287b9f074fc6a31cc782a31b009104ef8bc7e10e1d614dac1c17fef916",
@@ -7546,47 +7546,47 @@
     },
     {
       "event_id": 42,
-      "nis_status": "pending",
+      "nis_status": "converged",
       "lnz_reference": -16427.95996429391,
       "lnz_reference_error": 0.11200198316827052,
       "delta_lnz_cheap_reference": 0.9508498849609168,
       "delta_lnz_cheap_reference_error": 0.7468459073811504,
-      "delta_lnz_nismo_reference": null,
-      "delta_lnz_nismo_reference_error": null,
+      "delta_lnz_nismo_reference": -0.5290951732495159,
+      "delta_lnz_nismo_reference_error": 0.30444482188857286,
       "jsd_cheap_reference_bits": 0.02815274461084632,
-      "jsd_nismo_reference_bits": null,
+      "jsd_nismo_reference_bits": 0.04174344471146412,
       "jsd_marginals": {
         "chirp_mass": {
           "cheap_reference_bits": 0.02175638997031684,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.06191580999941731
         },
         "mass_ratio": {
           "cheap_reference_bits": 0.0104531732570185,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.012570261059989844
         },
         "a_1": {
           "cheap_reference_bits": 0.05530908273697671,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.09456713904485965
         },
         "a_2": {
           "cheap_reference_bits": 0.07850603327851327,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.05794143680538235
         },
         "tilt_1": {
           "cheap_reference_bits": 0.03418116432349087,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.03989322781340299
         },
         "tilt_2": {
           "cheap_reference_bits": 0.014136982703638681,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.04615555718111932
         },
         "phi_12": {
           "cheap_reference_bits": 0.0030926330183636314,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.014441652600791206
         },
         "phi_jl": {
           "cheap_reference_bits": 0.007786497598452034,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.006462473186750287
         }
       },
       "reference_split_calibration": {
@@ -7601,9 +7601,9 @@
       "cheap_rows": 109,
       "reference_rows": 1000,
       "reference_original_rows": 7571,
-      "nis_weight_ess": null,
-      "nis_recovery_iterations": null,
-      "nis_plot": null,
+      "nis_weight_ess": 551.2442646574174,
+      "nis_recovery_iterations": 5,
+      "nis_plot": "plots/nismo-mehdi-de80-rwalk20-100k/injection_042.png",
       "marginal_estimator": {
         "chirp_mass": {
           "low": 14.0,
@@ -7682,52 +7682,89 @@
         "cheap_posterior_sha256": "c726fd76947d4597de30a748688f90a3f38a10c404be69e1933c2da0f8aecc6a",
         "reference_posterior_sha256": "dff796ece87e158fb602f9c591a378b07b6a7279e9862dcf5f571a473fbf7e22",
         "reference_original_result_sha256": "0c07fc3b8feb236c362f94c3b926d0dd733243c006e20d96d391bc73855e3084",
-        "baseline_likelihood_id": "ae0f20a52574fa3a5ddc671df9e6e9b629ba904b7654a8d28c4eff3995a6ced7"
+        "baseline_likelihood_id": "ae0f20a52574fa3a5ddc671df9e6e9b629ba904b7654a8d28c4eff3995a6ced7",
+        "nis_result_sha256": "7d25fc76dc40009dc0b071b701ea7fa48d75d36ac36564e0d603c5396811c5a1",
+        "nis_comparison_sha256": "ee47adfe49dbb31e207848119ec0c0875d150618c9ce67a430122069c268788c"
+      },
+      "nis_failure": null,
+      "nis_likelihood_calls": 248759,
+      "nis_log_evidence": -16428.48905946716,
+      "nis_log_evidence_error": 0.28309398676259323,
+      "nis_nlive": 100,
+      "nis_weighted_rows": 1340,
+      "nis_sampler_seconds": 219.70399329200154,
+      "pilot_inclusive_likelihood_calls": 604129,
+      "nis_morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 676,
+        "rejected": 99224,
+        "prior_rejected": 44788,
+        "unused": 0,
+        "likelihood_calls": 55161,
+        "switch_iteration": 677
+      },
+      "data_origin": {
+        "kind": "validated_reconstruction",
+        "data_sha256": "cf944626a543289a506744f868181c4ae82eb5e6affe9a5d87788fc8b4b85724",
+        "original_data_sha256": "956b5d693b545f31410aa3f1fb85988bc73ce7856a41a322aaced662c483df47",
+        "receipt_sha256": "bc05b70bd7e0a94307a165e55ef0101d2222c26dc30084688a219c3cf77a825a",
+        "original_likelihood_id": "ae0f20a52574fa3a5ddc671df9e6e9b629ba904b7654a8d28c4eff3995a6ced7",
+        "reconstructed_likelihood_id": "0a1643e210de9c19882da6d8e655fae79ce253305c2362739a8ce7163fd8bee1"
+      },
+      "max_correlation_difference": 0.5255725971189055,
+      "posterior_diagnostic_flags": {
+        "mean_jsd_above_0_03_bits": true,
+        "correlation_difference_above_0_25": true
       }
     },
     {
       "event_id": 43,
-      "nis_status": "pending",
+      "nis_status": "converged",
       "lnz_reference": -16240.9125336356,
       "lnz_reference_error": 0.11926251199545229,
       "delta_lnz_cheap_reference": 1.0159788676555763,
       "delta_lnz_cheap_reference_error": 0.811243128059809,
-      "delta_lnz_nismo_reference": null,
-      "delta_lnz_nismo_reference_error": null,
+      "delta_lnz_nismo_reference": -0.4183192407926981,
+      "delta_lnz_nismo_reference_error": 0.30015953813392393,
       "jsd_cheap_reference_bits": 0.02168189752822714,
-      "jsd_nismo_reference_bits": null,
+      "jsd_nismo_reference_bits": 0.045256066198926234,
       "jsd_marginals": {
         "chirp_mass": {
           "cheap_reference_bits": 0.015156688308016822,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.04114577811176395
         },
         "mass_ratio": {
           "cheap_reference_bits": 0.0171307007954761,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.096856931734108
         },
         "a_1": {
           "cheap_reference_bits": 0.02082937398746147,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.051696929937730195
         },
         "a_2": {
           "cheap_reference_bits": 0.021585158138147164,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.01857462201272859
         },
         "tilt_1": {
           "cheap_reference_bits": 0.017763923979284994,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.03106631674973316
         },
         "tilt_2": {
           "cheap_reference_bits": 0.056274890682703374,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.027533566575972345
         },
         "phi_12": {
           "cheap_reference_bits": 0.009986562145833867,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.04214051615054747
         },
         "phi_jl": {
           "cheap_reference_bits": 0.01472788218889335,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.05303386831882613
         }
       },
       "reference_split_calibration": {
@@ -7742,9 +7779,9 @@
       "cheap_rows": 108,
       "reference_rows": 1000,
       "reference_original_rows": 11111,
-      "nis_weight_ess": null,
-      "nis_recovery_iterations": null,
-      "nis_plot": null,
+      "nis_weight_ess": 571.8536438496664,
+      "nis_recovery_iterations": 2,
+      "nis_plot": "plots/nismo-mehdi-de80-rwalk20-100k/injection_043.png",
       "marginal_estimator": {
         "chirp_mass": {
           "low": 14.0,
@@ -7823,52 +7860,89 @@
         "cheap_posterior_sha256": "d99ccc123df2007796880e306da2ea2d924f8ec212de8ac7a578aa54d8a5a62b",
         "reference_posterior_sha256": "6ce97b0b2f6aa9ae0e313cf92accc475ec3d22cf50acdd507e153544bb48f6b7",
         "reference_original_result_sha256": "a22ded91deff6b9e03806ffc76ee01178f8e5be8e7d812fc22e382c5f7f05fee",
-        "baseline_likelihood_id": "e6283f01735d2e2db556b45963f7508f4f53b2b342385692b524a938a85d0013"
+        "baseline_likelihood_id": "e6283f01735d2e2db556b45963f7508f4f53b2b342385692b524a938a85d0013",
+        "nis_result_sha256": "755e3e1ffe526417873d9612d702e54548cb905c3f66fb1209fafacb8444e7c6",
+        "nis_comparison_sha256": "a391644068130ee6ecd3301f37d7dd27247c9af0ca0ea9a3f9996845b349e884"
+      },
+      "nis_failure": null,
+      "nis_likelihood_calls": 185506,
+      "nis_log_evidence": -16241.330852876392,
+      "nis_log_evidence_error": 0.27544909069609425,
+      "nis_nlive": 100,
+      "nis_weighted_rows": 1294,
+      "nis_sampler_seconds": 144.3516309170227,
+      "pilot_inclusive_likelihood_calls": 585788,
+      "nis_morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 683,
+        "rejected": 99217,
+        "prior_rejected": 31652,
+        "unused": 0,
+        "likelihood_calls": 68317,
+        "switch_iteration": 684
+      },
+      "data_origin": {
+        "kind": "validated_reconstruction",
+        "data_sha256": "b7faf9838fa1aa8605452ca5aa961926fec19666bff3780ece18e534f4d83ff6",
+        "original_data_sha256": "c5908ab46129a2cb353682abe16e0405091e7ff2df528504c11ee146ec663cf9",
+        "receipt_sha256": "6abbfe41c1477607240ad88391e1b631e641fc2d7d04f5b53f29afdf1a05958a",
+        "original_likelihood_id": "e6283f01735d2e2db556b45963f7508f4f53b2b342385692b524a938a85d0013",
+        "reconstructed_likelihood_id": "194528b57d811dd8cf944b508cdd0e54adfe79602dd6f95baca9d98b6b81d8ac"
+      },
+      "max_correlation_difference": 0.38839707614408564,
+      "posterior_diagnostic_flags": {
+        "mean_jsd_above_0_03_bits": true,
+        "correlation_difference_above_0_25": true
       }
     },
     {
       "event_id": 44,
-      "nis_status": "pending",
+      "nis_status": "converged",
       "lnz_reference": -16415.120757579116,
       "lnz_reference_error": 0.11570856397633018,
       "delta_lnz_cheap_reference": 0.9279826343736204,
       "delta_lnz_cheap_reference_error": 0.7503955752106096,
-      "delta_lnz_nismo_reference": null,
-      "delta_lnz_nismo_reference_error": null,
+      "delta_lnz_nismo_reference": -0.09471587302323314,
+      "delta_lnz_nismo_reference_error": 0.2918400824659808,
       "jsd_cheap_reference_bits": 0.0322761182555025,
-      "jsd_nismo_reference_bits": null,
+      "jsd_nismo_reference_bits": 0.03014310494736206,
       "jsd_marginals": {
         "chirp_mass": {
           "cheap_reference_bits": 0.025173387833167613,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.024245022293367634
         },
         "mass_ratio": {
           "cheap_reference_bits": 0.05506439655392161,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.05679027394064546
         },
         "a_1": {
           "cheap_reference_bits": 0.05947513946155844,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.06303144848743167
         },
         "a_2": {
           "cheap_reference_bits": 0.019485773704249202,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.01072343417940192
         },
         "tilt_1": {
           "cheap_reference_bits": 0.04561096916979606,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.052331089231654776
         },
         "tilt_2": {
           "cheap_reference_bits": 0.017109890988618027,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.023523094406030804
         },
         "phi_12": {
           "cheap_reference_bits": 0.010240506945570908,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.0009156794233749339
         },
         "phi_jl": {
           "cheap_reference_bits": 0.02604888138713817,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.009584797616989287
         }
       },
       "reference_split_calibration": {
@@ -7883,9 +7957,9 @@
       "cheap_rows": 112,
       "reference_rows": 1000,
       "reference_original_rows": 9226,
-      "nis_weight_ess": null,
-      "nis_recovery_iterations": null,
-      "nis_plot": null,
+      "nis_weight_ess": 491.6543897853014,
+      "nis_recovery_iterations": 1,
+      "nis_plot": "plots/nismo-mehdi-de80-rwalk20-100k/injection_044.png",
       "marginal_estimator": {
         "chirp_mass": {
           "low": 14.0,
@@ -7964,52 +8038,89 @@
         "cheap_posterior_sha256": "10507d2d0d75f43190779e086972882fcbb2beea9416dbad2bc9714a7ca03db5",
         "reference_posterior_sha256": "365323efb5cc98a74633be1684a36e56507154385213f35a5621afab2bdb3dbb",
         "reference_original_result_sha256": "fe0a8e47168acaaaa12fd31fc0172eb896396e4a5d5fdfd3b910836134ce16f1",
-        "baseline_likelihood_id": "6f034fd95627f93bc2d9250bde8b109353e004c6fdddba8630bd8e23d8f29217"
+        "baseline_likelihood_id": "6f034fd95627f93bc2d9250bde8b109353e004c6fdddba8630bd8e23d8f29217",
+        "nis_result_sha256": "9ab5a3a0cee09d4e9c82f1f834082bcb693459a6b1091f1e8ef5858ebe8f2199",
+        "nis_comparison_sha256": "e8af3344007fd65411a7338ab680f02cd50db0c0d402b28fa45e33971b7690ca"
+      },
+      "nis_failure": null,
+      "nis_likelihood_calls": 224105,
+      "nis_log_evidence": -16415.21547345214,
+      "nis_log_evidence_error": 0.26792193257791713,
+      "nis_nlive": 100,
+      "nis_weighted_rows": 1224,
+      "nis_sampler_seconds": 176.09633487497922,
+      "pilot_inclusive_likelihood_calls": 645924,
+      "nis_morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 675,
+        "rejected": 99225,
+        "prior_rejected": 38960,
+        "unused": 0,
+        "likelihood_calls": 61005,
+        "switch_iteration": 676
+      },
+      "data_origin": {
+        "kind": "validated_reconstruction",
+        "data_sha256": "154329d7f3a5e9d766792c23b4fe2da74cfef1549757c0b76cd6d7a2b35deb10",
+        "original_data_sha256": "01b74d75298023f5bf49d973cbb9a290df2871e9bd5c066d698100ee214a4c47",
+        "receipt_sha256": "c514054c2889d9a0e1bce7c8b237e6c5236ec794ecaa3b329ba4f101306a3ed9",
+        "original_likelihood_id": "6f034fd95627f93bc2d9250bde8b109353e004c6fdddba8630bd8e23d8f29217",
+        "reconstructed_likelihood_id": "4d9f9437b68e14990702d75f55bc87faefd525b5a29d94eb53626ef924d77899"
+      },
+      "max_correlation_difference": 0.29511233888041377,
+      "posterior_diagnostic_flags": {
+        "mean_jsd_above_0_03_bits": true,
+        "correlation_difference_above_0_25": true
       }
     },
     {
       "event_id": 45,
-      "nis_status": "pending",
+      "nis_status": "converged",
       "lnz_reference": -16215.433304986542,
       "lnz_reference_error": 0.13461127329022654,
       "delta_lnz_cheap_reference": 2.887138725231125,
       "delta_lnz_cheap_reference_error": 0.9002730358143698,
-      "delta_lnz_nismo_reference": null,
-      "delta_lnz_nismo_reference_error": null,
+      "delta_lnz_nismo_reference": 1.0396468479229952,
+      "delta_lnz_nismo_reference_error": 0.3102318420863691,
       "jsd_cheap_reference_bits": 0.041060531750862966,
-      "jsd_nismo_reference_bits": null,
+      "jsd_nismo_reference_bits": 0.05931594765020469,
       "jsd_marginals": {
         "chirp_mass": {
           "cheap_reference_bits": 0.05521933753019967,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.0772262062957582
         },
         "mass_ratio": {
           "cheap_reference_bits": 0.05158239699627016,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.0705532724814871
         },
         "a_1": {
           "cheap_reference_bits": 0.038330040760296,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.05992902086320677
         },
         "a_2": {
           "cheap_reference_bits": 0.07376961025921544,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.0698423711480554
         },
         "tilt_1": {
           "cheap_reference_bits": 0.0480758307129891,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.03590826120778263
         },
         "tilt_2": {
           "cheap_reference_bits": 0.03259877197848901,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.0916924978378254
         },
         "phi_12": {
           "cheap_reference_bits": 0.007911113181227102,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.009787685688148234
         },
         "phi_jl": {
           "cheap_reference_bits": 0.02099715258821726,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.059588265679373746
         }
       },
       "reference_split_calibration": {
@@ -8024,9 +8135,9 @@
       "cheap_rows": 101,
       "reference_rows": 1000,
       "reference_original_rows": 9200,
-      "nis_weight_ess": null,
-      "nis_recovery_iterations": null,
-      "nis_plot": null,
+      "nis_weight_ess": 666.4279649591435,
+      "nis_recovery_iterations": 5,
+      "nis_plot": "plots/nismo-mehdi-de80-rwalk20-100k/injection_045.png",
       "marginal_estimator": {
         "chirp_mass": {
           "low": 14.0,
@@ -8105,52 +8216,89 @@
         "cheap_posterior_sha256": "5ad8a2860d9f75860e275598886c7df51e4518f8f902bb494106821b4c8bffeb",
         "reference_posterior_sha256": "51b022c23337550873dd4d9e58f3b89cde135f66d02ea51d446e689b6863248d",
         "reference_original_result_sha256": "d5e0cd31eeb9fe8dce65730d8c46d687b8e41a40f6481b4a6e90575cd3c164eb",
-        "baseline_likelihood_id": "d53a2cdde8ea8192f9144db9d0de6c95983205133abb78a8c5f95569230bec52"
+        "baseline_likelihood_id": "d53a2cdde8ea8192f9144db9d0de6c95983205133abb78a8c5f95569230bec52",
+        "nis_result_sha256": "11d923f2d3ef62497e28e9d7cffd374de5dd9c33979a4617135104c8fe13388e",
+        "nis_comparison_sha256": "a6aa1979c378be22a0ea2206f158b8a4ed3ec8d2a7c91e01435ef5ebbbd4286d"
+      },
+      "nis_failure": null,
+      "nis_likelihood_calls": 202941,
+      "nis_log_evidence": -16214.393658138619,
+      "nis_log_evidence_error": 0.2795059944750484,
+      "nis_nlive": 100,
+      "nis_weighted_rows": 1365,
+      "nis_sampler_seconds": 155.4864309580007,
+      "pilot_inclusive_likelihood_calls": 705772,
+      "nis_morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 617,
+        "rejected": 99283,
+        "prior_rejected": 40450,
+        "unused": 0,
+        "likelihood_calls": 59511,
+        "switch_iteration": 618
+      },
+      "data_origin": {
+        "kind": "validated_reconstruction",
+        "data_sha256": "a0408f49e29dd12772b5b6cc14d61cea77cb14a28a7f5e440be65616a1ca25c4",
+        "original_data_sha256": "1c855f6774295c87cb5e2a6c5eaf6cfd55da0fafcd07b8b363b26596b6fbab06",
+        "receipt_sha256": "5f4ea3ff083be478e1fbbbf1f63ee9ae989d63da112d485351ea5d266225d237",
+        "original_likelihood_id": "d53a2cdde8ea8192f9144db9d0de6c95983205133abb78a8c5f95569230bec52",
+        "reconstructed_likelihood_id": "5e88aeef03d41edd0983b9d63b608ea756fc64a125d07bf404576a58c9683d49"
+      },
+      "max_correlation_difference": 0.3875927743229467,
+      "posterior_diagnostic_flags": {
+        "mean_jsd_above_0_03_bits": true,
+        "correlation_difference_above_0_25": true
       }
     },
     {
       "event_id": 46,
-      "nis_status": "pending",
+      "nis_status": "converged",
       "lnz_reference": -16083.454115777155,
       "lnz_reference_error": 0.10110956688775152,
       "delta_lnz_cheap_reference": 0.6793426512886072,
       "delta_lnz_cheap_reference_error": 0.7210146608969891,
-      "delta_lnz_nismo_reference": null,
-      "delta_lnz_nismo_reference_error": null,
+      "delta_lnz_nismo_reference": -0.3295901885830972,
+      "delta_lnz_nismo_reference_error": 0.2811175912227114,
       "jsd_cheap_reference_bits": 0.024871558957690023,
-      "jsd_nismo_reference_bits": null,
+      "jsd_nismo_reference_bits": 0.022683335638040307,
       "jsd_marginals": {
         "chirp_mass": {
           "cheap_reference_bits": 0.034160116993696414,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.050517172473905164
         },
         "mass_ratio": {
           "cheap_reference_bits": 0.029622388242529725,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.014904000263874015
         },
         "a_1": {
           "cheap_reference_bits": 0.031545301575157086,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.03234630416991172
         },
         "a_2": {
           "cheap_reference_bits": 0.013642108509082823,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.005170626435041162
         },
         "tilt_1": {
           "cheap_reference_bits": 0.021129519536249464,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.027125274929879314
         },
         "tilt_2": {
           "cheap_reference_bits": 0.024941469310221898,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.004444730719920405
         },
         "phi_12": {
           "cheap_reference_bits": 0.002906554744881697,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.005537514872621157
         },
         "phi_jl": {
           "cheap_reference_bits": 0.04102501274970108,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.04142106123916953
         }
       },
       "reference_split_calibration": {
@@ -8165,9 +8313,9 @@
       "cheap_rows": 91,
       "reference_rows": 1000,
       "reference_original_rows": 10825,
-      "nis_weight_ess": null,
-      "nis_recovery_iterations": null,
-      "nis_plot": null,
+      "nis_weight_ess": 634.4472742492172,
+      "nis_recovery_iterations": 5,
+      "nis_plot": "plots/nismo-mehdi-de80-rwalk20-100k/injection_046.png",
       "marginal_estimator": {
         "chirp_mass": {
           "low": 14.0,
@@ -8246,7 +8394,44 @@
         "cheap_posterior_sha256": "8e8349002d1c0e14eab5774550a4f1d714bb417aeaee24c9b94de425f1f559f6",
         "reference_posterior_sha256": "a0cbc2f3ce4c7c6228c065e3221adc6ec822d1b8799f17479d3719dc69d102de",
         "reference_original_result_sha256": "ee68f903a3a4c239cb77db12974d0c4e48c655bf84ef6d4779b68a1b353499e8",
-        "baseline_likelihood_id": "61a29c5bf2acf0d31e94e1501edee0e28497f5351754c9b5880b17d4bde56e27"
+        "baseline_likelihood_id": "61a29c5bf2acf0d31e94e1501edee0e28497f5351754c9b5880b17d4bde56e27",
+        "nis_result_sha256": "417a759f01acea28a42e3f2c9e6f1d547f36fdd0f32f864e2b63a3b605c6fd7f",
+        "nis_comparison_sha256": "318faf1675979209b1d39b87fe5d027f6d90ea5a09269c29907231f340a7b454"
+      },
+      "nis_failure": null,
+      "nis_likelihood_calls": 140000,
+      "nis_log_evidence": -16083.783705965738,
+      "nis_log_evidence_error": 0.26230508111477896,
+      "nis_nlive": 100,
+      "nis_weighted_rows": 1248,
+      "nis_sampler_seconds": 114.11146283400012,
+      "pilot_inclusive_likelihood_calls": 341177,
+      "nis_morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 674,
+        "rejected": 99226,
+        "prior_rejected": 48449,
+        "unused": 0,
+        "likelihood_calls": 51503,
+        "switch_iteration": 675
+      },
+      "data_origin": {
+        "kind": "validated_reconstruction",
+        "data_sha256": "7ef2be32bab0e687110ed7fb8c92c8a9055afb831ff4948e88d349e7d8ef1518",
+        "original_data_sha256": "324bc69c74b39d0c3c3891a9f035e65557e3d1b174a9a29c96a829498b9d4ed2",
+        "receipt_sha256": "4c9f82fd3a881190816f09fa7ef1ddb7506af757af2a0ea04a105acaccc36c40",
+        "original_likelihood_id": "61a29c5bf2acf0d31e94e1501edee0e28497f5351754c9b5880b17d4bde56e27",
+        "reconstructed_likelihood_id": "6eef72e28a7ad14d1c8cdfcc4e54d977527cf83b6b21ca66a193049bdb7eaca5"
+      },
+      "max_correlation_difference": 0.7954228839949368,
+      "posterior_diagnostic_flags": {
+        "mean_jsd_above_0_03_bits": false,
+        "correlation_difference_above_0_25": true
       }
     },
     {
@@ -8429,47 +8614,47 @@
     },
     {
       "event_id": 48,
-      "nis_status": "pending",
+      "nis_status": "converged",
       "lnz_reference": -16518.613098362486,
       "lnz_reference_error": 0.10591396227470819,
       "delta_lnz_cheap_reference": 0.29938676395613584,
       "delta_lnz_cheap_reference_error": 0.7463713024619332,
-      "delta_lnz_nismo_reference": null,
-      "delta_lnz_nismo_reference_error": null,
+      "delta_lnz_nismo_reference": -0.13248909433968947,
+      "delta_lnz_nismo_reference_error": 0.3148674887068368,
       "jsd_cheap_reference_bits": 0.03156296632828311,
-      "jsd_nismo_reference_bits": null,
+      "jsd_nismo_reference_bits": 0.04708192866275854,
       "jsd_marginals": {
         "chirp_mass": {
           "cheap_reference_bits": 0.011236733772375319,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.07899190016081087
         },
         "mass_ratio": {
           "cheap_reference_bits": 0.017290367379333454,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.10278681210522013
         },
         "a_1": {
           "cheap_reference_bits": 0.03844638038351385,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.046355996190692465
         },
         "a_2": {
           "cheap_reference_bits": 0.0832712606796612,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.016967228731374594
         },
         "tilt_1": {
           "cheap_reference_bits": 0.06629627114227697,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.09313836457231446
         },
         "tilt_2": {
           "cheap_reference_bits": 0.021257183584466058,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.01153811486695507
         },
         "phi_12": {
           "cheap_reference_bits": 0.006665442059721891,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.0015561197080662678
         },
         "phi_jl": {
           "cheap_reference_bits": 0.008040091624916096,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.025320892966634465
         }
       },
       "reference_split_calibration": {
@@ -8484,9 +8669,9 @@
       "cheap_rows": 95,
       "reference_rows": 1000,
       "reference_original_rows": 8386,
-      "nis_weight_ess": null,
-      "nis_recovery_iterations": null,
-      "nis_plot": null,
+      "nis_weight_ess": 671.2172427437772,
+      "nis_recovery_iterations": 1,
+      "nis_plot": "plots/nismo-mehdi-de80-rwalk20-100k/injection_048.png",
       "marginal_estimator": {
         "chirp_mass": {
           "low": 14.0,
@@ -8565,52 +8750,89 @@
         "cheap_posterior_sha256": "2fe95cb28bb2971a3191c70221fa312496aff45539a257640fa5faef5ac9ded4",
         "reference_posterior_sha256": "6a3344cb26c64d9c86e2fed1dc786c8416893e14d99609d501615d81d9bf32b6",
         "reference_original_result_sha256": "d148f85f21b96e43a674b678e201b3c8079b1d5c1772edc1f2332632eba494b4",
-        "baseline_likelihood_id": "8a2df074afe6d4773e285d8cd7d3a774b6f644d98d5f68dfb40b4c135cc78f3d"
+        "baseline_likelihood_id": "8a2df074afe6d4773e285d8cd7d3a774b6f644d98d5f68dfb40b4c135cc78f3d",
+        "nis_result_sha256": "1f7751ce3e447a37f6f8363d0492b28f29120792090963c6f80871178e037a10",
+        "nis_comparison_sha256": "83d9a1cdbfbf15bf2e472d1ad45fbe8fb9b796d5a4664b940cf4df168ebe915f"
+      },
+      "nis_failure": null,
+      "nis_likelihood_calls": 225031,
+      "nis_log_evidence": -16518.745587456826,
+      "nis_log_evidence_error": 0.2965194227024963,
+      "nis_nlive": 100,
+      "nis_weighted_rows": 1445,
+      "nis_sampler_seconds": 193.2754474579997,
+      "pilot_inclusive_likelihood_calls": 526289,
+      "nis_morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 667,
+        "rejected": 99233,
+        "prior_rejected": 57424,
+        "unused": 0,
+        "likelihood_calls": 42518,
+        "switch_iteration": 668
+      },
+      "data_origin": {
+        "kind": "validated_reconstruction",
+        "data_sha256": "871fb3faa534b23f351561e6a44b2dd66bfd0db0b4f250b99da5d055100c44b9",
+        "original_data_sha256": "9adce92cc86fbc6b5cdda8ffb4b99304663ac303a62ebc19f2282acde4d57dc2",
+        "receipt_sha256": "e6be9e23043293187267d9e6a1777675abfc0d908e30deadf68276df16d8f847",
+        "original_likelihood_id": "8a2df074afe6d4773e285d8cd7d3a774b6f644d98d5f68dfb40b4c135cc78f3d",
+        "reconstructed_likelihood_id": "34d5d6bef213f5c2edc83a593ff7ad2ff26590b556b0db91719ace726196d8be"
+      },
+      "max_correlation_difference": 0.6127492204061473,
+      "posterior_diagnostic_flags": {
+        "mean_jsd_above_0_03_bits": true,
+        "correlation_difference_above_0_25": true
       }
     },
     {
       "event_id": 49,
-      "nis_status": "pending",
+      "nis_status": "converged",
       "lnz_reference": -16220.049781487933,
       "lnz_reference_error": 0.10401073463441059,
       "delta_lnz_cheap_reference": 0.3086592047056911,
       "delta_lnz_cheap_reference_error": 0.7442196696748348,
-      "delta_lnz_nismo_reference": null,
-      "delta_lnz_nismo_reference_error": null,
+      "delta_lnz_nismo_reference": -0.178944965966366,
+      "delta_lnz_nismo_reference_error": 0.2861814163256837,
       "jsd_cheap_reference_bits": 0.017018059481114234,
-      "jsd_nismo_reference_bits": null,
+      "jsd_nismo_reference_bits": 0.03502442496684256,
       "jsd_marginals": {
         "chirp_mass": {
           "cheap_reference_bits": 0.007933091432152884,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.03369646463287702
         },
         "mass_ratio": {
           "cheap_reference_bits": 0.02619966778955498,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.06641346137792334
         },
         "a_1": {
           "cheap_reference_bits": 0.015686388247045383,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.013540723204375982
         },
         "a_2": {
           "cheap_reference_bits": 0.021327212690965398,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.037162481031296726
         },
         "tilt_1": {
           "cheap_reference_bits": 0.020725990398821954,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.031776965215195796
         },
         "tilt_2": {
           "cheap_reference_bits": 0.011646502522882081,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.015977319383742434
         },
         "phi_12": {
           "cheap_reference_bits": 0.012821841096316204,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.016197432292831458
         },
         "phi_jl": {
           "cheap_reference_bits": 0.019803781671175,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.0654305525964978
         }
       },
       "reference_split_calibration": {
@@ -8625,9 +8847,9 @@
       "cheap_rows": 91,
       "reference_rows": 1000,
       "reference_original_rows": 9046,
-      "nis_weight_ess": null,
-      "nis_recovery_iterations": null,
-      "nis_plot": null,
+      "nis_weight_ess": 509.02164246181405,
+      "nis_recovery_iterations": 9,
+      "nis_plot": "plots/nismo-mehdi-de80-rwalk20-100k/injection_049.png",
       "marginal_estimator": {
         "chirp_mass": {
           "low": 14.0,
@@ -8706,52 +8928,89 @@
         "cheap_posterior_sha256": "1c4615644467dc2da4cbfb7a2dde7b3d785ec0b69ba33d5230afb9881b5a735f",
         "reference_posterior_sha256": "8abd03c52d0738ab84005d3b2c9afc2ff6ad56f38aea9bc4a315a831c24d916d",
         "reference_original_result_sha256": "b6923513cc7f3a6c40e2968af6ec6e1106396be2d8d0b32c348c9cd8d7fdc1b9",
-        "baseline_likelihood_id": "0dd9313985c6f00e3c7201e03d7e31ff0ac1d6344a40507486bdc3ed9e5404be"
+        "baseline_likelihood_id": "0dd9313985c6f00e3c7201e03d7e31ff0ac1d6344a40507486bdc3ed9e5404be",
+        "nis_result_sha256": "811384c0179806628f75d25d7b541d5c1f7be8a3c13a3d32b056e463e31eade0",
+        "nis_comparison_sha256": "dd385cd4506570b4688448a832dd8980c284e64fb0b2d0b4356ac1c50bb5f412"
+      },
+      "nis_failure": null,
+      "nis_likelihood_calls": 191016,
+      "nis_log_evidence": -16220.228726453899,
+      "nis_log_evidence_error": 0.2666112715752741,
+      "nis_nlive": 100,
+      "nis_weighted_rows": 1317,
+      "nis_sampler_seconds": 159.7928877910017,
+      "pilot_inclusive_likelihood_calls": 511451,
+      "nis_morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 677,
+        "rejected": 99223,
+        "prior_rejected": 36919,
+        "unused": 0,
+        "likelihood_calls": 63042,
+        "switch_iteration": 678
+      },
+      "data_origin": {
+        "kind": "validated_reconstruction",
+        "data_sha256": "f188a16317c5ecba8d0ad363ea635fbb8376852dd814a7bf326127dbcd4594aa",
+        "original_data_sha256": "6392eadf270c6ff548672aa43041e04ec3e2d49338a13155b5d098deee46b055",
+        "receipt_sha256": "79c2a0d6f79a8822f0c55014d60a37308fe392dac08af40ffceb651ee8724d05",
+        "original_likelihood_id": "0dd9313985c6f00e3c7201e03d7e31ff0ac1d6344a40507486bdc3ed9e5404be",
+        "reconstructed_likelihood_id": "df31aebe9054540388dcd851409dfe4601154e540d83fd4314321008270a377f"
+      },
+      "max_correlation_difference": 0.5949203455145035,
+      "posterior_diagnostic_flags": {
+        "mean_jsd_above_0_03_bits": true,
+        "correlation_difference_above_0_25": true
       }
     },
     {
       "event_id": 50,
-      "nis_status": "pending",
+      "nis_status": "converged",
       "lnz_reference": -16134.110211632576,
       "lnz_reference_error": 0.1125450344766492,
       "delta_lnz_cheap_reference": 0.4991520629282604,
       "delta_lnz_cheap_reference_error": 0.8064788371365355,
-      "delta_lnz_nismo_reference": null,
-      "delta_lnz_nismo_reference_error": null,
+      "delta_lnz_nismo_reference": 0.0947750270479446,
+      "delta_lnz_nismo_reference_error": 0.32091006178938764,
       "jsd_cheap_reference_bits": 0.06313188624307445,
-      "jsd_nismo_reference_bits": null,
+      "jsd_nismo_reference_bits": 0.05306592886661491,
       "jsd_marginals": {
         "chirp_mass": {
           "cheap_reference_bits": 0.04123556783198033,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.08973135342960108
         },
         "mass_ratio": {
           "cheap_reference_bits": 0.12080133132276952,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.0442813628728536
         },
         "a_1": {
           "cheap_reference_bits": 0.11814386616844548,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.015584856026050198
         },
         "a_2": {
           "cheap_reference_bits": 0.0261976995477958,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.012219483456001969
         },
         "tilt_1": {
           "cheap_reference_bits": 0.05315699842055441,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.0514482955527732
         },
         "tilt_2": {
           "cheap_reference_bits": 0.1286893147857233,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.1400767452694597
         },
         "phi_12": {
           "cheap_reference_bits": 0.002827768504710765,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.054919247874219056
         },
         "phi_jl": {
           "cheap_reference_bits": 0.014002543362615976,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.0162660864519605
         }
       },
       "reference_split_calibration": {
@@ -8766,9 +9025,9 @@
       "cheap_rows": 99,
       "reference_rows": 1000,
       "reference_original_rows": 8844,
-      "nis_weight_ess": null,
-      "nis_recovery_iterations": null,
-      "nis_plot": null,
+      "nis_weight_ess": 792.5047101101458,
+      "nis_recovery_iterations": 12,
+      "nis_plot": "plots/nismo-mehdi-de80-rwalk20-100k/injection_050.png",
       "marginal_estimator": {
         "chirp_mass": {
           "low": 14.0,
@@ -8847,52 +9106,89 @@
         "cheap_posterior_sha256": "c53a4487018b93c2d2c9db2087b04728cc051894ace6163bdeec7b91f91208bb",
         "reference_posterior_sha256": "92294c7118e5ad3bab5cc3efd64357fbc4f8d1444557ef4dfba977dffdce2d23",
         "reference_original_result_sha256": "99fb7a48c37d554fe6d0f1bc68eb6965b85055cf72aff4201c4109619836c2cd",
-        "baseline_likelihood_id": "1906f4e12922d085d6b6d06a1457494528327da057a3925eebe3195bed9768ab"
+        "baseline_likelihood_id": "1906f4e12922d085d6b6d06a1457494528327da057a3925eebe3195bed9768ab",
+        "nis_result_sha256": "051d0a84710de005a9d6ca4a61d8ca58d550c2fdc3fd1c5cfa5d59a2d596bc98",
+        "nis_comparison_sha256": "f7aa15c6593c5cc71c3e7ab1d77100d679c5cc8d831cea28dcad5c5c3992066a"
+      },
+      "nis_failure": null,
+      "nis_likelihood_calls": 254730,
+      "nis_log_evidence": -16134.015436605529,
+      "nis_log_evidence_error": 0.3005276742203926,
+      "nis_nlive": 100,
+      "nis_weighted_rows": 1567,
+      "nis_sampler_seconds": 195.76898645900656,
+      "pilot_inclusive_likelihood_calls": 607762,
+      "nis_morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 711,
+        "rejected": 99189,
+        "prior_rejected": 34840,
+        "unused": 0,
+        "likelihood_calls": 65126,
+        "switch_iteration": 712
+      },
+      "data_origin": {
+        "kind": "validated_reconstruction",
+        "data_sha256": "a8df4f400b468f53ee3e57678de6fde4c8131b491a1edb0ae30cbd71d9dc3901",
+        "original_data_sha256": "8497cd3815fb12b3a3a27b36a730aa147fcbd53af77b592560565b2ff9ffcdfd",
+        "receipt_sha256": "bd0e3b2ed6b8e56fdcdafed1daa90a071af19e64d5ffe26d430cd42b52e74db8",
+        "original_likelihood_id": "1906f4e12922d085d6b6d06a1457494528327da057a3925eebe3195bed9768ab",
+        "reconstructed_likelihood_id": "7cd6d7b4299c93ddcdabfede52351cfae5ffbde7f6f8eab86323f35c7da0681e"
+      },
+      "max_correlation_difference": 0.637833710063804,
+      "posterior_diagnostic_flags": {
+        "mean_jsd_above_0_03_bits": true,
+        "correlation_difference_above_0_25": true
       }
     },
     {
       "event_id": 51,
-      "nis_status": "pending",
+      "nis_status": "converged",
       "lnz_reference": -16091.04690232729,
       "lnz_reference_error": 0.09965022200865895,
       "delta_lnz_cheap_reference": 0.7701998606826237,
       "delta_lnz_cheap_reference_error": 0.702488299160217,
-      "delta_lnz_nismo_reference": null,
-      "delta_lnz_nismo_reference_error": null,
+      "delta_lnz_nismo_reference": -0.2432665446158353,
+      "delta_lnz_nismo_reference_error": 0.3011893178368462,
       "jsd_cheap_reference_bits": 0.01946981243471889,
-      "jsd_nismo_reference_bits": null,
+      "jsd_nismo_reference_bits": 0.020458449662614345,
       "jsd_marginals": {
         "chirp_mass": {
           "cheap_reference_bits": 0.012050599683296333,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.003531171993007935
         },
         "mass_ratio": {
           "cheap_reference_bits": 0.03333815489592523,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.026394341799926103
         },
         "a_1": {
           "cheap_reference_bits": 0.0225974980495737,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.033780330222538554
         },
         "a_2": {
           "cheap_reference_bits": 0.02730451519903601,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.01200319790908611
         },
         "tilt_1": {
           "cheap_reference_bits": 0.02195202707391079,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.010738656768375885
         },
         "tilt_2": {
           "cheap_reference_bits": 0.012520576110098582,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.029948131629311286
         },
         "phi_12": {
           "cheap_reference_bits": 0.004518684449748737,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.004701753534238596
         },
         "phi_jl": {
           "cheap_reference_bits": 0.021476444016161715,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.04257001344443029
         }
       },
       "reference_split_calibration": {
@@ -8907,9 +9203,9 @@
       "cheap_rows": 86,
       "reference_rows": 1000,
       "reference_original_rows": 9607,
-      "nis_weight_ess": null,
-      "nis_recovery_iterations": null,
-      "nis_plot": null,
+      "nis_weight_ess": 561.3216983625707,
+      "nis_recovery_iterations": 3,
+      "nis_plot": "plots/nismo-mehdi-de80-rwalk20-100k/injection_051.png",
       "marginal_estimator": {
         "chirp_mass": {
           "low": 14.0,
@@ -8988,52 +9284,89 @@
         "cheap_posterior_sha256": "7ae4ea34f20d52385dc4766f8df4f3c44bb561a32736285e3ae7b17e5153523a",
         "reference_posterior_sha256": "5b009683afb1496b1262c311c3b87566fd56a8ac39c7d726fecc0b673e825a10",
         "reference_original_result_sha256": "818e74d5d8e268f1634546dd6152f1e8b5e16200ee5b7f45d3a6c3da210c68db",
-        "baseline_likelihood_id": "4d31f20fb5c7284df0ee43c93255649a5c46ec8c0d04fa38963cb2acfb0aaaed"
+        "baseline_likelihood_id": "4d31f20fb5c7284df0ee43c93255649a5c46ec8c0d04fa38963cb2acfb0aaaed",
+        "nis_result_sha256": "b6782c9d1170c42cabc8125431f025f97a653a3dfe641cc2a0e464bf2e413c47",
+        "nis_comparison_sha256": "f1fab8e007d28c91993662dc7ce6402447bd67262737389fb7e292bbf62c16a5"
+      },
+      "nis_failure": null,
+      "nis_likelihood_calls": 221529,
+      "nis_log_evidence": -16091.290168871907,
+      "nis_log_evidence_error": 0.28422673771594703,
+      "nis_nlive": 100,
+      "nis_weighted_rows": 1341,
+      "nis_sampler_seconds": 186.680471959,
+      "pilot_inclusive_likelihood_calls": 476368,
+      "nis_morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 651,
+        "rejected": 99249,
+        "prior_rejected": 42862,
+        "unused": 0,
+        "likelihood_calls": 57091,
+        "switch_iteration": 652
+      },
+      "data_origin": {
+        "kind": "validated_reconstruction",
+        "data_sha256": "a7bd02ff326aa9a05b6d093d11be14c25cb05df42aba0abc8d913dd68836bfeb",
+        "original_data_sha256": "a32af7130b3978b3e02fa337abf11efde475d97cf1879d249d87b33fcb6b8cff",
+        "receipt_sha256": "b2ab5e770ccc0072396014c62c23223955761c65a404146bc2c8f0e6a6721b83",
+        "original_likelihood_id": "4d31f20fb5c7284df0ee43c93255649a5c46ec8c0d04fa38963cb2acfb0aaaed",
+        "reconstructed_likelihood_id": "ed5f7172463fdd10f2b80f7d41f68a683fd338c8f42e7e68a63493284e9600b2"
+      },
+      "max_correlation_difference": 0.46201479819022967,
+      "posterior_diagnostic_flags": {
+        "mean_jsd_above_0_03_bits": false,
+        "correlation_difference_above_0_25": true
       }
     },
     {
       "event_id": 52,
-      "nis_status": "pending",
+      "nis_status": "converged",
       "lnz_reference": -16033.393715115686,
       "lnz_reference_error": 0.09198868449758062,
       "delta_lnz_cheap_reference": -0.17886093466586317,
       "delta_lnz_cheap_reference_error": 0.6352149064042049,
-      "delta_lnz_nismo_reference": null,
-      "delta_lnz_nismo_reference_error": null,
+      "delta_lnz_nismo_reference": 0.09141826593076985,
+      "delta_lnz_nismo_reference_error": 0.2842177739886547,
       "jsd_cheap_reference_bits": 0.023260913617503216,
-      "jsd_nismo_reference_bits": null,
+      "jsd_nismo_reference_bits": 0.02841660408912892,
       "jsd_marginals": {
         "chirp_mass": {
           "cheap_reference_bits": 0.02281679266383313,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.024329235740855982
         },
         "mass_ratio": {
           "cheap_reference_bits": 0.029277585088531764,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.019112050096991094
         },
         "a_1": {
           "cheap_reference_bits": 0.009148661988706749,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.062076961527401796
         },
         "a_2": {
           "cheap_reference_bits": 0.03275398682135856,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.034564817305483775
         },
         "tilt_1": {
           "cheap_reference_bits": 0.030140192006000533,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.017173648732081704
         },
         "tilt_2": {
           "cheap_reference_bits": 0.04091451388233726,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.04514683967817417
         },
         "phi_12": {
           "cheap_reference_bits": 0.004132068035590434,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.01602460171061202
         },
         "phi_jl": {
           "cheap_reference_bits": 0.016903508453667317,
-          "nismo_reference_bits": null
+          "nismo_reference_bits": 0.008904677921430806
         }
       },
       "reference_split_calibration": {
@@ -9048,9 +9381,9 @@
       "cheap_rows": 102,
       "reference_rows": 1000,
       "reference_original_rows": 8187,
-      "nis_weight_ess": null,
-      "nis_recovery_iterations": null,
-      "nis_plot": null,
+      "nis_weight_ess": 652.257670184107,
+      "nis_recovery_iterations": 8,
+      "nis_plot": "plots/nismo-mehdi-de80-rwalk20-100k/injection_052.png",
       "marginal_estimator": {
         "chirp_mass": {
           "low": 14.0,
@@ -9129,7 +9462,44 @@
         "cheap_posterior_sha256": "3a78a604923fe566fcf3d8318c1a20fbf537a8d8bbef6b8012ff4aa0f33d2dd4",
         "reference_posterior_sha256": "8dcac9640ae87736105f16681b9702b20b1be64663fad8df7fa17a289b3af3d0",
         "reference_original_result_sha256": "245acbabd38a3dc61b55d77c9c31af8da3ebdbfe040a67f64d67ca181a7c73e6",
-        "baseline_likelihood_id": "6b77b7c556886df014302b5f4befd184fdea111d807c7f58a5ad155a2a687a3d"
+        "baseline_likelihood_id": "6b77b7c556886df014302b5f4befd184fdea111d807c7f58a5ad155a2a687a3d",
+        "nis_result_sha256": "2eca88b8ae09c71b62680a0acf0bad88128b9d6a36333e2fed7c27811cdfa116",
+        "nis_comparison_sha256": "df4c951ae27f9e1a17abd929eab24adb7a9020c6a4b0c72e56cc0c3177988a4f"
+      },
+      "nis_failure": null,
+      "nis_likelihood_calls": 140621,
+      "nis_log_evidence": -16033.302296849755,
+      "nis_log_evidence_error": 0.26891973705079847,
+      "nis_nlive": 100,
+      "nis_weighted_rows": 1282,
+      "nis_sampler_seconds": 127.17944870798965,
+      "pilot_inclusive_likelihood_calls": 317633,
+      "nis_morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 636,
+        "rejected": 99264,
+        "prior_rejected": 65650,
+        "unused": 0,
+        "likelihood_calls": 34279,
+        "switch_iteration": 637
+      },
+      "data_origin": {
+        "kind": "validated_reconstruction",
+        "data_sha256": "d971bc10607dbbe7747748800ff758f6ddc2ba2e1a1047a548d8e5fff8fd20c0",
+        "original_data_sha256": "f0ff9dc00c4b6cba509ad721e5f7f60b07ab300a655c0cf282b51361fd7f942a",
+        "receipt_sha256": "24bd4365e0256371dde7a58dbb8632ae9b2babb28754bcf0f7701bb0e3b83f12",
+        "original_likelihood_id": "6b77b7c556886df014302b5f4befd184fdea111d807c7f58a5ad155a2a687a3d",
+        "reconstructed_likelihood_id": "5dc604ec46de2218bf0acd271c5c0179bfcde1f72b8cdfa487051f502d5376e5"
+      },
+      "max_correlation_difference": 0.538905674280171,
+      "posterior_diagnostic_flags": {
+        "mean_jsd_above_0_03_bits": false,
+        "correlation_difference_above_0_25": true
       }
     },
     {
