@@ -155,12 +155,15 @@ def publish(root, plan, outcomes, state, active=None, error=None):
     derived(root / "summary.md", "\n".join(markdown)+"\n")
 
 
-def run_plan(plan_path):
+def run_plan(plan_path, max_new_events=None):
+    if max_new_events is not None and max_new_events < 1:
+        raise ValueError("max_new_events must be positive")
     plan = read(plan_path)
     root = Path(plan["campaign_root"])
     root.mkdir(parents=True, exist_ok=True)
     lock = acquire_lock(root / "controller.lock")
     outcomes = []
+    new_events = 0
     stop = [False]
     previous_handlers = {sig: signal.signal(sig, lambda *_: stop.__setitem__(0, True))
                          for sig in (signal.SIGTERM, signal.SIGINT)}
@@ -191,7 +194,7 @@ def run_plan(plan_path):
                         raise ValueError(f"Existing event output changed: {event}/{filename}")
                 outcomes.append(outcome)
                 continue
-            if stop[0] or (root / "STOP_AFTER_CURRENT").exists():
+            if stop[0] or (root / "STOP_AFTER_CURRENT").exists() or (max_new_events is not None and new_events >= max_new_events):
                 publish(root, plan, outcomes, "stopped_after_current")
                 return 0
             for item in job.get("pinned_files", []):
@@ -229,6 +232,7 @@ def run_plan(plan_path):
                            pilot_likelihood_calls=job["pilot_likelihood_calls"])
             new_json(receipt, outcome)
             outcomes.append(outcome)
+            new_events += 1
             publish(root, plan, outcomes, "running")
             print(json.dumps({"event": event, "status": outcome["status"], "reused": outcome["reused"]}), flush=True)
         publish(root, plan, outcomes, "completed")
@@ -245,4 +249,7 @@ def run_plan(plan_path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--plan", type=Path, required=True)
-    raise SystemExit(run_plan(parser.parse_args().plan))
+    parser.add_argument("--max-new-events", type=int,
+                        help="Stop after this many new outcomes; restarting verifies and reuses existing receipts")
+    args = parser.parse_args()
+    raise SystemExit(run_plan(args.plan, args.max_new_events))

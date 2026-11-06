@@ -1,0 +1,113 @@
+{
+  "display": "Common bounds from 0.1\u201399.9% weighted ranges plus padding, clipped to prior support; common reference Scott smoothing.",
+  "series": [
+    {
+      "parameters": [
+        "chirp_mass",
+        "mass_ratio"
+      ],
+      "sampler": "Dynesty 2000",
+      "displayed_mass": 0.9999999999999996,
+      "range": [
+        [
+          14.53226337661283,
+          14.93254366548928
+        ],
+        [
+          0.3887776759225567,
+          1
+        ]
+      ]
+    },
+    {
+      "parameters": [
+        "chirp_mass",
+        "mass_ratio"
+      ],
+      "sampler": "Cheap Dynesty",
+      "displayed_mass": 1.0000000000000004,
+      "range": [
+        [
+          14.53226337661283,
+          14.93254366548928
+        ],
+        [
+          0.3887776759225567,
+          1
+        ]
+      ]
+    },
+    {
+      "parameters": [
+        "chirp_mass",
+        "mass_ratio"
+      ],
+      "sampler": "DE/rwalk NISMO",
+      "displayed_mass": 0.9999999999999999,
+      "range": [
+        [
+          14.53226337661283,
+          14.93254366548928
+        ],
+        [
+          0.3887776759225567,
+          1
+        ]
+      ]
+    },
+    {
+      "parameters": [
+        "chirp_mass",
+        "a_1"
+      ],
+      "sampler": "Dynesty 2000",
+      "displayed_mass": 0.9999999999999996,
+      "range": [
+        [
+          14.53226337661283,
+          14.93254366548928
+        ],
+        [
+          0,
+          0.99
+        ]
+      ]
+    },
+    {
+      "parameters": [
+        "chirp_mass",
+        "a_1"
+      ],
+      "sampler": "Cheap Dynesty",
+      "displayed_mass": 1.0000000000000004,
+      "range": [
+        [
+          14.53226337661283,
+          14.93254366548928
+        ],
+        [
+          0,
+          0.99
+        ]
+      ]
+    },
+    {
+      "parameters": [
+        "chirp_mass",
+        "a_1"
+      ],
+      "sampler": "DE/rwalk NISMO",
+      "displayed_mass": 1.0,
+      "range": [
+        [
+          14.53226337661283,
+          14.93254366548928
+        ],
+        [
+          0,
+          0.99
+        ]
+      ]
+    }
+  ]
+}

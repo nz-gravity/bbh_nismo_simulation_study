@@ -51,6 +51,23 @@ def revision(directory):
     return subprocess.check_output(["git", "-C", str(directory), "rev-parse", "HEAD"], text=True).strip()
 
 
+def resolve_demo_settings(repo, event, output, morph_phase=False):
+    """Read executable demo defaults; retain our existing audited pilot/target.
+
+    Only the post-processing stage is reused. The demo's new random-walk pilot
+    is not run, and the reference never enters proposal fitting.
+    """
+    path = Path(repo) / "examples/lvk/rwalk_morph_demo.py"
+    demo = load_helpers(path)
+    defaults = demo.parse_args([str(event), "--output-dir", str(output)])
+    return {"demo": str(path), "demo_sha256": digest(path),
+            "bandwidth_scale": defaults.bandwidth_scale, "bw": defaults.bw,
+            "move_weights": dict(demo.LOCAL_MOVE_WEIGHTS), "move_adapt": False,
+            "de_adapt": True, "stretch_scale": 1.5,
+            "morph_phase": morph_phase, "morph_batch_size": defaults.morph_batch_size,
+            "training_source": "existing complete cheap nlive=100 posterior; no new pilot"}
+
+
 def read_event(archive, event, kind):
     expected = json.loads((Path(__file__).parents[1] / "results_manifest.json").read_text())
     package = next(p for p in expected["result_packages"] if p["kind"] == kind)
@@ -241,11 +258,31 @@ def main():
                         help="Explicitly permit potentially biased successful-retry selection")
     parser.add_argument("--fixed-walks", action="store_true", help="Disable between-walk DE adaptation")
     parser.add_argument("--walk-n-steps", type=int)
+    parser.add_argument("--demo-settings", action="store_true",
+                        help="Use the checked-out rwalk_morph_demo post-processing configuration")
+    parser.add_argument("--morph-phase", action="store_true",
+                        help="Enable the demo's independent cached proposal pool")
+    parser.add_argument("--demo-bw", type=float,
+                        help="Use the demo's documented fixed --bw option")
+    parser.add_argument("--demo-pool-size", type=int,
+                        help="Explicit override for the demo's proposal-pool size")
+    parser.add_argument("--demo-moves", choices=("de-stretch", "de-rwalk"), default="de-stretch",
+                        help="Fixed 80/20 move mixture for the demo post-processing stage")
     parser.add_argument("--audit-only", action="store_true")
     parser.add_argument("--reconstruction-audit", type=Path)
     args = parser.parse_args()
     if args.de_retries and not args.allow_heuristic_recovery:
         parser.error("Retries condition on successful movement; use --allow-heuristic-recovery to opt in explicitly")
+    if args.morph_phase and not args.demo_settings:
+        parser.error("--morph-phase requires --demo-settings")
+    if (args.demo_bw is not None or args.demo_pool_size is not None) and not args.demo_settings:
+        parser.error("Demo overrides require --demo-settings")
+    if args.demo_bw is not None and (not np.isfinite(args.demo_bw) or args.demo_bw <= 0):
+        parser.error("--demo-bw must be finite and positive")
+    if args.demo_pool_size is not None and args.demo_pool_size < args.nlive:
+        parser.error("Demo pool must include at least nlive proposals")
+    if args.demo_settings and args.fixed_walks:
+        parser.error("The demo uses adaptation; omit --fixed-walks")
     if args.nlive < 4 or args.max_iterations < 1 or not np.isfinite(args.dlogz) or args.dlogz <= 0:
         parser.error("Invalid sampling settings")
     if not (0 <= args.fit_seed < 2**32 and 0 <= args.seed < 2**32) or args.de_retries < 0:
@@ -307,13 +344,33 @@ def main():
         if args.audit_only:
             return
         from morphnis import MorphImportance, NestedImportanceSampler
+        settings = (resolve_demo_settings(args.nismo_repo, args.event, args.output, args.morph_phase)
+                    if args.demo_settings else {
+                        "bandwidth_scale": 1., "bw": None,
+                        "move_weights": {"de": .8, "stretch": .2},
+                        "move_adapt": False, "de_adapt": not args.fixed_walks,
+                        "stretch_scale": 1.5, "morph_phase": False, "morph_batch_size": 1000})
+        if args.demo_bw is not None:
+            settings.update(bandwidth_scale=1., bw=args.demo_bw)
+        if args.demo_pool_size is not None:
+            settings["morph_batch_size"] = args.demo_pool_size
+        if args.demo_moves == "de-rwalk":
+            settings["move_weights"] = {"de": .8, "stretch": 0., "rwalk": .2}
+        write_new(args.output / "workflow_settings.json", settings | {
+            "nlive": args.nlive, "seed": args.seed, "fit_seed": args.fit_seed,
+            "dlogz": args.dlogz, "max_iterations": args.max_iterations,
+            "de_retries": args.de_retries, "thin": 1,
+            "reference_policy": "independent holdout; excluded from training and tuning"})
         phase = "fit"
         fit_started = time.perf_counter()
         proposal = MorphImportance.fit(training[list(PARAMETERS)].to_numpy(),
-                                       parameter_names=PARAMETERS, seed=args.fit_seed, thin=1)
+                                       parameter_names=PARAMETERS, seed=args.fit_seed, thin=1,
+                                       bandwidth_scale=settings["bandwidth_scale"], bw=settings["bw"])
         fit_seconds = time.perf_counter()-fit_started
+        write_new(args.output / "proposal.json", proposal.metadata)
         sampler = NestedImportanceSampler(model=model, importance=proposal, nlive=args.nlive,
-            seed=args.seed, move_weights={"de": .8, "stretch": .2}, de_adapt=not args.fixed_walks,
+            seed=args.seed, **{k: settings[k] for k in (
+                "move_weights", "move_adapt", "de_adapt", "stretch_scale", "morph_phase", "morph_batch_size")},
             de_retries=args.de_retries, walk_n_steps=args.walk_n_steps)
         phase = "sampling"
         result = sampler.run(dlogz=args.dlogz, max_iterations=args.max_iterations, print_progress=True)
@@ -328,12 +385,13 @@ def main():
             "event": args.event, "scope": "local NIS; thinned reference posterior; full-inference baseline evidence/cost",
             "status": "converged" if converged else "non_converged", "termination_reason": result.termination_reason,
             "likelihood_id": target_manifest["likelihood_id"], "baseline_likelihood_id": manifest["likelihood_id"],
-            "data_origin": data_origin, "training": proposal.metadata,
+            "data_origin": data_origin, "training": proposal.metadata, "workflow_settings": settings,
             "nis": {"log_evidence": result.logz, "log_evidence_err": result.logzerr,
                 "n_iterations": result.niter, "nlive": result.nlive,
                 "weight_ess": float(1 / np.sum(weights**2)), "weight_ess_accounts_for_correlations": False,
                 "likelihood_calls": result.n_likelihood_calls, "sampler_seconds": result.runtime_seconds,
-                "fit_seconds": fit_seconds, "recovery_iterations": len({row["iteration"] for row in retry_rows}),
+                "fit_seconds": fit_seconds, "morph_phase": result.move_settings.get("morph_phase"),
+                "recovery_iterations": len({row["iteration"] for row in retry_rows}),
                 "retry_attempts": len(retry_rows), "failed_walk_attempts": sum(not row["succeeded"] for row in history)},
             "cheap": cheap, "reference": ref,
             "delta_logz_nis_reference": result.logz-ref["log_evidence"],
@@ -372,6 +430,7 @@ def main():
         if sampler is not None:
             failure["likelihood_calls"] = sampler.evaluate.n_likelihood_calls
             failure["prior_calls"] = sampler.evaluate.n_prior_calls
+            failure["morph_phase"] = sampler._morph_metadata()
             failure["recovery_history"] = sampler._de_recovery_history
         write_new(args.output / "failure.json", failure)
         raise

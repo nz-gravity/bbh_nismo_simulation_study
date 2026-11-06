@@ -67,6 +67,17 @@ def test_scientific_failure_stops_before_next_event(make_plan):
     assert not (root / "events/event_001").exists()
 
 
+def test_smoke_limit_preserves_plan_and_resume_skips_completed_workers(make_plan):
+    plan, root, journal = make_plan(["success", "success", "success"])
+    before = plan.read_bytes()
+    assert campaign.run_plan(plan, max_new_events=2) == 0
+    assert campaign.read(root / "status.json")["state"] == "stopped_after_current"
+    assert journal.read_text().splitlines() == ['START 0', 'END 0', 'START 1', 'END 1']
+    assert campaign.run_plan(plan) == 0
+    assert plan.read_bytes() == before
+    assert journal.read_text().splitlines() == ['START 0', 'END 0', 'START 1', 'END 1', 'START 2', 'END 2']
+
+
 def test_second_controller_cannot_acquire_campaign_lock(tmp_path):
     first = campaign.acquire_lock(tmp_path / "lock")
     try:

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "desktop/mobile render",
+    "new/original/failed-control selectors",
+    "matching downloads",
+    "no stale NIS outputs on pending/failed runs",
+    "diagnostic alerts",
+    "corner and marginal images",
+    "no JS exceptions",
+    "no mobile page overflow"
+  ],
+  "errors": []
+}

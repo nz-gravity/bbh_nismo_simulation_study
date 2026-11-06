@@ -1,0 +1,50 @@
+[
+  {
+    "event": 47,
+    "setting": "scale1",
+    "draws": 100000,
+    "prior_box_fraction": 0.78409,
+    "expected_initial_positive": 78.40899999999999,
+    "estimated_probability_all_initial_zero": 2.674704083316768e-67
+  },
+  {
+    "event": 47,
+    "setting": "scale2",
+    "draws": 100000,
+    "prior_box_fraction": 0.5051,
+    "expected_initial_positive": 50.51,
+    "estimated_probability_all_initial_zero": 2.829732489151878e-31
+  },
+  {
+    "event": 47,
+    "setting": "bw4",
+    "draws": 100000,
+    "prior_box_fraction": 0.00744,
+    "expected_initial_positive": 0.744,
+    "estimated_probability_all_initial_zero": 0.4738893209053798
+  },
+  {
+    "event": 23,
+    "setting": "scale1",
+    "draws": 100000,
+    "prior_box_fraction": 0.43576,
+    "expected_initial_positive": 43.576,
+    "estimated_probability_all_initial_zero": 1.400835321113465e-25
+  },
+  {
+    "event": 23,
+    "setting": "scale2",
+    "draws": 100000,
+    "prior_box_fraction": 0.17123,
+    "expected_initial_positive": 17.122999999999998,
+    "estimated_probability_all_initial_zero": 6.972719582145492e-09
+  },
+  {
+    "event": 23,
+    "setting": "bw4",
+    "draws": 100000,
+    "prior_box_fraction": 0.00032,
+    "expected_initial_positive": 0.032,
+    "estimated_probability_all_initial_zero": 0.968501622280077
+  }
+]

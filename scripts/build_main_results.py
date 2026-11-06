@@ -14,6 +14,7 @@ import io
 import json
 import math
 import os
+import re
 import shutil
 import subprocess
 import time
@@ -29,6 +30,26 @@ from local_morphnis import PARAMETERS, digest, read_event
 
 SCHEMA = 1
 METHOD = "shared-reference-scott-smoothed-histogram-v1"
+
+
+def weighted_correlation(x, w):
+    w = np.asarray(w)/np.sum(w)
+    centered = x-np.sum(x*w[:, None], axis=0)
+    covariance = (centered*w[:, None]).T@centered
+    scale = np.sqrt(np.diag(covariance))
+    if np.any(scale <= 0) or not np.isfinite(scale).all():
+        raise ValueError("Degenerate posterior covariance")
+    return covariance/np.outer(scale, scale)
+
+
+def coordinates(x, reference, specs):
+    """Use one reference-based circular seam for descriptive correlations."""
+    result = np.array(x, copy=True)
+    for j, name in enumerate(PARAMETERS):
+        if specs[name]["periodic"]:
+            center = np.angle(np.exp(1j*reference[:, j]).mean())
+            result[:, j] = np.angle(np.exp(1j*(result[:, j]-center)))
+    return result
 
 
 def js_divergence(p, q):
@@ -128,10 +149,14 @@ def read_receipt(path):
 
 
 class MainResults:
-    def __init__(self, cheap, reference, campaign, null_repeats=32):
+    def __init__(self, cheap, reference, campaign, null_repeats=32, plot_subdir="nismo"):
         self.cheap, self.reference, self.campaign = Path(cheap), Path(reference), Path(campaign)
         self.null_repeats = null_repeats
+        if not re.fullmatch(r"[A-Za-z0-9_-]+", plot_subdir):
+            raise ValueError("Plot subdirectory must be a single portable name")
+        self.plot_subdir = plot_subdir
         self.baselines, self.cache = {}, {}
+        self.reference_points = {}
 
     def baseline(self, event):
         if event in self.baselines:
@@ -179,6 +204,7 @@ class MainResults:
                 "reference_posterior_sha256": ref["posterior_sha256"], "reference_original_result_sha256": ref["source_result_sha256"],
                 "baseline_likelihood_id": cheap["likelihood_id"]}}
         self.baselines[event] = row, ref, ref_mass
+        self.reference_points[event] = rp[list(PARAMETERS)].to_numpy()
         return self.baselines[event]
 
     def build(self, site_dir=None):
@@ -194,6 +220,10 @@ class MainResults:
                 row = json.loads(json.dumps(baseline))
                 if receipt:
                     row["nis_status"] = receipt["status"]
+                    row["nis_failure"] = receipt.get("error")
+                    row["nis_likelihood_calls"] = receipt.get("likelihood_calls")
+                    if row["nis_likelihood_calls"] is not None:
+                        row["pilot_inclusive_likelihood_calls"] = row["nis_likelihood_calls"]+receipt.get("pilot_likelihood_calls", 0)
                     if receipt["status"] == "converged":
                         output = Path(receipt["output"])
                         comparison_path = output / "comparison.json"
@@ -217,13 +247,26 @@ class MainResults:
                             nis_nlive=comparison["nis"]["nlive"], nis_weighted_rows=len(weights),
                             nis_sampler_seconds=comparison["nis"]["sampler_seconds"],
                             nis_recovery_iterations=comparison["nis"]["recovery_iterations"],
+                            nis_likelihood_calls=comparison["nis"]["likelihood_calls"],
+                            pilot_inclusive_likelihood_calls=comparison["cost_including_pilot"]["likelihood_calls"],
+                            nis_morph_phase=comparison["nis"].get("morph_phase"),
                             data_origin=comparison.get("data_origin", {"kind": "original_frozen"}))
+                        rp = self.reference_points[event]
+                        try:
+                            delta_corr = abs(weighted_correlation(coordinates(samples, rp, row["marginal_estimator"]), weights)-
+                                             weighted_correlation(coordinates(rp, rp, row["marginal_estimator"]), np.ones(len(rp))))
+                            row["max_correlation_difference"] = float(np.max(delta_corr))
+                        except ValueError:
+                            row["max_correlation_difference"] = None
+                        row["posterior_diagnostic_flags"] = {
+                            "mean_jsd_above_0_03_bits": row["jsd_nismo_reference_bits"] > .03,
+                            "correlation_difference_above_0_25": row["max_correlation_difference"] is None or row["max_correlation_difference"] > .25}
                         row["sources"].update(nis_result_sha256=receipt["result_sha256"], nis_comparison_sha256=receipt["comparison_sha256"])
                         plot = output / "corner.png"
                         if not plot.exists() and receipt.get("reused"):
                             plot = self.campaign / "reused_artifacts/event_000_corner.png"
                         if plot.exists():
-                            row["nis_plot"] = f"plots/nismo/injection_{event:03d}.png"
+                            row["nis_plot"] = f"plots/{self.plot_subdir}/injection_{event:03d}.png"
                             if site_dir:
                                 target = Path(site_dir) / row["nis_plot"]
                                 target.parent.mkdir(parents=True, exist_ok=True)
@@ -233,7 +276,10 @@ class MainResults:
             rows.append(row)
         paired = [row for row in rows if row["nis_status"] == "converged"]
         state = json.loads((self.campaign / "status.json").read_text())
+        plan_path = self.campaign / "plan.json"
+        campaign_metadata = json.loads(plan_path.read_text()).get("public_metadata", {}) if plan_path.exists() else {}
         return {"schema_version": SCHEMA, "created_utc": datetime.now(timezone.utc).isoformat(),
+            "campaign_metadata": campaign_metadata,
             "event_count": len(rows), "nis_counts": dict(Counter(row["nis_status"] for row in rows)),
             "campaign_state": state["state"], "active_event": (state.get("active") or {}).get("event"),
             "method": {"id": METHOD, "jsd_log_base": 2, "jsd_unit": "bits", "jsd_range": [0, 1],
@@ -243,6 +289,7 @@ class MainResults:
                 "grid": "512–8192 bins, at least four bins per bandwidth unless the recorded floor binds",
                 "calibration": "disjoint reference splits matching the cheap draw count; descriptive 5/50/95 percentiles, not confidence bounds or a bias correction",
                 "limitations": ["Marginal JSD misses correlations and depends on density-estimation resolution.",
+                    "Correlation and JSD alert thresholds are descriptive, not calibrated significance tests; angular correlations depend on the shared circular seam.",
                     "Unequal sample sizes and correlated NIS particles affect JSD; the calibration only matches cheap sample size.",
                     "Reported evidence errors exclude sampler/proposal/recovery bias; stopping thresholds do not certify convergence.",
                     "Reference posteriors are thinned to 1000 retained draws per event; reference is finite-sampling, not exact truth."]},
@@ -260,7 +307,9 @@ def export(data, output, site_dir=None):
     atomic(output / "main_results.json", data)
     columns = ["event_id", "nis_status", "lnz_reference", "lnz_reference_error",
         "delta_lnz_cheap_reference", "delta_lnz_cheap_reference_error", "delta_lnz_nismo_reference", "delta_lnz_nismo_reference_error",
-        "jsd_cheap_reference_bits", "jsd_nismo_reference_bits", "nis_weight_ess", "nis_recovery_iterations"]
+        "jsd_cheap_reference_bits", "jsd_nismo_reference_bits", "nis_weight_ess", "nis_recovery_iterations",
+        "nis_likelihood_calls", "pilot_inclusive_likelihood_calls"]
+    columns += ["max_correlation_difference"]
     columns += [f"jsd_{method}_{name}_bits" for name in PARAMETERS for method in ("cheap", "nismo")]
     stream = io.StringIO()
     writer = csv.DictWriter(stream, fieldnames=columns, lineterminator="\n")
@@ -279,10 +328,10 @@ def export(data, output, site_dir=None):
         atomic(target / "main_results.csv", stream.getvalue())
 
 
-def publish_git(site_dir, count):
+def publish_git(site_dir, count, plot_subdir="nismo"):
     """Publish only generated data/plots from a dedicated clean checkout."""
     root = Path(site_dir).resolve().parent
-    allowed = ["docs/data/main_results.json", "docs/data/main_results.js", "docs/data/main_results.csv", "docs/plots/nismo"]
+    allowed = ["docs/data/main_results.json", "docs/data/main_results.js", "docs/data/main_results.csv", f"docs/plots/{plot_subdir}"]
     changed = subprocess.check_output(["git", "-C", str(root), "status", "--porcelain"], text=True).splitlines()
     if any(not any(line[3:].startswith(path) for path in allowed) for line in changed):
         raise RuntimeError("Publication checkout has unrelated changes; refusing to commit them")
@@ -299,6 +348,7 @@ def main():
         parser.add_argument("--"+name, type=Path, required=True)
     parser.add_argument("--site-dir", type=Path)
     parser.add_argument("--null-repeats", type=int, default=32)
+    parser.add_argument("--plot-subdir", default="nismo")
     parser.add_argument("--watch", action="store_true")
     parser.add_argument("--interval", type=float, default=60.)
     parser.add_argument("--git-publish", action="store_true")
@@ -308,7 +358,7 @@ def main():
     args.output.mkdir(parents=True, exist_ok=args.watch)
     with (args.output / "export.lock").open("a+") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        builder = MainResults(args.cheap, args.reference, args.campaign_root, args.null_repeats)
+        builder = MainResults(args.cheap, args.reference, args.campaign_root, args.null_repeats, args.plot_subdir)
         last_published = -1
         while True:
             data = builder.build(args.site_dir)
@@ -316,7 +366,7 @@ def main():
             count = data["nis_counts"].get("converged", 0)
             terminal = data["campaign_state"] in ("completed", "blocked", "stopped_after_current")
             if args.git_publish and (last_published < 0 or count-last_published >= 10 or terminal):
-                publish_git(args.site_dir, count)
+                publish_git(args.site_dir, count, args.plot_subdir)
                 last_published = count
             print(json.dumps({"as_of": data["created_utc"], "nis_counts": data["nis_counts"], "paired_summary": data["paired_summary"]}), flush=True)
             if not args.watch or terminal:

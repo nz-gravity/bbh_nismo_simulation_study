@@ -1,0 +1,181 @@
+{
+  "passed": false,
+  "runs": [
+    {
+      "event": 47,
+      "passed": false,
+      "checks": {
+        "stopping": true,
+        "finite_weights": true,
+        "weight_ess": true,
+        "weight_dominance": true,
+        "mean_marginal_jsd": false,
+        "worst_marginal_jsd": true,
+        "correlations": false,
+        "evidence": true,
+        "retries": true,
+        "pool": true
+      },
+      "mean_marginal_jsd_bits": 0.03895961698725373,
+      "marginal_jsd_bits": {
+        "chirp_mass": 0.028026397833867577,
+        "mass_ratio": 0.013158713886385336,
+        "a_1": 0.04330008249918923,
+        "a_2": 0.04574089387643326,
+        "tilt_1": 0.07904476887935898,
+        "tilt_2": 0.07891741330061147,
+        "phi_12": 0.01756345119790434,
+        "phi_jl": 0.005925214424279695
+      },
+      "max_correlation_difference": 0.4750288331730037,
+      "evidence_standardized_difference": 0.886656477900562,
+      "delta_logz_reference": 0.26179809950735944,
+      "max_weight": 0.0037355309019222794,
+      "weight_ess": 674.0313716825258,
+      "retries": 3,
+      "morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 668,
+        "rejected": 99232,
+        "prior_rejected": 49485,
+        "unused": 0,
+        "likelihood_calls": 50471,
+        "switch_iteration": 669
+      },
+      "result_sha256": "7a2062c867d8e3b7e655bd4e583fb658f7c23c15c66c1d28bc84698c29343451"
+    },
+    {
+      "event": 47,
+      "passed": false,
+      "checks": {
+        "stopping": true,
+        "finite_weights": true,
+        "weight_ess": true,
+        "weight_dominance": true,
+        "mean_marginal_jsd": false,
+        "worst_marginal_jsd": false,
+        "correlations": false,
+        "evidence": true,
+        "retries": true,
+        "pool": true
+      },
+      "mean_marginal_jsd_bits": 0.03939661148970692,
+      "marginal_jsd_bits": {
+        "chirp_mass": 0.1063382969269092,
+        "mass_ratio": 0.06362960783948056,
+        "a_1": 0.02053192154950372,
+        "a_2": 0.02715998273376933,
+        "tilt_1": 0.04912177164658732,
+        "tilt_2": 0.019358233654336233,
+        "phi_12": 0.00959585835054596,
+        "phi_jl": 0.019437219216523027
+      },
+      "max_correlation_difference": 0.49025697809341673,
+      "evidence_standardized_difference": 0.014064956350855121,
+      "delta_logz_reference": 0.0039782372277841205,
+      "max_weight": 0.004740897888920529,
+      "weight_ess": 540.0681424980509,
+      "retries": 4,
+      "morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 626,
+        "rejected": 99274,
+        "prior_rejected": 49810,
+        "unused": 0,
+        "likelihood_calls": 50136,
+        "switch_iteration": 627
+      },
+      "result_sha256": "bbe9def164f97844acf26c6199c27e9eb2d00c8b76e0ec6533a98a07e5481f60"
+    },
+    {
+      "event": 23,
+      "passed": true,
+      "checks": {
+        "stopping": true,
+        "finite_weights": true,
+        "weight_ess": true,
+        "weight_dominance": true,
+        "mean_marginal_jsd": true,
+        "worst_marginal_jsd": true,
+        "correlations": true,
+        "evidence": true,
+        "retries": true,
+        "pool": true
+      },
+      "mean_marginal_jsd_bits": 0.0020680386012722667,
+      "marginal_jsd_bits": {
+        "chirp_mass": 0.0002877163822818623,
+        "mass_ratio": 0.0004355984304273453,
+        "a_1": 0.002584252317808887,
+        "a_2": 0.0031200871439303482,
+        "tilt_1": 0.004638314505942969,
+        "tilt_2": 0.003352761142078938,
+        "phi_12": 0.0005284812345710985,
+        "phi_jl": 0.001597097653136686
+      },
+      "max_correlation_difference": 0.11015775431902994,
+      "evidence_standardized_difference": 1.530726596214804,
+      "delta_logz_reference": -0.27976901912006724,
+      "max_weight": 0.0034812585835331325,
+      "weight_ess": 575.0183397075878,
+      "retries": 2,
+      "morph_phase": {
+        "enabled": true,
+        "batch_size": 100000,
+        "selection": "first_passing_random_order",
+        "generated": 100000,
+        "initial_live": 100,
+        "consumed": 99900,
+        "accepted": 615,
+        "rejected": 99285,
+        "prior_rejected": 82870,
+        "unused": 0,
+        "likelihood_calls": 17044,
+        "switch_iteration": 616
+      },
+      "result_sha256": "6aca62efab68705021514a3ca5693c85576187e75963ce0ca31d8388b363e058"
+    }
+  ],
+  "stability": [
+    {
+      "event": 47,
+      "mean_marginal_jsd_bits": 0.05801193509177312,
+      "evidence_standardized_difference": 0.6737379084293447,
+      "passed": false
+    }
+  ],
+  "spec": {
+    "preset_before_reading_smoke_results": true,
+    "require_termination": [
+      "dlogz",
+      "flat_log_psi"
+    ],
+    "max_mean_marginal_jsd_bits": 0.03,
+    "max_any_marginal_jsd_bits": 0.1,
+    "max_evidence_standardized_difference": 3.0,
+    "min_weight_ess": 200,
+    "max_weight": 0.05,
+    "max_correlation_difference": 0.25,
+    "require_zero_retries": false,
+    "require_no_pool_exhaustion": false,
+    "target_replay_tolerance": 1e-06,
+    "weight_sum_tolerance": 1e-10,
+    "stability_max_mean_marginal_jsd_bits": 0.02,
+    "stability_max_evidence_standardized_difference": 3.0,
+    "interpretation": "Diagnostic acceptance checks, not calibrated hypothesis tests or unbiasedness proof. Settings fixed from the demo and safety policy; the independent reference is used only for target validation and post-run comparisons.",
+    "recipe": "Mehdi demo with user-specified DE/rwalk mixture",
+    "scope": "A diagnostic gate for a faithful algorithm comparison, not proof of unbiased sampling."
+  },
+  "spec_sha256": "bc4ddf61d7d365e6a2760e4115b2760029751510d94b44c94f09b32840a2954b",
+  "limitations": "Marginal and correlation diagnostics do not establish joint coverage or unbiasedness. Heuristic recovery remains explicitly heuristic. Target replay audit is a separate required check."
+}

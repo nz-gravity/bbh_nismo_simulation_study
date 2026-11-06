@@ -3,6 +3,7 @@
   const ns = 'http://www.w3.org/2000/svg';
   const colors = {cheap: '#2166ac', nismo: '#28814c'};
   let data = window.BBH_MAIN_RESULTS;
+  let activeDataset = 'main_results';
   const value = (x, digits=4) => Number.isFinite(x) ? x.toFixed(digits) : '—';
   const estimate = (x, error) => Number.isFinite(x) ? `${value(x, 3)} ± ${value(error, 3)}` : '—';
   const svgNode = (tag, attrs={}, text) => {
@@ -62,7 +63,8 @@
       const tr=document.createElement('tr');
       const first=document.createElement('th'); first.scope='row';
       const link=document.createElement('a'); link.href=`#event=${row.event_id}`; link.textContent=String(row.event_id).padStart(3,'0'); first.append(link); tr.append(first);
-      const values=[estimate(row.lnz_reference,row.lnz_reference_error), estimate(row.delta_lnz_cheap_reference,row.delta_lnz_cheap_reference_error), estimate(row.delta_lnz_nismo_reference,row.delta_lnz_nismo_reference_error), value(row.jsd_cheap_reference_bits), value(row.jsd_nismo_reference_bits), row.nis_status === 'converged' ? 'Stopping threshold reached' : row.nis_status.replaceAll('_',' ')];
+      const alert=Object.values(row.posterior_diagnostic_flags||{}).some(Boolean);
+      const values=[estimate(row.lnz_reference,row.lnz_reference_error), estimate(row.delta_lnz_cheap_reference,row.delta_lnz_cheap_reference_error), estimate(row.delta_lnz_nismo_reference,row.delta_lnz_nismo_reference_error), value(row.jsd_cheap_reference_bits), value(row.jsd_nismo_reference_bits), row.nis_status === 'converged' ? `Stopping threshold reached${alert?' · diagnostic alert':''}` : row.nis_status.replaceAll('_',' ')];
       values.forEach(text => { const td=document.createElement('td'); td.textContent=text; tr.append(td); });
       body.append(tr);
     });
@@ -71,7 +73,10 @@
     if (!data || data.schema_version !== 1) { $('#main-status').textContent='The main comparison snapshot is not available.'; return; }
     window.BBH_MAIN_RESULTS=data;
     const count=data.nis_counts.converged || 0;
-    $('#main-status').textContent=`${count}/${data.event_count} NISMO comparisons available · campaign ${data.campaign_state} · snapshot ${new Date(data.created_utc).toLocaleString()}. Missing results are not zero.`;
+    $('#main-status').textContent=`${count}/${data.event_count} NISMO comparisons available · campaign ${data.campaign_state}${Number.isInteger(data.active_event)?` · running injection ${data.active_event}`:''} · snapshot ${new Date(data.created_utc).toLocaleString()}. Missing results are not zero.`;
+    $('#campaign-settings').textContent=data.campaign_metadata?.description || 'Original exploratory campaign: bandwidth scale 1, local walks and heuristic recovery. See the sampling diagnostics before interpreting these results.';
+    $('#results-csv').href=`data/${activeDataset}.csv`;
+    $('#results-json').href=`data/${activeDataset}.json`;
     const paired=data.paired_summary;
     $('#paired-summary').textContent=paired.events ? `On the same ${paired.events} completed events: mean marginal JSD is ${value(paired.mean_jsd_cheap_bits)} bits for cheap and ${value(paired.mean_jsd_nismo_bits)} bits for NISMO. Median |ΔlnZ| is ${value(paired.median_abs_delta_cheap,3)} and ${value(paired.median_abs_delta_nismo,3)}, respectively.` : 'Paired aggregates will appear as NISMO results become available.';
     chart('evidence'); chart('jsd'); table();
@@ -81,11 +86,13 @@
   names.forEach(name => {const option=document.createElement('option');option.value=name;option.textContent=name;$('#jsd-parameter').append(option);});
   $('#jsd-parameter').addEventListener('change', () => chart('jsd'));
   $('#completed-only').addEventListener('change', table);
-  $('#refresh-results').addEventListener('click', async () => {
-    const button=$('#refresh-results');button.disabled=true;
-    try {const response=await fetch(`data/main_results.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);data=await response.json();render();}
-    catch(error) {$('#main-status').textContent=`Refresh unavailable (${error.message}). The existing snapshot remains displayed.`;}
-    finally {button.disabled=false;}
-  });
+  async function loadSnapshot(dataset) {
+    const button=$('#refresh-results'), select=$('#campaign-select');button.disabled=true;select.disabled=true;
+    try {const response=await fetch(`data/${dataset}.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);const next=await response.json();if(next.schema_version!==1||!Array.isArray(next.events))throw new Error('Invalid snapshot');data=next;activeDataset=dataset;select.value=dataset;render();}
+    catch(error) {select.value=activeDataset;$('#main-status').textContent=`Refresh unavailable (${error.message}). The existing snapshot remains displayed.`;}
+    finally {button.disabled=false;select.disabled=false;}
+  }
+  $('#refresh-results').addEventListener('click', () => loadSnapshot(activeDataset));
+  $('#campaign-select').addEventListener('change', () => loadSnapshot($('#campaign-select').value));
   render();
 })();

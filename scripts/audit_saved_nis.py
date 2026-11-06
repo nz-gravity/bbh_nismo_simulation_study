@@ -33,8 +33,11 @@ def main():
         result = NISResult.load(out/"nis")
         w = result.posterior_weights
         positive = w > 0
+        proposal_path = out/"proposal.json"
+        proposal_metadata = json.loads(proposal_path.read_text()) if proposal_path.exists() else {}
         proposal = MorphImportance.fit(training[list(PARAMETERS)].to_numpy(),
-            parameter_names=PARAMETERS, seed=inv["fit_seed"], thin=1)
+            parameter_names=PARAMETERS, seed=inv["fit_seed"], thin=1,
+            bandwidth_scale=proposal_metadata.get("bandwidth_scale", 1.), bw=proposal_metadata.get("bw"))
         arrays = {name: np.concatenate((getattr(result, "dead_"+name),
                                         getattr(result, "final_live_"+name)))
                   for name in ("log_q", "log_likelihood", "log_prior", "log_psi", "log_weights")}

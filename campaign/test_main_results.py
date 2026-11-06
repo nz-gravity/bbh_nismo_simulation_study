@@ -73,3 +73,12 @@ def test_cached_nis_weights_and_evidence_are_checked(tmp_path):
              final_live_theta=np.ones((1, 8)), log_posterior_weights=np.log([.250001, .75]))
     with pytest.raises(ValueError, match="Invalid cached NIS posterior"):
         results.load_nis(path, {"nis": {"log_evidence": -3.}}, results.digest(path))
+
+
+def test_weighted_correlations_match_repeated_observations():
+    x = np.array([[0., 1.], [1., 0.], [3., 4.], [2., 5.]])
+    counts = np.array([1, 3, 2, 4])
+    expected = np.corrcoef(np.repeat(x, counts, axis=0), rowvar=False)
+    np.testing.assert_allclose(results.weighted_correlation(x, counts), expected, atol=1e-14)
+    with pytest.raises(ValueError, match="Degenerate"):
+        results.weighted_correlation(np.ones((4, 2)), counts)

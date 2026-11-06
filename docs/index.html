@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BBH NISMO comparison</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="data/events.js" defer></script><script src="data/main_results.js" defer></script>
-  <script src="app.js" defer></script><script src="main-results.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261106">
+  <script src="data/events.js" defer></script><script src="data/main_results.js?campaign=de80-rwalk20-20261106" defer></script>
+  <script src="app.js?v=20261106" defer></script><script src="main-results.js?v=20261106" defer></script>
 </head>
 <body>
 <main>
   <header><span class="status">100 matched injections</span><h1>BBH NISMO comparison</h1><p>Evidence and posterior comparisons against the matched <strong>2,000-live Dynesty reference</strong>. Cheap Dynesty uses 100 live points; NISMO trains exclusively on the cheap posterior.</p></header>
-  <aside class="result-note" role="note"><strong>Sampler validation issue · 6 November 2026:</strong> the original 100-event NISMO results remain exploratory. Event 47 failed a longer-walk, no-retry control; the full rerun is on hold. <a href="recovery-debug.html">Weight audit, independent controls and posterior overlays</a>.</aside>
+  <aside class="result-note" role="note"><strong>DE/rwalk rerun · 6 November 2026:</strong> using <a href="https://github.com/nz-gravity/nismo-dev/commit/1c0b92a4c2db7174f34afd566049961d6fbdb0bf">Mehdi’s demo at 1c0b92a</a> with adaptive DE, DE/rwalk weights 80/20, no stretch, a 100,000-point Morph pool and 100 NIS live points. No bandwidth flag is set; the executable demo resolves it to scale 2. Events 47 and 23 run first. Numerical stopping and weight ESS do not certify posterior coverage; recovery remains heuristic. <a href="demo-rerun.html">Settings and diagnostic controls</a>.</aside>
   <section id="main-results" aria-labelledby="main-title">
     <h2 id="main-title">Main results</h2>
+    <label class="result-filter" for="campaign-select">Campaign <select id="campaign-select"><option value="main_results">DE/rwalk 80/20 · 100k pool · 6 November</option><option value="main_results_demo_failfast_20261106">Earlier 200k-pool fail-fast controls (failed)</option><option value="main_results_original_20261105">Original campaign · 5 November (exploratory)</option></select></label>
+    <p id="campaign-settings" class="result-note"></p>
     <p id="main-status" role="status" aria-live="polite">Loading the comparison snapshot…</p>
-    <div class="result-links"><a href="data/main_results.csv" download>Download results CSV</a><a href="data/main_results.json">Data and estimator settings</a><button id="refresh-results" type="button">Refresh snapshot</button></div>
+    <div class="result-links"><a id="results-csv" href="data/main_results.csv" download>Download results CSV</a><a id="results-json" href="data/main_results.json">Data and estimator settings</a><button id="refresh-results" type="button">Refresh snapshot</button></div>
     <p id="paired-summary"></p>
     <div class="series-legend"><span class="cheap">● Cheap Dynesty</span><span class="nismo">◇ NISMO</span></div>
     <p class="mobile-chart-hint">Scroll charts and tables sideways to see all events and comparison columns.</p>

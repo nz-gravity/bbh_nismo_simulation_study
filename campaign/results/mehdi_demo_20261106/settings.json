@@ -1,0 +1,41 @@
+{
+  "public_metadata": {
+    "id": "mehdi-de80-rwalk20-pool100k-20261106",
+    "label": "Mehdi demo with user-specified DE/rwalk mixture",
+    "nismo_commit": "1c0b92a4c2db7174f34afd566049961d6fbdb0bf",
+    "description": "User-specified rerun: 100,000 cached Morph proposals, 100 NIS live points, adaptive DE, DE/rwalk weights 80/20 with no stretch. No bandwidth flag; demo default scale 2. Existing cheap posterior training only. Upstream default of three recovery retries is explicitly recorded as heuristic. Smoke events 47 and 23 run first; original campaign retained separately.",
+    "settings": {
+      "nlive": 100,
+      "morph_phase": true,
+      "morph_batch_size": 100000,
+      "move_weights": {
+        "de": 0.8,
+        "rwalk": 0.2,
+        "stretch": 0
+      },
+      "de_adapt": true,
+      "rwalk_adapt": true,
+      "bandwidth_flag": "omitted",
+      "resolved_bandwidth_scale": 2,
+      "de_retries": 3,
+      "dlogz": 0.1,
+      "max_iterations": 10000,
+      "thin": 1
+    },
+    "training": "Existing cheap nlive=100 posteriors, all saved rows; reference excluded from training/tuning",
+    "limitations": "Stopping thresholds and Kish ESS do not certify mixing or unbiasedness; bounded recovery is heuristic."
+  },
+  "versions": {
+    "morphnis": "0.1.0.dev0",
+    "morphZ": "0.4.4",
+    "bilby": "2.8.0",
+    "lalsuite": "7.26.15",
+    "numpy": "2.4.4",
+    "scipy": "1.18.1",
+    "pandas": "3.0.3"
+  },
+  "study_tests": 16,
+  "demo_and_proposal_tests": 67,
+  "move_and_adaptation_tests": 94,
+  "test_note": "Tests cover source/configuration, proposal density, moves, independent pool, sequencing/locking/restart, and estimator arithmetic. They do not certify unbiasedness."
+}

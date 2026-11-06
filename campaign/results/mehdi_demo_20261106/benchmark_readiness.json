@@ -1,0 +1,7 @@
+{
+  "created_utc": "2026-11-06T04:26:13.085390+00:00",
+  "target_and_bookkeeping_checks_passed": true,
+  "posterior_quality_alerts_retained": true,
+  "scope": "Proceed with the user-requested fixed-setting 100-event sampler benchmark, not a claim of validated unbiased inference. Posterior performance alerts are benchmark outcomes; target or likelihood/prior convention mismatches halt the controller. No reference tuning.",
+  "settings": "DE/rwalk 80/20; no stretch; DE adaptation on; Morph pool 100000; NIS live 100; bandwidth flag omitted, executable default scale 2; upstream heuristic recovery explicitly recorded."
+}

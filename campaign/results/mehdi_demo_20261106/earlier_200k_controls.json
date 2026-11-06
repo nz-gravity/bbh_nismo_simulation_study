@@ -1,0 +1,133 @@
+{
+  "passed": false,
+  "runs": [
+    {
+      "event": 47,
+      "passed": false,
+      "checks": {
+        "stopping": true,
+        "finite_weights": true,
+        "weight_ess": true,
+        "weight_dominance": true,
+        "mean_marginal_jsd": true,
+        "worst_marginal_jsd": true,
+        "correlations": false,
+        "evidence": true,
+        "retries": true,
+        "pool": true
+      },
+      "mean_marginal_jsd_bits": 0.027809190000101312,
+      "marginal_jsd_bits": {
+        "chirp_mass": 0.013074513972622595,
+        "mass_ratio": 0.06211886271491137,
+        "a_1": 0.03121436786240332,
+        "a_2": 0.01973205153596617,
+        "tilt_1": 0.02144207198716421,
+        "tilt_2": 0.012214492730973971,
+        "phi_12": 0.010106534656729574,
+        "phi_jl": 0.052570624540039294
+      },
+      "max_correlation_difference": 0.4314958488792397,
+      "evidence_standardized_difference": 0.962272527451915,
+      "delta_logz_reference": 0.2887004943459033,
+      "max_weight": 0.0028598194595635808,
+      "weight_ess": 738.8134096584059,
+      "retries": 3,
+      "morph_phase": {
+        "enabled": true,
+        "batch_size": 200000,
+        "selection": "first_passing_random_order",
+        "generated": 200000,
+        "initial_live": 100,
+        "consumed": 199900,
+        "accepted": 742,
+        "rejected": 199158,
+        "prior_rejected": 98865,
+        "unused": 0,
+        "likelihood_calls": 101091,
+        "switch_iteration": 743
+      },
+      "result_sha256": "daeee3624cc80986e415aeac5910ca2e6cd38fe6af3687f096a552cac409bb0a"
+    },
+    {
+      "event": 47,
+      "passed": false,
+      "checks": {
+        "stopping": true,
+        "finite_weights": true,
+        "weight_ess": true,
+        "weight_dominance": true,
+        "mean_marginal_jsd": true,
+        "worst_marginal_jsd": true,
+        "correlations": false,
+        "evidence": true,
+        "retries": true,
+        "pool": true
+      },
+      "mean_marginal_jsd_bits": 0.027459638246781687,
+      "marginal_jsd_bits": {
+        "chirp_mass": 0.06277532300325811,
+        "mass_ratio": 0.031078619763271104,
+        "a_1": 0.0382449801586813,
+        "a_2": 0.010843155328133755,
+        "tilt_1": 0.040558438423583976,
+        "tilt_2": 0.014368652300870987,
+        "phi_12": 0.007997931746767684,
+        "phi_jl": 0.013810005249686598
+      },
+      "max_correlation_difference": 0.5780601445860516,
+      "evidence_standardized_difference": 0.2327789139743709,
+      "delta_logz_reference": 0.06675918730252306,
+      "max_weight": 0.003484809773216917,
+      "weight_ess": 581.3370329661644,
+      "retries": 2,
+      "morph_phase": {
+        "enabled": true,
+        "batch_size": 200000,
+        "selection": "first_passing_random_order",
+        "generated": 200000,
+        "initial_live": 100,
+        "consumed": 199900,
+        "accepted": 700,
+        "rejected": 199200,
+        "prior_rejected": 99149,
+        "unused": 0,
+        "likelihood_calls": 100793,
+        "switch_iteration": 701
+      },
+      "result_sha256": "0b630f0ea3f1512b59cf182eed081247e733e8d8e9c64603d9c831fed61187ac"
+    }
+  ],
+  "stability": [
+    {
+      "event": 47,
+      "mean_marginal_jsd_bits": 0.04258666621319966,
+      "evidence_standardized_difference": 0.5701783895289151,
+      "passed": false
+    }
+  ],
+  "spec": {
+    "preset_before_reading_smoke_results": true,
+    "require_termination": [
+      "dlogz",
+      "flat_log_psi"
+    ],
+    "max_mean_marginal_jsd_bits": 0.03,
+    "max_any_marginal_jsd_bits": 0.1,
+    "max_evidence_standardized_difference": 3.0,
+    "min_weight_ess": 200,
+    "max_weight": 0.05,
+    "max_correlation_difference": 0.25,
+    "require_zero_retries": false,
+    "require_no_pool_exhaustion": false,
+    "target_replay_tolerance": 1e-06,
+    "weight_sum_tolerance": 1e-10,
+    "stability_max_mean_marginal_jsd_bits": 0.02,
+    "stability_max_evidence_standardized_difference": 3.0,
+    "interpretation": "Diagnostic acceptance checks, not calibrated hypothesis tests or unbiasedness proof. Settings fixed from the demo and safety policy; the independent reference is used only for target validation and post-run comparisons.",
+    "recipe": "Literal upstream demo recovery default: three bounded retries, explicitly labelled heuristic. The fail-fast controls stay failed and are retained separately.",
+    "scope": "A diagnostic gate for a faithful algorithm comparison, not proof of unbiased sampling."
+  },
+  "spec_sha256": "c79fe328d129f2b010948d5d3270abc0250de8c89adc1e8e82011ae6f4934ebc",
+  "limitations": "Marginal and correlation diagnostics do not establish joint coverage or unbiasedness. Heuristic recovery remains explicitly heuristic. Target replay audit is a separate required check."
+}

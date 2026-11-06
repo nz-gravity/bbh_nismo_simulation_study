@@ -1,0 +1,59 @@
+{
+  "script_sha256": "97689ed349c879cc6d83d286dcd76f601891b4b7c54c022370eae10a4d73e715",
+  "events": [
+    {
+      "event": 47,
+      "numerical_audit_passed": true,
+      "maximum_absolute_residuals": {
+        "log_q": 7.105427357601002e-14,
+        "log_likelihood": 0.0,
+        "log_prior": 0.0,
+        "log_psi_identity": 3.637978807091713e-12,
+        "normalized_weights": 2.7783764872113537e-15
+      },
+      "weight_sum": 1.000000000000004,
+      "maximum_weight": 0.0037355309019222794,
+      "top10_mass": 0.022203849787303803,
+      "weight_ess": 674.0313716825258,
+      "positive_points": 1315,
+      "unique_positive_points": 1315,
+      "recovery_retries": 3,
+      "failed_attempts": 3,
+      "n_iterations": 1259,
+      "likelihood_replay_calls": 1315,
+      "input_sha256": {
+        "event_047.json": "ff6805a4884323e91666d451a6ef5b8d3aaaf138b54b225e7b59dda21762eb9f",
+        "invocation.json": "1d0ab9ff2decced2e6afafee6904edde1a0913e639aabd65147fe35a90062085",
+        "result.npz": "7a2062c867d8e3b7e655bd4e583fb658f7c23c15c66c1d28bc84698c29343451"
+      },
+      "limitations": "Bookkeeping and pointwise replay only; does not certify proposal sampling, mixing, missing modes or unbiased volumes."
+    },
+    {
+      "event": 23,
+      "numerical_audit_passed": true,
+      "maximum_absolute_residuals": {
+        "log_q": 5.329070518200751e-15,
+        "log_likelihood": 0.0,
+        "log_prior": 0.0,
+        "log_psi_identity": 1.8189894035458565e-12,
+        "normalized_weights": 4.37106947859256e-15
+      },
+      "weight_sum": 1.0000000000000029,
+      "maximum_weight": 0.0034812585835331325,
+      "top10_mass": 0.027196385285319945,
+      "weight_ess": 575.0183397075878,
+      "positive_points": 695,
+      "unique_positive_points": 695,
+      "recovery_retries": 2,
+      "failed_attempts": 2,
+      "n_iterations": 681,
+      "likelihood_replay_calls": 695,
+      "input_sha256": {
+        "event_023.json": "b23ddca111f3f852fe7aca87fd27bb712e0c91236eee001ffbb999e4f1f53eb4",
+        "invocation.json": "bdcadb46f1d26686416fa3aaaf3cb3e4931f40c92d23a3c525ab4cc14ed77fe7",
+        "result.npz": "6aca62efab68705021514a3ca5693c85576187e75963ce0ca31d8388b363e058"
+      },
+      "limitations": "Bookkeeping and pointwise replay only; does not certify proposal sampling, mixing, missing modes or unbiased volumes."
+    }
+  ]
+}
